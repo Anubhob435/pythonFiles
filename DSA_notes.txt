@@ -1,0 +1,179 @@
+====================================================
+DATA STRUCTURES AND ALGORITHMS - ESSENTIAL NOTES
+====================================================
+
+=====================
+1. COMPLEXITY ANALYSIS
+=====================
+
+BIG O NOTATION:
+- O(1)     : Constant time - Operations that don't depend on input size
+- O(log n) : Logarithmic - Divide and conquer algorithms (binary search)
+- O(n)     : Linear - Scanning through data once
+- O(n log n): Linearithmic - Efficient sorting algorithms (merge sort, quicksort)
+- O(n²)    : Quadratic - Nested loops, simple sorting algorithms
+- O(2^n)   : Exponential - Recursive algorithms solving problems of size n
+- O(n!)    : Factorial - Permutation algorithms
+
+SPACE COMPLEXITY: Memory usage by an algorithm
+
+=====================
+2. BASIC DATA STRUCTURES
+=====================
+
+ARRAYS:
+- Fixed size, contiguous memory allocation
+- O(1) access by index
+- O(n) for insertion/deletion (except at end)
+- Uses: Simple lists, buffers, lookup tables
+
+LINKED LISTS:
+- Single: Each node points to next node
+- Double: Each node points to both next and previous nodes
+- O(n) access, O(1) insertion/deletion (if position known)
+- Uses: Dynamic memory allocation, implementing stacks/queues
+
+STACKS:
+- LIFO (Last In, First Out)
+- Operations: push, pop, peek - all O(1)
+- Uses: Expression evaluation, backtracking, function calls
+
+QUEUES:
+- FIFO (First In, First Out)
+- Operations: enqueue, dequeue - all O(1)
+- Uses: BFS, scheduling, buffers
+
+=====================
+3. ADVANCED DATA STRUCTURES
+=====================
+
+HASH TABLES:
+- Key-value pairs with hashing function
+- Average O(1) for search/insert/delete
+- Collision resolution: chaining, open addressing
+- Uses: Caching, indexing, counting
+
+TREES:
+- Binary Trees: Each node has at most 2 children
+- Binary Search Trees: Left < Node < Right
+- Balanced Trees (AVL, Red-Black): Keep operations O(log n)
+- B-Trees: Self-balancing, used in databases/file systems
+- Uses: Hierarchical data, efficient searching
+
+HEAPS:
+- Complete binary trees with heap property
+- Min-heap: Parent smaller than children
+- Max-heap: Parent larger than children
+- O(log n) for insertion/deletion, O(1) to find min/max
+- Uses: Priority queues, scheduling, heap sort
+
+GRAPHS:
+- Vertices (nodes) connected by edges
+- Directed vs Undirected
+- Weighted vs Unweighted
+- Representations: Adjacency matrix, adjacency list
+- Uses: Networks, routes, social connections
+
+TRIES:
+- Tree-like structures for string operations
+- O(L) for search/insert/delete (L = string length)
+- Uses: Autocomplete, spell-checking, IP routing
+
+=====================
+4. SORTING ALGORITHMS
+=====================
+
+COMPARISON SORTS:
+- Bubble Sort: O(n²), swaps adjacent elements
+- Selection Sort: O(n²), finds min/max repeatedly
+- Insertion Sort: O(n²), builds sorted array incrementally
+- Merge Sort: O(n log n), divide and conquer, stable
+- Quick Sort: O(n log n) average, in-place, unstable
+- Heap Sort: O(n log n), in-place, unstable
+
+NON-COMPARISON SORTS:
+- Counting Sort: O(n+k), for small integer ranges
+- Radix Sort: O(n*k), sorts by digits
+- Bucket Sort: O(n+k), distributes into buckets
+
+=====================
+5. SEARCHING ALGORITHMS
+=====================
+
+- Linear Search: O(n), check each element
+- Binary Search: O(log n), requires sorted data
+- Depth-First Search (DFS): Uses stack, explores branches
+- Breadth-First Search (BFS): Uses queue, explores levels
+- A* Search: Uses heuristics for path finding
+
+=====================
+6. ALGORITHM PARADIGMS
+=====================
+
+RECURSION:
+- Function that calls itself
+- Base case prevents infinite recursion
+- Uses: Tree traversal, divide and conquer
+
+DYNAMIC PROGRAMMING:
+- Breaking down problems into subproblems
+- Memoization stores results of subproblems
+- Bottom-up vs Top-down approaches
+- Uses: Optimization problems, counting problems
+
+GREEDY ALGORITHMS:
+- Make locally optimal choices
+- May not guarantee global optimum
+- Uses: Scheduling, Huffman coding
+
+DIVIDE AND CONQUER:
+- Break problem into subproblems
+- Solve subproblems recursively
+- Combine solutions
+- Uses: Binary search, merge sort
+
+BACKTRACKING:
+- Build solutions incrementally
+- Abandon partial solutions ("backtrack") when they fail
+- Uses: Puzzles, combinatorial problems
+
+=====================
+7. COMMON PROBLEMS & TECHNIQUES
+=====================
+
+- Two Pointer Technique
+- Sliding Window
+- Binary Search Variations
+- Graph Traversal (DFS/BFS)
+- Topological Sorting
+- Shortest Path Algorithms (Dijkstra's, Bellman-Ford)
+- Minimum Spanning Tree (Prim's, Kruskal's)
+- Dynamic Programming Patterns
+- Bit Manipulation
+
+=====================
+8. SYSTEM DESIGN BASICS
+=====================
+
+- Scalability: Horizontal vs Vertical
+- Load Balancing
+- Caching Strategies
+- Database Indexing
+- Microservices Architecture
+- API Design Principles
+- Consistency vs Availability (CAP Theorem)
+- Message Queues
+- Sharding Techniques
+
+=====================
+9. INTERVIEW TIPS
+=====================
+
+- Break down problems step by step
+- Think out loud during problem-solving
+- Start with brute force, then optimize
+- Test your solution with examples
+- Analyze time and space complexity
+- Consider edge cases
+- Ask clarifying questions when needed
+- Practice explaining your approach

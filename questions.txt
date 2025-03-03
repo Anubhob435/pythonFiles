@@ -41,3 +41,10 @@ Consider a string , S , that is a series of character, each followed by its freq
 the string is not compresed correctly, so there may be multiple occurances of the same character. A propery
 of ea compressed string will consist of one instanc ch character in alphabetical order followed by total count 
 of that character withing the string 
+
+Question 8
+Given a singly linked list, write a function to reverse the linked list. The function should take the head of the linked list as input and return the new head of the reversed linked list.
+
+Example:
+Input: 1 -> 2 -> 3 -> 4 -> 5 -> NULL
+Output: 5 -> 4 -> 3 -> 2 -> 1 -> NULL
