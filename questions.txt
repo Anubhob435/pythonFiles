@@ -48,3 +48,34 @@ Given a singly linked list, write a function to reverse the linked list. The fun
 Example:
 Input: 1 -> 2 -> 3 -> 4 -> 5 -> NULL
 Output: 5 -> 4 -> 3 -> 2 -> 1 -> NULL
+
+
+Question 9
+
+the function  def product smallestpair(sun arr) accepts an integer array of set n implement
+the function to fin the pair(arr[i] arr[k]) where i = k, such that arr[i] and arr[k]
+are the least two elements of the array(arr[i]+ arr[k]) <= sum and return the product element of the 
+pair. Note return -1 if array is empty or if n<2 return 0 if no such pair found.
+
+question 10
+
+implement robin-karp algorithim
+
+
+N base notion is a system for writing numbers which uses only n different symbols.
+these symbols are the first n symbols from the given notation list (including the symbol for o) 
+decimal to n based notation are (0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9,
+10:A, 11:B, and so on upto 35:Z) 
+
+implement the following function char* DectoNBase(int n , int num):
+the funtion accept a positive int n and num implement the function to calculate the n base equivalent of 
+num and return the same as a string
+
+
+the steps are 
+devide the decimal no. by N treat the division as integer division
+write the remainder in n based notation. 
+divide the quotient again by n.
+repeat step 2 and 3 untill the quotient is 0. 
+
+th
