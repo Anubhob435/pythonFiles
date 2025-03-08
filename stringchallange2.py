@@ -1,17 +1,7 @@
-def StringChallenge(str):
-    # Convert the string to lowercase
-    str = str.lower()
-    
-    # Create a set of all the unique letters in the alphabet
-    alphabet = set('abcdefghijklmnopqrstuvwxyz')
-    
-    # Create a set of all the unique letters in the string
-    letters = set(c for c in str if c.isalpha())
-    
-    # Check if all the letters in the alphabet are in the string
-    return 'true' if alphabet.issubset(letters) else 'false'
+def find_smallest_number(numbers):
+    if not numbers:
+        return None
+    return min(numbers)
 
-
-print(StringChallenge("abcdefghijklmnopqrstuvwxyyyy"))  # Output: false
-print(StringChallenge("abc123456kmo"))  # Output: false
-print(StringChallenge("zacxyjbbkfgtbhdaielqrm45pnsowtuv"))  # Output: true
+sample_list = [10, 2, 5, 1, -7, 13]
+print(find_smallest_number(sample_list))  # Output: -7
