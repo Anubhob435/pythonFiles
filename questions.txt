@@ -78,4 +78,6 @@ write the remainder in n based notation.
 divide the quotient again by n.
 repeat step 2 and 3 untill the quotient is 0. 
 
-th
+Question 12. 
+
+Write a python code to arrange the elements of an array based on the rand( frequency of their appearence.)
