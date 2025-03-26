@@ -1,0 +1,20 @@
+{
+    "balance": 1400.0,
+    "transactions": [
+        {
+            "amount": 200,
+            "description": "Payment received for Web development services [ID: 1743003322]",
+            "timestamp": "2025-03-26 21:05:22"
+        },
+        {
+            "amount": 200,
+            "description": "Payment received for Web development services [ID: 1743003385]",
+            "timestamp": "2025-03-26 21:06:25"
+        },
+        {
+            "amount": 500.0,
+            "description": "Payment received for for web development [ID: 1743003588]",
+            "timestamp": "2025-03-26 21:10:51"
+        }
+    ]
+}
