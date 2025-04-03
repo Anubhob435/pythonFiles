@@ -7,10 +7,10 @@ class ScientificCalculator:
         self.master.title("Scientific Calculator")
         self.master.geometry("400x500")
         self.master.resizable(False, False)
-        self.master.configure(bg="#f0f0f0")
+        self.master.configure(bg="#2d2d2d")  # Dark background
         
         # Display frame
-        self.display_frame = tk.Frame(master, bg="#f0f0f0")
+        self.display_frame = tk.Frame(master, bg="#2d2d2d")  # Dark background
         self.display_frame.pack(padx=10, pady=10, fill=tk.BOTH)
         
         # Result display
@@ -23,12 +23,15 @@ class ScientificCalculator:
             font=("Arial", 24), 
             bd=10, 
             relief=tk.FLAT,
-            justify=tk.RIGHT
+            justify=tk.RIGHT,
+            bg="#3d3d3d",  # Darker gray for display
+            fg="#ffffff",  # White text
+            insertbackground="#ffffff"  # White cursor
         )
         self.display.pack(fill=tk.BOTH, expand=True)
         
         # Buttons frame
-        self.buttons_frame = tk.Frame(master, bg="#f0f0f0")
+        self.buttons_frame = tk.Frame(master, bg="#2d2d2d")  # Dark background
         self.buttons_frame.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
         
         # Define buttons
@@ -43,53 +46,53 @@ class ScientificCalculator:
         # Button configurations (text, row, column, function, color)
         buttons = [
             # Row 0 - Memory and Clear
-            ("MC", 0, 0, lambda: self.memory_clear(), "#e8e8e8"),
-            ("MR", 0, 1, lambda: self.memory_recall(), "#e8e8e8"),
-            ("M+", 0, 2, lambda: self.memory_add(), "#e8e8e8"),
-            ("M-", 0, 3, lambda: self.memory_subtract(), "#e8e8e8"),
-            ("C", 0, 4, lambda: self.clear(), "#ff9980"),
+            ("MC", 0, 0, lambda: self.memory_clear(), "#444444"),
+            ("MR", 0, 1, lambda: self.memory_recall(), "#444444"),
+            ("M+", 0, 2, lambda: self.memory_add(), "#444444"),
+            ("M-", 0, 3, lambda: self.memory_subtract(), "#444444"),
+            ("C", 0, 4, lambda: self.clear(), "#d9534f"),
             
             # Row 1 - Functions
-            ("sin", 1, 0, lambda: self.calculate_function("sin"), "#c9c9c9"),
-            ("cos", 1, 1, lambda: self.calculate_function("cos"), "#c9c9c9"),
-            ("tan", 1, 2, lambda: self.calculate_function("tan"), "#c9c9c9"),
-            ("√", 1, 3, lambda: self.calculate_function("sqrt"), "#c9c9c9"),
-            ("DEL", 1, 4, lambda: self.delete_last(), "#ff9980"),
+            ("sin", 1, 0, lambda: self.calculate_function("sin"), "#333333"),
+            ("cos", 1, 1, lambda: self.calculate_function("cos"), "#333333"),
+            ("tan", 1, 2, lambda: self.calculate_function("tan"), "#333333"),
+            ("√", 1, 3, lambda: self.calculate_function("sqrt"), "#333333"),
+            ("DEL", 1, 4, lambda: self.delete_last(), "#d9534f"),
             
             # Row 2 - More Functions
-            ("log", 2, 0, lambda: self.calculate_function("log"), "#c9c9c9"),
-            ("ln", 2, 1, lambda: self.calculate_function("ln"), "#c9c9c9"),
-            ("x²", 2, 2, lambda: self.calculate_function("square"), "#c9c9c9"),
-            ("x³", 2, 3, lambda: self.calculate_function("cube"), "#c9c9c9"),
-            ("÷", 2, 4, lambda: self.add_operator("/"), "#ffcc99"),
+            ("log", 2, 0, lambda: self.calculate_function("log"), "#333333"),
+            ("ln", 2, 1, lambda: self.calculate_function("ln"), "#333333"),
+            ("x²", 2, 2, lambda: self.calculate_function("square"), "#333333"),
+            ("x³", 2, 3, lambda: self.calculate_function("cube"), "#333333"),
+            ("÷", 2, 4, lambda: self.add_operator("/"), "#ff9800"),
             
             # Row 3 - Numbers and operators
-            ("7", 3, 0, lambda: self.add_digit("7"), "white"),
-            ("8", 3, 1, lambda: self.add_digit("8"), "white"),
-            ("9", 3, 2, lambda: self.add_digit("9"), "white"),
-            ("(", 3, 3, lambda: self.add_parenthesis("("), "#c9c9c9"),
-            ("×", 3, 4, lambda: self.add_operator("*"), "#ffcc99"),
+            ("7", 3, 0, lambda: self.add_digit("7"), "#4a4a4a"),
+            ("8", 3, 1, lambda: self.add_digit("8"), "#4a4a4a"),
+            ("9", 3, 2, lambda: self.add_digit("9"), "#4a4a4a"),
+            ("(", 3, 3, lambda: self.add_parenthesis("("), "#333333"),
+            ("×", 3, 4, lambda: self.add_operator("*"), "#ff9800"),
             
             # Row 4
-            ("4", 4, 0, lambda: self.add_digit("4"), "white"),
-            ("5", 4, 1, lambda: self.add_digit("5"), "white"),
-            ("6", 4, 2, lambda: self.add_digit("6"), "white"),
-            (")", 4, 3, lambda: self.add_parenthesis(")"), "#c9c9c9"),
-            ("-", 4, 4, lambda: self.add_operator("-"), "#ffcc99"),
+            ("4", 4, 0, lambda: self.add_digit("4"), "#4a4a4a"),
+            ("5", 4, 1, lambda: self.add_digit("5"), "#4a4a4a"),
+            ("6", 4, 2, lambda: self.add_digit("6"), "#4a4a4a"),
+            (")", 4, 3, lambda: self.add_parenthesis(")"), "#333333"),
+            ("-", 4, 4, lambda: self.add_operator("-"), "#ff9800"),
             
             # Row 5
-            ("1", 5, 0, lambda: self.add_digit("1"), "white"),
-            ("2", 5, 1, lambda: self.add_digit("2"), "white"),
-            ("3", 5, 2, lambda: self.add_digit("3"), "white"),
-            ("π", 5, 3, lambda: self.add_constant("pi"), "#c9c9c9"),
-            ("+", 5, 4, lambda: self.add_operator("+"), "#ffcc99"),
+            ("1", 5, 0, lambda: self.add_digit("1"), "#4a4a4a"),
+            ("2", 5, 1, lambda: self.add_digit("2"), "#4a4a4a"),
+            ("3", 5, 2, lambda: self.add_digit("3"), "#4a4a4a"),
+            ("π", 5, 3, lambda: self.add_constant("pi"), "#333333"),
+            ("+", 5, 4, lambda: self.add_operator("+"), "#ff9800"),
             
             # Row 6
-            ("±", 6, 0, lambda: self.toggle_sign(), "#c9c9c9"),
-            ("0", 6, 1, lambda: self.add_digit("0"), "white"),
-            (".", 6, 2, lambda: self.add_decimal(), "white"),
-            ("e", 6, 3, lambda: self.add_constant("e"), "#c9c9c9"),
-            ("=", 6, 4, lambda: self.calculate(), "#4ca3dd"),
+            ("±", 6, 0, lambda: self.toggle_sign(), "#333333"),
+            ("0", 6, 1, lambda: self.add_digit("0"), "#4a4a4a"),
+            (".", 6, 2, lambda: self.add_decimal(), "#4a4a4a"),
+            ("e", 6, 3, lambda: self.add_constant("e"), "#333333"),
+            ("=", 6, 4, lambda: self.calculate(), "#5bc0de"),
         ]
         
         # Configure grid for equal column widths
@@ -105,9 +108,12 @@ class ScientificCalculator:
                 text=text, 
                 font=("Arial", 12, "bold"), 
                 bg=color,
+                fg="#ffffff",  # White text for all buttons
                 relief=tk.RAISED,
                 bd=3,
-                command=command
+                command=command,
+                activebackground="#666666",  # Darker when pressed
+                activeforeground="#ffffff"
             )
             button.grid(row=row, column=col, sticky="nsew", padx=2, pady=2)
     
