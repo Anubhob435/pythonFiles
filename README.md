@@ -22,6 +22,14 @@ A repository containing various Python implementations, algorithm challenges, co
   - Data visualization
   - Algorithm challenges
   - String manipulation utilities
+  - ASCII art and animation
+  - Encryption utilities
+  
+- **Notes and Materials**: Documentation and learning resources
+  - Algorithm design techniques
+  - DSA notes
+  - Python cheat sheets
+  - Practice problem sets
 
 ## Key Projects
 
@@ -36,6 +44,24 @@ A repository containing various Python implementations, algorithm challenges, co
 - Array manipulation algorithms (`arrchallange.py`)
 - Roman numeral conversion (`roman.py`)
 - Dynamic programming solutions (`practice5.py`)
+- Merge sort implementation (`mergesort.py`)
+- Maximum subarray problem (`maximumSubArray.py`)
+
+### ASCII Art Tools
+- ASCII art converter (`ascii_art_converter.py`)
+- ASCII video generator (`ascii_video.py`)
+- Pre-generated ASCII art examples
+
+### Fibonacci Visualizations
+- Graphical spiral representations (`fibonacci.py`)
+- Generated GIF animations in outputs folder
+- Mathematical implementations
+
+### Utilities
+- Temperature converter (`temperature_converter.py`)
+- Calculator application (`calculator.py`)
+- Encryption/decryption tools (`encrypt.py`, `encrytionDecryption.py`, `sha512.py`)
+- Random luck generator (`random_luck.py`)
 
 ### Database Application
 - MySQL-based shopping system
@@ -47,6 +73,8 @@ A repository containing various Python implementations, algorithm challenges, co
 
 - Comprehensive DSA notes available in DSA_notes.txt
 - Practice problems with solutions in the classwork directory
+- Algorithm design techniques PDF
+- Python cheat sheet for quick reference
 
 ## Technologies Used
 
@@ -72,3 +100,5 @@ python classwork/practice1.py
 ## Note
 
 This repository represents a collection of coding exercises, projects, and learning materials. Individual files may have specific requirements or dependencies.
+
+Last updated: April 20, 2025
