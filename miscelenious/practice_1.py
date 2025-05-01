@@ -20,3 +20,4 @@ tips = sns.load_dataset("tips")
 sns.scatterplot(data=tips, x="total_bill", y="tip")
 plt.title("Tips vs Total Bill Amount")
 plt.show()
+
