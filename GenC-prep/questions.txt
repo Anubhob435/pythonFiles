@@ -1,0 +1,373 @@
+Problem Statement – Write a program to calculate the fuel consumption of your truck.The program should ask the user to enter the quantity of diesel to fill up 
+the tank and the distance covered till the tank goes dry.
+Calculate the fuel consumption and display it in the format (liters per 100 kilometers).
+
+Convert the same result to the U.S. style of miles per gallon and display the result. If the quantity or distance is zero or negative display ” is an Invalid Input”.
+[Note: The US approach of fuel consumption calculation (distance / fuel) is the inverse of the European approach (fuel / distance ).
+Also note that 1 kilometer is 0.6214 miles, and 1 liter is 0.2642 gallons.]
+The result should be with two decimal place.To get two decimal place refer the below-mentioned print statement :
+float cost=670.23;
+
+System.out.printf(“You need a sum of Rs.%.2f to cover the trip”,cost);
+
+Sample Input 1:
+Enter the no of liters to fill the tank
+           20
+Enter the distance covered
+           150
+Sample Output 1:
+Liters/100KM
+          13.33
+Miles/gallons
+          17.64
+
+
+Question-2
+Problem Statement – Vohra went to a movie with his friends in a Wave theatre and during  break time he bought pizzas, puffs and cool drinks. Consider   the following prices : 
+
+Rs.100/pizza
+Rs.20/puffs
+Rs.10/cooldrink
+Generate a bill for What Vohra has bought.
+
+Sample Input 1:
+
+Enter the no of pizzas bought:10
+Enter the no of puffs bought:12
+Enter the no of cool drinks bought:5
+Sample Output 1:
+
+Bill Details
+
+No of pizzas:10
+No of puffs:12
+No of cooldrinks:5
+Total price=1290
+ENJOY THE SHOW!!!
+
+Question-3
+Problem Statement – Ritik wants a magic board, which displays a character for a corresponding number for his science project. Help him to develop such an application.
+For example when the digits 65,66,67,68 are entered, the alphabet ABCD are to be displayed.
+[Assume the number of inputs should be always 4 ]
+
+Sample Input 1:
+
+Enter the digits:
+65
+66
+67
+68
+Sample Output 1:
+
+65-A
+66-B
+67-C
+68-D
+
+Sample Input 2:
+
+Enter the digits:
+115
+116
+101
+112
+Sample Output 2:
+
+115-s
+116-t
+101-e
+112-p
+
+
+Question-4
+Problem Statement – FOE college wants to recognize the department which has succeeded in getting the maximum number of placements for this academic year. 
+The departments that have participated in the recruitment drive are CSE,ECE, MECH. 
+Help the college find the department getting maximum placements. Check for all the possible output given in the sample snapshot
+
+Note : If any input is negative, the output should be “Input is Invalid”.  If all department has equal number of placements, 
+the output should be “None of the department has got the highest placement”.
+
+Sample Input 1:
+
+Enter the no of students placed in CSE:90
+Enter the no of students placed in ECE:45
+Enter the no of students placed in MECH:70
+Sample Output 1:
+
+Highest placement
+CSE
+
+Sample Input 2:
+
+Enter the no of students placed in CSE:55
+Enter the no of students placed in ECE:85
+Enter the no of students placed in MECH:85
+Sample Output 2:
+
+Highest placement
+ECE
+
+MECH
+
+Sample Input 3:
+
+Enter the no of students placed in CSE:0
+Enter the no of students placed in ECE:0
+Enter the no of students placed in MECH:0
+Sample Output 3:
+
+None of the department has got the highest placement
+Sample Input 4:
+
+Enter the no of students placed in CSE:10
+Enter the no of students placed in ECE:-50
+Enter the no of students placed in MECH:40
+Sample Output 4:
+
+Input is Invalid
+
+Question-5
+Problem Statement  – In a theater, there is a discount scheme announced where one gets a 10% discount on the total cost of tickets when there is
+a bulk booking of more than 20 tickets, and a discount of 2% on the total cost of tickets if a special coupon card is submitted.
+Develop a program to find the total cost as per the scheme. The cost of the k class ticket is Rs.75 and q class is Rs.150.
+Refreshments can also be opted by paying an additional of Rs. 50 per member.
+
+Hint: k and q and You have to book minimum of 5 tickets and maximum of 40 at a time. If fails display “Minimum of 5 and Maximum of 40 Tickets”. 
+If circle is given a value other than ‘k’ or ‘q’ the output should be “Invalid Input”.
+
+The ticket cost should be printed exactly to two decimal places.
+
+Sample Input 1:
+
+Enter the no of ticket:35
+Do you want refreshment:y
+Do you have coupon code:y
+Enter the circle:k
+Sample Output 1:
+
+Ticket cost:4065.25
+Sample Input 2:
+
+Enter the no of ticket:1
+Sample Output 2:
+
+Minimum of 5 and Maximum of 40 Tickets
+
+
+
+Question-6
+Problem Statement – Rhea Pandey’s teacher has asked her to prepare well for the lesson on seasons. When her teacher tells a month, 
+she needs to say the season corresponding to that month. Write a program to solve the above task.
+
+Spring – March to May,
+Summer – June to August,
+Autumn – September to November and,
+Winter – December to February.
+Month should be in the range 1 to 12.  If not the output should be “Invalid month”.
+
+Sample Input 1:
+
+Enter the month:11
+Sample Output 1:
+
+Season:Autumn
+Sample Input 2:
+
+Enter the month:13
+Sample Output 2:
+
+Invalid month
+
+
+QUESTION 7
+
+Problem Statement – To speed up his composition of generating unpredictable rhythms, Blue Bandit wants the list of prime numbers available in a range of numbers.Can you help him out?
+
+Write a java program to print all prime numbers in the interval [a,b] (a and b, both inclusive).
+
+Note
+
+Input 1 should be lesser than Input 2. Both the inputs should be positive. 
+Range must always be greater than zero.
+If any of the condition mentioned above fails, then display “Provide valid input”
+Use a minimum of one for loop and one while loop
+Sample Input 1:
+
+2
+
+15
+
+Sample Output 1:
+
+2 3 5 7 11 13
+
+Sample Input 2:
+
+8
+
+5
+
+Sample Output 2:
+
+Provide valid input
+
+
+Question-8
+Problem Statement – Goutam and  Tanul plays  by  telling numbers.  Goutam says a number to Tanul.  
+Tanul should first reverse the number and check if it is same as the original.  
+If yes,  Tanul should say “Palindrome”.  If not, he should say “Not a Palindrome”.  
+If the number is negative, print “Invalid Input”.  Help Tanul by writing a program.
+
+Sample Input 1 :
+
+21212
+
+Sample Output 1 :
+
+Palindrome
+
+Sample Input 2 :
+
+6186
+
+Sample Output 2 :
+
+Not a Palindrome
+
+Cognizant GenC Coding Questions
+Question-9
+XYZ Technologies is in the process of increment the salary of the employees.  This increment is done based on their salary and their performance appraisal rating.
+
+If the appraisal rating is between 1 and 3, the increment is 10% of the salary.
+If the appraisal rating is between 3.1 and 4, the increment is  25% of the salary.
+If the appraisal rating is between 4.1 and 5, the increment is  30% of the salary.
+Help them to do this,  by writing a program that displays the incremented salary. Write a class “IncrementCalculation.java” and write the main method in it.
+
+Note   :   If either the salary is 0 or negative  (or) if the appraisal rating is not in the range 1 to 5 (inclusive), then the output should be “Invalid Input”.
+
+Sample Input 1 :
+
+Enter the salary
+8000
+
+Enter the Performance appraisal rating
+3
+
+Sample Output  1 :
+
+8800
+
+Sample Input  2 :
+
+Enter the salary
+7500
+
+Enter the Performance appraisal rating
+4.3
+
+Sample Output  2 :
+
+9750
+
+Sample Input  3 :
+
+Enter the salary
+-5000
+
+Enter the Performance appraisal rating
+6
+
+Sample Output  3 :
+
+Invalid Input
+
+
+Question-10
+Problem Statement – Chaman planned to choose a four digit lucky number for his car. His lucky numbers are 3,5 and 7. 
+Help him find the number, whose sum is divisible by  3 or 5 or 7. Provide a valid car number, Fails to provide a valid 
+input then display that number is not a valid car number. 
+
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as invalid.
+
+Refer the samples, to read and display the data.
+
+Sample Input 1:
+
+Enter the car no:1234
+Sample Output 1:
+
+Lucky Number
+Sample Input 2:
+
+Enter the car no:1214
+Sample Output 2:
+
+Sorry its not my lucky number
+Sample Input 3:
+
+Enter the car no:14
+Sample Output 3:
+
+14 is not a valid car number
+
+
+
+Question-11
+Problem Statement –
+
+IIHM institution is offering a variety of courses to students. Students have a facility to check whether a particular course 
+is available in the institution. Write a program to help the institution accomplish this task. 
+If the number is less than or equal to zero display “Invalid Range”.
+
+Assume maximum number of courses is 20.
+
+Sample Input 1:
+
+Enter no of course:
+5
+
+Enter course names:
+Java
+
+Oracle
+
+C++
+
+Mysql
+
+Dotnet
+
+Enter the course to be searched:
+C++
+
+Sample Output 1:
+
+C++ course is available
+
+Sample Input 2: 
+
+Enter no of course:
+3
+
+Enter course names:
+Java
+
+Oracle
+
+Dotnet
+
+Enter the course to be searched:
+C++
+
+Sample Output 2:
+
+C++ course is not available
+
+Sample Input 3:
+
+Enter no of course:
+0
+
+Sample Output 3:
+
+Invalid Range
