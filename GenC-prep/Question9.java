@@ -30,7 +30,7 @@ public class Question9 {
         
         System.out.println(new_salary);
         
-    
+        sc.close();
     }
     
 }

@@ -12,6 +12,7 @@ public class Question10 {
         } else {
             System.out.println(number + " is not a valid car number");
         }
+        scanner.close();
     }
     
     public static boolean isValidCarNumber(int number) {

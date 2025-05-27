@@ -33,5 +33,6 @@ public class Question11 {
             System.out.println(st + " Course Available ");
         else 
             System.out.println(st +" Course not available ");
+        sc.close();
     }
 }

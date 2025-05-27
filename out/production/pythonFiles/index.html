@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recognition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">
+        <i class="fas fa-sun"></i>
+    </button>
+    <div id="app">
+        <h1><i class="fas fa-microphone"></i> Voice Recognition</h1>
+        <button id="start-btn">
+            <i class="fas fa-microphone"></i>
+            <span>Start Listening</span>
+        </button>
+        <div id="output">Tap the microphone to start speaking...</div>
+        <div class="status-indicator">
+            <i class="fas fa-info-circle"></i>
+            <span id="status">Ready</span>
+            <div class="wave" id="wave-visualizer" style="display: none;">
+                <div class="wave-bar" style="animation-delay: -0.4s"></div>
+                <div class="wave-bar" style="animation-delay: -0.3s"></div>
+                <div class="wave-bar" style="animation-delay: -0.2s"></div>
+                <div class="wave-bar" style="animation-delay: -0.1s"></div>
+                <div class="wave-bar" style="animation-delay: 0s"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
