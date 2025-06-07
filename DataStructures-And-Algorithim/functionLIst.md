@@ -43,3 +43,20 @@ lambda x: {condition } is also valid
 
 sum(numbers, start = start value)
 
+sorted()
+
+sorts a list
+
+sort(list, reverse =True, key)
+key is like lambda, custom function, specify on which parameter the items will be sorted.
+
+example in a list of dictionaries of key value pari, you can sort on the basis of a specific key's value
+
+
+enumerate() ## upgraded version of for loops
+
+for index, task in enumerate(tasks):
+    print(f"{index + 1}. {taskl}")
+
+
+zip()
