@@ -7,32 +7,28 @@ public class Question13 {
         int[] max_marks_arr = new int[x];
         int[] number_of_subjects = new int[x];
 
-        for(int i = 0; i< x; i++){
-            System.out.println("How many subjects in " + (i+1) + " semester?");
-            number_of_subjects[i] = sc.nextInt();
-        }
+for(int i = 0; i< x; i++){
+    System.out.println("How many subjects in " + (i+1) + " semester?");
+    number_of_subjects[i] = sc.nextInt();
+}
 
-       // for (int a = 0; a<)
+for (int i = 0; i < x; i++){
+    int max_this_sem = 0;
+    for(int j =0; j < number_of_subjects[i]; j++){
+        System.out.println("marks in Subject " + (j+1) + ": ");
+        int y = sc.nextInt();
+        if (y < 0 || y > 100)
+            System.exit(0);
 
-/* 
-            for(int j =0; j < z; j++){
-                System.out.println("marks in Subject " + (j+1) + ": ");
-                int y = sc.nextInt();
-                if (y < 0 || y > 100)
-                    System.exit(0);
+        if(y> max_this_sem)
+            max_this_sem = y;
+    }
+    max_marks_arr[i] = max_this_sem;
+}
 
-                if(y> max_this_sem)
-                    max_this_sem = y;
-            }
-            max_marks_arr[i] = max_this_sem;
-            max_this_sem = 0;
-
-        }
-
-        for (int k =0; k < x; k++){
-            System.out.println("Highest Marks in " + (k+1) + " smester is " + (max_marks_arr[k]));
-        }
-*/
+for (int k =0; k < x; k++){
+    System.out.println("Highest Marks in " + (k+1) + " smester is " + (max_marks_arr[k]));
+}
 
     }
     
