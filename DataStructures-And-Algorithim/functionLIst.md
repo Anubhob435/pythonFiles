@@ -1,62 +1,98 @@
-print()
-sep = ""
-end = ""
+# Python Function Reference
 
-help()
+## Basic Functions
 
+### `print()`
+- `sep=""` - separator between items
+- `end=""` - what to print at the end
 
-range(a, b, c)
-a = start
-b = end (not included)
-c = step value
+### `help()`
+Get help documentation for objects
 
-list()
+### `range(a, b, c)`
+- `a` = start value
+- `b` = end value (not included)
+- `c` = step value
 
+### `list()`
+Create a new list
 
+## Higher-Order Functions
 
-map(lambd x: x + "s", strings )
+### `map()`
+Applies a function to each item in a list
 
-map function adds custom function to each and every items in a list
+**Using lambda:**
+```python
+map(lambda x: x + "s", strings)
+```
 
-lambda x: is a custum function
-
-lambda x: x + "s" means add a s to each an every item in that list
-
-insted of writeing a single inline function, you can define custom
-user define dfunction and then call that
-
+**Using custom function:**
+```python
 def add_s(string):
     return string + "s"
 
 map(add_s, strings)
+```
 
+### `filter()`
+Filters items in a list based on a condition
 
-filter()
+**Example:**
+```python
+x = filter(longer_than_4, strings)
+# or with lambda
+x = filter(lambda x: condition, strings)
+```
 
-iterates throug a list and applies the mentioned filter, if ok
-keeps it else not
+### `sum(numbers, start=0)`
+Sum all numbers in a list with optional start value
 
-example 
-x = filter(longer_than_4, strings) 
+### `sorted()`
+Returns a sorted list
 
-lambda x: {condition } is also valid
+**Parameters:**
+- `reverse=True` - sort in descending order
+- `key` - custom function to specify sorting criteria
 
-sum(numbers, start = start value)
+**Example:** Sort list of dictionaries by specific key
+```python
+sorted(list_of_dicts, key=lambda x: x['key_name'])
+```
 
-sorted()
+## Iteration Functions
 
-sorts a list
+### `enumerate()`
+Enhanced for loop with index
 
-sort(list, reverse =True, key)
-key is like lambda, custom function, specify on which parameter the items will be sorted.
-
-example in a list of dictionaries of key value pari, you can sort on the basis of a specific key's value
-
-
-enumerate() ## upgraded version of for loops
-
+```python
 for index, task in enumerate(tasks):
-    print(f"{index + 1}. {taskl}")
+    print(f"{index + 1}. {task}")
+```
+
+### `zip()`
+Combines multiple iterables (stops at shortest length)
+
+## File Operations
+
+### `open()`
+Open a file with specified permissions
+- `"r"` - read
+- `"w"` - write
+- `"a"` - append
+- `"wr"` - read/write
+
+### File Handling Best Practice
+```python
+with open("filename.txt", "w") as file:
+    file.write("content")
+    # file automatically closes
+```
+
+**Manual closing:**
+```python
+file.close()
+```
 
 
-zip()
+pprint()
