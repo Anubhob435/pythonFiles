@@ -145,7 +145,7 @@ Do you have coupon code:y
 Enter the circle:k
 Sample Output 1:
 
-Ticket cost:4065.25
+T	qk
 Sample Input 2:
 
 Enter the no of ticket:1

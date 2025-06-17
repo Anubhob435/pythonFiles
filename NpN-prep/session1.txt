@@ -1,0 +1,19 @@
+What is Data WearHouse?
+A Data Warehouse is a centralized repository that stores large volumes of structured and semi-structured data from multiple sources.
+business users preffer Data WearHouse over traditional databases because it is optimized for query and analysis, allowing for faster retrieval of data and better performance 
+on complex queries.
+
+what is information?
+it is processed data that is meaningful and useful for decision-making. Information is derived from raw data through various processes such as filtering, sorting, and aggregating.
+
+What  are the advantages of Data WearHouse?
+1. Improved data quality and consistency: Data Warehouses integrate data from various sources, ensuring that the data is accurate, consistent, and up-to-date.
+2. Enhanced data analysis and reporting: Data Warehouses support complex queries and analytics, enabling users to gain insights and make informed decisions based on the data.
+3. Historical data storage: Data Warehouses can store large volumes of historical data, allowing for trend analysis and long-term decision-making.
+4. Scalability: Data Warehouses can handle large volumes of data and can be scaled up. 
+
+From query to result
+take data from various sources -> integrate data  from multiple sources -> standardize data & remove inconsistencies -> store data in format suitable for easy access
+
+A data wearhouse is a "subject-oriented", "integrated", "time-variant", and "non-volatile" collection of data that supports decision-making processes. 
+    -Bill Inmon, Father of data warehousing
