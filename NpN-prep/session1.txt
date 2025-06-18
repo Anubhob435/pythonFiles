@@ -1,3 +1,21 @@
+## RDBMS
+
+#RDBMS stands for Relational Database Management System. It is a type of database management system that stores data in a structured format using rows and columns. RDBMS uses Structured Query Language (SQL) for querying and managing the data.  
+It supports SQL based on sets and relationships.
+
+#Transactions in RDBMS are ACID compliant, meaning they ensure Atomicity, Consistency, Isolation, and Durability.
+
+#Constraints in RDBMS are rules that enforce data integrity and consistency.
+
+#Transaction logs are used to record all changes made to the database, allowing for recovery in case of a failure.
+when something goes wrong, we can use transaction logs to rollback the changes made to the database. they improve recovery.
+For example, transactions happen throughout the day, and at the end of the day, we do backup. if anything goes wromg the next dayk, we can use  previous
+night backup to do a #rollback.
+
+#Security in RDBMS is implemented through user roles and permissions, ensuring that only authorized users can access or modify the data.
+
+#Triggers in RDBMS are special procedures that automatically execute in response to certain events on a table or view, such as insertions, updates, or deletions. They are used to enforce business rules or maintain data integrity.
+
 ## DATA WAREHOUSE
 
 What is Data WearHouse?
@@ -75,3 +93,35 @@ There are two approaches to Data Mart:
 ## DATA WEARHOUSE ARCHITECTURE
 
 Database, Flat Files -> Staging Area (Staging Database) -> Data Warehouse(Meta Data, Aggregate Data, Raw Data) -> Data Marts(like Sales, Marketing, Finance) -> End Users (Business Analysts, Decision Makers)
+
+
+## HANDS ON PRACTICE
+
+# Oracle SQL Developer - Creating two tables  
+
+# Talend Data integration - import the data from the oracle database and load it into the staging area, apply filter, create one accepted excel and the rejected ones into another excel.
+
+### END OF LECTURE 1 UNDER SESSION 1 ###
+
+
+## DATA LAKES
+
+Started as Datalake ended up as Data Swamp.
+
+Scaled out Data Platform. Database contains external Files.
+Data Lakes optain data from Structured, un structured, and semi-structured sources.
+
+Data from Data Lake can be placed in Data WearHouse using ETL (Extract, Transform, Load) or ELT (Extract, Load, Transform) processes.
+
+data lake supports
+    - SQL Language
+    - transactions
+    - ACID compliance
+    - Transaction logs
+    - some contains
+    - almost no Security
+    - no triggers
+    - no backups
+    - supports schema evolutions
+
+### END OF LECTURE 2 UNDER SESSION 1 ###
