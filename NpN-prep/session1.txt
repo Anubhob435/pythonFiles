@@ -1,3 +1,5 @@
+## DATA WAREHOUSE
+
 What is Data WearHouse?
 A Data Warehouse is a centralized repository that stores large volumes of structured and semi-structured data from multiple sources.
 business users preffer Data WearHouse over traditional databases because it is optimized for query and analysis, allowing for faster retrieval of data and better performance 
@@ -15,5 +17,61 @@ What  are the advantages of Data WearHouse?
 From query to result
 take data from various sources -> integrate data  from multiple sources -> standardize data & remove inconsistencies -> store data in format suitable for easy access
 
+## Properties of Data WearHouse
+
 A data wearhouse is a "subject-oriented", "integrated", "time-variant", and "non-volatile" collection of data that supports decision-making processes. 
     -Bill Inmon, Father of data warehousing
+
+
+## OLTP(DB) vs OLAP(DW)
+
+| Feature                | OLTP (DB)                                  | OLAP (DW)                                 |
+|------------------------|--------------------------------------------|-------------------------------------------|
+| Purpose                | Transaction processing                     | Analytical processing                     |
+| Data Structure         | Highly normalized, detailed data           | Denormalized, aggregated data             |
+| Operations             | Insert, update, delete, simple queries     | Complex queries, data analysis, reporting |
+| Users                  | Clerks, database administrators            | Business analysts, decision makers        |
+| Data Volume            | Smaller, current data                      | Large, historical data                    |
+| Response Time          | Fast for transactions                      | Fast for complex queries                  |
+| Example                | Banking transactions, order entry systems  | Sales trend analysis, forecasting         |
+
+
+## DATA MART 
+
+Data mart is a smaller version of a data wearhouse, less sources of data, used to satify only a certain department or business unit.
+Data mart is like sub parts of Data wearhouse divides to give access to specific departments or business units.
+
+#Difference between Data Warehouse and Data Mart:
+
+| Feature                | Data Warehouse                              | Data Mart                                 |
+|------------------------|---------------------------------------------|-------------------------------------------|
+| Scope                  | Organization-wide                           | Department or business unit specific      |
+| Data Sources           | Multiple, enterprise-wide                   | Few, focused on specific area             |
+| Size                   | Large (terabytes to petabytes)              | Smaller (gigabytes to terabytes)          |
+| Complexity             | High, integrates data from many sources     | Lower, simpler structure                  |
+| Implementation Time    | Longer                                      | Shorter                                   |
+| Users                  | Organization-wide decision makers           | Specific department users                 |
+| Maintenance            | More complex                                | Easier                                    |
+| Cost                   | Higher                                      | Lower                                     |
+
+There are two approaches to Data Mart:
+    top down approach: Data Mart is created from Data Warehouse, data is extracted from Data Warehouse and loaded into Data Mart.
+    bottom up approach: Data Mart is created first, data is extracted from operational systems and loaded into Data Mart,
+                        then Data Mart is integrated into Data Warehouse.
+
+# Dependent data mart vs Independent data mart vs Hybrid data mart
+
+> in dependent data mart, data is extracted from operational systems and loaded into Data wearhouser and then into data mart.
+> in independent data mart, data is extracted from operational systems and loaded directly into data mart.
+> in hybrid data mart, data is extracted from both operational systems and Data Warehouse and loaded into data mart.
+
+## METADATA
+
+    - Metadata is data about data. 
+    - It provides information about the structure, content, and context of the data stored in a Data Warehouse or Data Mart.
+    - Metadata is define where the data is coming from, how it is transformed, and how it is stored.
+    - used to define what is source and what is target.
+
+## DATA WEARHOUSE ARCHITECTURE
+
+Database, Flat Files -> Staging Area (Staging Database) -> Data Warehouse(Meta Data, Aggregate Data, Raw Data) -> Data Marts(like Sales, Marketing, Finance) -> End Users (Business Analysts, Decision Makers)
