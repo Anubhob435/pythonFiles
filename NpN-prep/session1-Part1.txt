@@ -44,7 +44,7 @@ A data wearhouse is a "subject-oriented", "integrated", "time-variant", and "non
 ## OLTP(DB) vs OLAP(DW)
 
 | Feature                | OLTP (DB)                                  | OLAP (DW)                                 |
-|------------------------|--------------------------------------------|-------------------------------------------|
+||--|-|
 | Purpose                | Transaction processing                     | Analytical processing                     |
 | Data Structure         | Highly normalized, detailed data           | Denormalized, aggregated data             |
 | Operations             | Insert, update, delete, simple queries     | Complex queries, data analysis, reporting |
@@ -62,7 +62,7 @@ Data mart is like sub parts of Data wearhouse divides to give access to specific
 #Difference between Data Warehouse and Data Mart:
 
 | Feature                | Data Warehouse                              | Data Mart                                 |
-|------------------------|---------------------------------------------|-------------------------------------------|
+|||-|
 | Scope                  | Organization-wide                           | Department or business unit specific      |
 | Data Sources           | Multiple, enterprise-wide                   | Few, focused on specific area             |
 | Size                   | Large (terabytes to petabytes)              | Smaller (gigabytes to terabytes)          |
@@ -167,5 +167,255 @@ Load -
 
 
 
+#Key Considerations When Choosing ETL Tools
+
+- Data Integration Extent: Range of supported connectors
+- Customizability Level: Technical flexibility vs. ease of use
+- Cost Structure: Tool cost plus infrastructure and maintenance
+- Automation Level: How much manual work is required
+- Security & Compliance: Data protection features
+- Performance & Reliability: Tool stability and speed
+
+#Top ETL Tools Categories
+
+# Open Source Options
+- Apache Airflow: Workflow orchestration with DAGs
+- Talend Open Studio: User-friendly GUI with drag-and-drop
+- Pentaho Data Integration: Real-time ETL capabilities
+- Hadoop: Big data processing framework
+- Airbyte: Leading open-source ELT platform with 350+ connectors
+
+# Cloud-Native Solutions
+- AWS Glue: Serverless ETL with multiple interface options
+- Azure Data Factory: Extensive connectors and flexible interfaces
+- Google Cloud Dataflow: Serverless with Apache Beam integration
+
+# Enterprise Tools
+- IBM InfoSphere DataStage: High-speed processing with parallelization
+- Oracle Data Integrator: Comprehensive database integration
+- Microsoft SSIS: Built-in transformations for SQL Server environments
+- Informatica PowerCenter: Industry leader with extensive connectors
+
+# Modern SaaS Platforms
+- Fivetran: Automated data replication with minimal setup
+- Stitch: Simple ETL for basic transformations
+- Hevo: Low-code platform with real-time integration
+- Matillion: Cloud-native with visual interface
+
+## Key Trends
+
+- ELT vs ETL: ELT (Extract, Load, Transform) is gaining popularity over traditional ETL
+- Cloud Migration: Most tools are moving toward cloud-native architectures
+- Automation Focus: Modern tools emphasize automated schema detection and management
+- Real-time Processing: Increasing demand for streaming data capabilities
+
+The choice of ETL tool depends on your organization's technical expertise, data volume, budget, and specific integration requirements.
+
+### END OF LECTURE 4 UNDER SESSION 1 ###
 
 
+## INFORMATICA
+
+# Informatica Architecture
+
+Informatica PowerCenter follows a Service-Oriented Architecture (SOA) with these core components:
+
+# Domain Architecture
+
+Domain (Administrative Layer)
+├── PowerCenter Repository Service
+├── PowerCenter Integration Service  
+├── PowerCenter Reporting Service
+└── PowerCenter Web Services Hub
+
+# Key Components:
+    - Domain: Administrative layer managing all services
+    - Nodes: Physical/virtual machines running Informatica services
+    - Services: Processes that perform specific functions
+    - Repository: Metadata storage for all objects and configurations
+
+# Informatica PowerCenter & Repository
+
+# PowerCenter Components:
+    1. Repository Service - Manages metadata and repository database
+    2. Integration Service - Executes workflows and sessions
+    3. Reporting Service - Generates reports and logs
+    4. Web Services Hub - Provides web service interfaces
+
+# Repository Structure:
+
+Repository Database
+├── Metadata Tables (Source/Target definitions)
+├── Transformations (Business logic)
+├── Mappings (Data flow design)
+├── Sessions (Runtime instructions)
+├── Workflows (Process orchestration)
+└── Security & User Management
+
+# Repository Types:
+    - PowerCenter Repository: Stores metadata for mappings, sessions, workflows
+    - Global Repository: Shared objects across multiple domains
+    - Local Repository: Domain-specific objects
+
+
+# Informatica PowerCenter Designer
+    - Purpose: Visual development environment for creating data mappings
+
+# Key Features:
+    - Source Analyzer: Import/define source structures
+    - Warehouse Designer: Create target table structures  
+    - Transformation Developer: Build reusable transformations
+    - Mapplet Designer: Create reusable mapping components
+    - Mapping Designer: Design complete data flows
+
+# Common Transformations:
+
+Source → Filter → Expression → Lookup → Aggregator → Target
+
+# Designer Workflow:
+    1. Import source definitions
+    2. Create target definitions
+    3. Build transformations
+    4. Connect data flow
+    5. Validate mapping
+    6. Save to repository
+
+# PowerCenter Workflow Manager
+    - Purpose: Create and manage workflows that orchestrate ETL processes
+
+# Task Types:
+    - Session Task: Executes mappings
+    - Command Task: Runs shell/batch commands
+    - Email Task: Sends notifications
+    - Timer Task: Adds delays
+    - Decision Task: Conditional branching
+    - Assignment Task: Sets workflow variables
+
+# Workflow Objects:
+
+    Workflow
+    ├── Start Task (Entry point)
+    ├── Session Tasks (Execute mappings)
+    ├── Link Conditions (Control flow)
+    ├── Events (Success/Failure handling)
+    └── Worklets (Reusable workflow components)
+
+
+# Session Configuration:
+    - Mapping: Associates with created mapping
+    - Source/Target Connections: Database connections
+    - Session Properties: Performance and runtime settings
+    - Config Object: Environment-specific configurations
+
+## 5. PowerCenter Workflow Monitor
+    - Purpose: Monitor, troubleshoot, and manage running workflows
+
+# Key Features:
+
+Monitoring Capabilities:
+    - Real-time Status: Running, succeeded, failed workflows
+    - Performance Metrics: Row counts, throughput, timing
+    - Error Tracking: Session logs, error messages
+    - Resource Usage: Memory, CPU utilization
+
+# Views Available:
+
+    Navigator View
+    ├── Repository Navigator (Browse objects)
+    ├── Task View (Individual task status)
+    ├── Gantt Chart View (Timeline visualization)
+    └── Output Window (Detailed logs)
+
+# Operations:
+    - Start/Stop workflows
+    - View session logs
+    - Recover failed sessions
+    - Generate reports
+    - Set up alerts and notifications
+
+# Running Mappings 
+
+# Process Flow:
+
+    1. Create Mapping (Designer)
+    2. Create Session (Workflow Manager)
+    3. Create Workflow (Workflow Manager)
+    4. Run Workflow (Workflow Monitor)
+    5. Monitor Execution (Workflow Monitor)
+
+# Session Execution Steps:
+    1. Read: Integration Service reads session properties
+    2. Load: Loads mapping metadata
+    3. Execute: Processes data according to mapping logic
+    4. Write: Loads transformed data to targets
+    5. Commit: Finalizes transaction
+
+### Performance Tuning:
+    - Partitioning: Parallel processing
+    - Caching: Lookup and aggregator optimization
+    - Pushdown Optimization: Database-level processing
+    - Session Configuration: Memory allocation, commit intervals
+
+
+
+# Workflow Creation & Deletion
+
+### Creating Workflows:
+
+#### Step-by-Step Process:
+
+    `powershell
+    # 1. Open Workflow Manager
+    # 2. Connect to Repository
+    # 3. Create New Workflow
+    `
+
+    `sql
+    -- Workflow Creation Components:
+    START → Session_Task → Email_Task → END
+    ↓         ↓           ↓
+    Always   OnSuccess   OnFailure
+    `
+
+# Best Practices:
+    - Use meaningful naming conventions
+    - Add error handling tasks
+    - Include logging and notification
+    - Set appropriate timeout values
+    - Use worklets for reusability
+
+# Workflow Deletion:
+
+# Safe Deletion Process:
+    1. Stop Running Instances: Ensure workflow is not executing
+    2. Check Dependencies: Verify no other workflows reference it
+    3. Backup: Export workflow definition if needed
+    4. Delete: Remove from repository
+
+#### Deletion Considerations:
+
+    Before Deletion Checklist:
+    ├── No active sessions running
+    ├── No scheduler dependencies  
+    ├── No parent workflow references
+    ├── Backup/export completed
+    └── Stakeholder approval obtained
+
+
+# Workflow Scheduling:
+    - pmcmd: Command-line scheduling
+    - Third-party Schedulers: Integration with enterprise schedulers
+    - Event-based: Trigger workflows based on file arrival/database changes
+
+
+
+# Summary Architecture Flow:
+
+Designer → Workflow Manager → Repository → Integration Service → Workflow Monitor
+    ↓           ↓              ↓            ↓                    ↓
+ Mappings   Workflows     Metadata     Execution            Monitoring
+
+
+This architecture provides a robust, scalable platform for enterprise data integration with clear separation of development, management, and monitoring concerns.
+
+### END OF LECTURE 5 UNDER SESSION 1 ###
