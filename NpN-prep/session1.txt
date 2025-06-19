@@ -125,3 +125,47 @@ data lake supports
     - supports schema evolutions
 
 ### END OF LECTURE 2 UNDER SESSION 1 ###
+
+
+## ETL (Extract, Transform, Load)
+
+Extract - 
+    - Extract data from various sources such as databases, flat files, APIs, etc.
+    - Data can be structured, semi-structured, or unstructured.
+    - Data is extracted in its raw form.
+    - Data quality rules
+    - Data Format consistency (For example converting date formats, currency formats, etc.)
+    - Data Dump from source systems
+    - No Complex Logics (simple logic like extracting age from date of birth is okay, but not complex logics like calculating profit from sales and expenses)
+    - No running business Quaries, not given access to business department.
+    - Popular Load Strategies - Full and Delta Load
+            - Full Load: All data is extracted and loaded into the target system.
+            - Delta Load: Only the changes (new or updated records) since the last load are extracted and loaded into the target system.
+    - Load strategies - Historical and Incremental Load
+            - Historical Load: All historical data is loaded into the target system.
+            - Incremental Load: Only new or changed data is loaded into the target system since the last load.
+    
+Transform -
+    - Data is cleaned, filtered, and transformed to meet the requirements of the target system.
+    - Convert raw data into meaningful information.
+    - Steps are 
+            - mapping the data from source to target (colulmn level maping, as-is, new derived colums, rename columns)
+            - Enrich the data (adding more info to make the output more meaningful, someone sends zip code, we can add city name to it)
+            - Join data from multiple sources (joining data from multiple tables, or files, or databases)
+            - Filter data(keeping only the required data,)
+            - Remove duplicates (removing duplicate records from the data, if continious duplicate , check source or could be multiple run of a job)
+            - Aggregation (summarizing the data, like calculating total sales, average sales, etc.)
+
+Load -
+    - Dimension Tables (primary key, Functional identifier, Attributes, Load Strategies, Gain)
+    - Fact Tables (primary key, Foreign key, Measures)
+    - EDW [Enterprise Data Warehouse] (Data Mart, Data Warehouse, Data Lake)
+    - Data Mart (Sales, Marketing, Finance, etc.)
+
+
+### END OF LECTURE 3 UNDER SESSION 1 ###
+
+
+
+
+
