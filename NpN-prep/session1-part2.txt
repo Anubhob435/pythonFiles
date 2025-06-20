@@ -1,4 +1,4 @@
-## SQL BEGINNER TO ADVANCED
+## SQL BEGINNER 
 
 # What is SQL?
     - SQL (Structured Query Language) is a standard programming language specifically designed for managing and manipulating relational databases.
@@ -21,3 +21,33 @@
 # Grouping and Aggregating Data
     - Grouping data is done using the `GROUP BY` clause, which allows you to aggregate data based on one or more columns.
     - Aggregation functions like `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX` are used to perform calculations on grouped data.
+
+# Join and Subqueries
+    - Joins are used to combine rows from two or more tables based on a related column. Common types of joins include `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and `FULL OUTER JOIN`.
+    - Subqueries are nested queries that can be used within another SQL statement, allowing for more complex data retrieval and manipulation.
+
+# Window functions
+    - Window functions perform calculations across a set of rows related to the current row, allowing for advanced analytics without collapsing the result set.
+    - Common window functions include `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, and aggregate functions used with the `OVER()` clause.
+
+# Optimizing SQL Queries
+    - Query optimization involves improving the performance of SQL queries by analyzing execution plans, indexing strategies, and query structure.
+    - Techniques include using appropriate indexes, avoiding unnecessary joins, and minimizing the use of subqueries when possible.
+
+# Indexing and Performance Tuning
+    - Indexing is a technique used to speed up data retrieval by creating a data structure that allows for faster searches.
+    - Performance tuning involves analyzing query performance, identifying bottlenecks, and making adjustments to improve efficiency.
+
+# Automation and Scripting
+    - Automation in SQL can be achieved through stored procedures, triggers, and scheduled jobs.
+    - Scripting allows for the execution of multiple SQL statements in a single script, enabling batch processing and automation of repetitive tasks.
+
+# Backup and Recovery
+    - Backup and recovery are essential for data protection and disaster recovery in SQL databases.
+    - Regular backups ensure that data can be restored in case of loss or corruption, while recovery processes allow for the restoration of the database to a previous state.
+
+### END OF LECTURE 6 UNDER SESSION 1 ###
+
+## SQL ADVANCED
+(Subqueries in SQL, Stored Procedures, Triggers, Veiws, Window Function in SQL)
+
