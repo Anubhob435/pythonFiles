@@ -1,2 +1,1 @@
-USE sakila;
-SHOW TABLES;
+SELECT * FROM `employees`.`employees` LIMIT 1000;
