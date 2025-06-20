@@ -1,0 +1,23 @@
+## SQL BEGINNER TO ADVANCED
+
+# What is SQL?
+    - SQL (Structured Query Language) is a standard programming language specifically designed for managing and manipulating relational databases.
+    - It provides a standardized way to interact witrh databases, allowing users to create, read, update, and delete data.
+    - SQL is used in various applications, from small-scale projects to large enterprise systems.
+
+#Understanding Database and tables.
+    - A table is a collection of related data organized in rows and columns within a database.
+    - A database is a structured collection of data that is stored and managed by a database management system (DBMS).
+
+# DQL, DDl, DML 
+    - DQL (Data Query Language): Used to query and retrieve data from a database. The primary command is `SELECT`.
+    - DDL (Data Definition Language): Used to define and manage database structures, such as creating, altering, and dropping tables. Common commands include `CREATE`, `ALTER`, and `DROP`.
+    - DML (Data Manipulation Language): Used to manipulate data within the database, including inserting, updating, and deleting records. Common commands include `INSERT`, `UPDATE`, and `DELETE`.
+
+# Filtering and Sorting Data
+    - Filtering data involves using the `WHERE` clause to specify conditions that rows must meet to be included in the result set.
+    - Sorting data can be done using the `ORDER BY` clause, which allows you to arrange the results in ascending or descending order based on one or more columns.
+
+# Grouping and Aggregating Data
+    - Grouping data is done using the `GROUP BY` clause, which allows you to aggregate data based on one or more columns.
+    - Aggregation functions like `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX` are used to perform calculations on grouped data.
