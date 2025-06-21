@@ -87,3 +87,48 @@ drop trigger if exists marks_verify;
 --
 USE classicmodels;
 
+select * from customers;
+
+
+USE classicmodels;
+create view cust_details as
+select customerName, phone, city
+from customers;
+
+USE classicmodels;
+select * from cust_details;
+
+-- create veiws using joins
+USE classicmodels;
+
+select * from products;
+
+-- 
+
+USE classicmodels;
+create view product_description as
+SELECT productName, quantityInStock, MSRP, textDescription
+FROM products as p inner join productlines as pl 
+on p.productLine = pl.productLine;
+
+--
+USe classicmodels;
+select * from product_description;
+
+-- Rename the view product_description to vehicle_description
+USE classicmodels;
+rename table product_description
+to vehicle_description;
+
+--
+USE classicmodels;
+show full tables;
+where Table_type = 'VIEW';
+
+-- Drop the view vehicle_description
+USE classicmodels;  
+drop view if exists vehicle_description;
+
+-- Windows Functions in SQL
+
+USE classicmodels;
