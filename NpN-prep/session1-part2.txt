@@ -50,4 +50,154 @@
 
 ## SQL ADVANCED
 (Subqueries in SQL, Stored Procedures, Triggers, Veiws, Window Function in SQL)
+# Subqueries in SQL
+    - A subquery is a query nested inside another SQL statement (SELECT, INSERT, UPDATE, or DELETE).
+    - Types: Scalar subqueries (return single value), Row subqueries (return single row), Table subqueries (return multiple rows).
+    - Can be used in WHERE, FROM, SELECT, and HAVING clauses.
+    - Example: `SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);`
+
+# Stored Procedures
+    - Pre-compiled SQL code blocks stored in the database that can be executed repeatedly.
+    - Benefits: Improved performance, code reusability, centralized business logic, enhanced security.
+    - Can accept parameters (IN, OUT, INOUT) and return values.
+    - Created using `CREATE PROCEDURE` statement and executed with `CALL` or `EXEC`.
+
+# Triggers
+    - Special stored procedures that automatically execute (fire) in response to specific database events.
+    - Types: BEFORE/AFTER triggers for INSERT, UPDATE, DELETE operations.
+    - Used for data validation, auditing, logging, and maintaining data integrity.
+    - Cannot be directly called; they fire automatically when triggering events occur.
+
+# Views
+    - Virtual tables created from the result of a SELECT statement.
+    - Do not store data physically; they dynamically retrieve data from underlying tables.
+    - Benefits: Data security, query simplification, data abstraction, reusability.
+    - Can be updatable or read-only depending on complexity and underlying table structure.
+    - Created using `CREATE VIEW` statement.
+
+# Window Functions in SQL
+    - Perform calculations across a set of rows related to the current row without collapsing the result set.
+    - Use the `OVER()` clause to define the window frame and partitioning.
+    - Common functions: ROW_NUMBER(), RANK(), DENSE_RANK(), LEAD(), LAG(), FIRST_VALUE(), LAST_VALUE().
+    - Partition by specific columns and order results within partitions.
+    - Enable advanced analytics like running totals, moving averages, and ranking within groups.
+
+
+### END OF LECTURE 7 UNDER SESSION 1 ###
+
+## INTRODUCTION TO NO SQL DATABASES
+
+# What is NoSQL?
+    - NoSQL (Not Only SQL) databases are non-relational databases designed to handle large volumes of unstructured or semi-structured data.
+    - They provide flexible data models, horizontal scalability, and high availability, making them suitable for modern applications.
+    - Stores files in Json format, which is more flexible than traditional SQL databases.
+
+# Benefits of NoSQL
+    - Scalability: Can handle large amounts of data and traffic by distributing data across multiple servers.
+    - Flexibility: Supports various data models (document, key-value, column-family, graph) to accommodate diverse data types.
+    - High availability: Designed for fault tolerance and can continue operating even if some nodes fail.
+    - Performance: Optimized for read and write operations, making them suitable for real-time applications.
+
+# Disadvantages of NoSQL
+    - Lack of standardization: NoSQL databases do not have a universal query language, leading to vendor lock-in.
+    - Limited ACID compliance: Many NoSQL databases prioritize availability and partition tolerance over strict consistency.
+    - Complexity: Requires a different approach to data modeling and querying compared to traditional SQL databases.
+    - Joins are not supported: NoSQL databases typically do not support joins, which can complicate data retrieval across related entities.
+
+# When Do we use NoSQL?
+    - When dealing with large volumes of unstructured or semi-structured data.
+    - When applications require high scalability and performance, such as real-time analytics, big data processing, and content management systems.
+    - When the data model is flexible and can evolve over time, allowing for rapid development and iteration.
+    - When applications need to handle diverse data types, such as JSON documents, key-value pairs, or graph structures.
+
+# Example
+
+# SQL Table Example:
+
+    Students Table:
+    | StudentID | FirstName | LastName | Email                | Age | Major           |
+    |-----------|-----------|----------|----------------------|-----|-----------------|
+    | 1         | John      | Doe      | john.doe@email.com   | 20  | Computer Science|
+    | 2         | Jane      | Smith    | jane.smith@email.com | 22  | Mathematics     |
+    | 3         | Mike      | Johnson  | mike.j@email.com     | 21  | Engineering     |
+
+# NoSQL Document Example (MongoDB-style JSON):
+    {
+        "_id": "507f1f77bcf86cd799439011",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@email.com",
+        "age": 20,
+        "major": "Computer Science",
+        "courses": [
+            {
+                "courseId": "CS101",
+                "courseName": "Introduction to Programming",
+                "grade": "A",
+                "credits": 3
+            },
+            {
+                "courseId": "MATH201",
+                "courseName": "Calculus II",
+                "grade": "B+",
+                "credits": 4
+            }
+        ],
+        "address": {
+            "street": "123 Main St",
+            "city": "Springfield",
+            "zipCode": "12345"
+        },
+        "hobbies": ["programming", "reading", "gaming"]
+    }
+
+# Key Differences Between SQL vs NoSQL:
+
+| Aspect              | SQL                          | NoSQL                               |
+|---------------------|------------------------------|-------------------------------------|
+| Data Model          | Relational (tables)          | Document, Key-Value, Graph          |
+| Schema              | Fixed/Rigid schema           | Flexible/Dynamic schema             |
+| Query Language      | Standardized SQL             | Varies by database type             |
+| ACID Compliance     | Full ACID support            | Limited/Eventual consistency        | 
+| Scalability         | Vertical scaling (scale-up)  | Horizontal scaling (scale-out)      |
+| Data Structure      | Structured data              | Unstructured/Semi-structured        | 
+| Joins               | Complex joins supported      | Limited/No joins                    |
+| Data Storage        | Rows and columns             | JSON, XML, key-value pairs          |
+| Performance         | Good for complex queries     | High performance for simple queries |
+| Use Cases           | Banking, ERP, CRM systems    | Big data, real-time apps, IoT       |
+| Examples            | MySQL, PostgreSQL, Oracle    | MongoDB, Cassandra, Redis           |
+| Learning Curve      | Well-established standards   | Database-specific approaches        |
+
+# Casandra
+    - Cassandra is a NoSQL database designed for high availability and scalability.
+    - It uses a distributed architecture with a peer-to-peer model, allowing data to be replicated across multiple nodes.
+    - Data is stored in tables, but the schema can be flexible, allowing for different columns in different rows.
+
+### END OF LECTURE 8 UNDER SESSION 1 ###
+
+## POWER BI
+(Why power bi, what is power bi, features of power bi, power bi Desktop, power bi Desktop vs enterprise, Dashboard overveiw)
+
+# What is Power BI?
+    - Power BI is a business analytics tool developed by Microsoft that allows users to visualize and share insights from their data.
+    - It provides interactive dashboards, reports, and data visualizations to help organizations make data-driven decisions.
+    - Power BI can connect to various data sources, including databases, cloud services, and Excel files.
+    - Data in silos will not be useful, Power BI helps to connect data from different sources and visualize it in a single dashboard.
+    - Suppoerts drag and Drop functions
+    - powe bi works very fast with excel files. 
+    - power bi with azure data lake is a very powerful combination.
+
+# Why Power BI?
+    - User-friendly interface: Power BI offers an intuitive drag-and-drop interface, making it accessible to users with varying technical skills.
+    - Integration with Microsoft ecosystem: Seamlessly integrates with other Microsoft products like Excel, SharePoint, and Azure services.
+    - Real-time data updates: Provides real-time data refresh capabilities, ensuring that users have access to the latest information.
+    - Advanced analytics: Supports advanced analytics features like natural language queries, AI-driven insights, and machine learning integration.
+    - Cost-effective: Offers a free version (Power BI Desktop) and affordable pricing for the Pro and Premium versions.
+
+# Features Power BI
+    - Data connectivity: Connects to a wide range of data sources, including databases, cloud services, and web APIs.
+    - Data transformation: Provides tools for data cleaning, shaping, and transformation using Power Query.
+    - Interactive and custom visualizations: Offers a variety of visualization options, including charts, maps, tables, and custom visuals.
+    - Collaboration and sharing: Allows users to share reports and dashboards with colleagues and stakeholders through the Power BI service.
+    - Mobile access: Provides mobile apps for iOS and Android devices, enabling users to access reports on the go.
 

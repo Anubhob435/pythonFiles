@@ -132,3 +132,24 @@ drop view if exists vehicle_description;
 -- Windows Functions in SQL
 
 USE classicmodels;
+SELECT * from employees;
+limit 100;
+
+-- row_number() function
+USE classicmodels;
+SELECT employeeNumber, firstName, lastName, 
+       ROW_NUMBER() OVER (ORDER BY employeeNumber) as row_num
+       from employees;
+
+
+-- rank() function
+USE classicmodels;
+SELECT employeeNumber, firstName, lastName, 
+       RANK() OVER (ORDER BY employeeNumber) as rank_num
+       from employees;
+
+-- first_value() function
+USE classicmodels;
+SELECT employeeNumber, firstName, lastName, 
+       FIRST_VALUE(firstName) OVER (ORDER BY employeeNumber) as first_name
+       from employees;
