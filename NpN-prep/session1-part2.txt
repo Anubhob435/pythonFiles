@@ -201,3 +201,25 @@
     - Collaboration and sharing: Allows users to share reports and dashboards with colleagues and stakeholders through the Power BI service.
     - Mobile access: Provides mobile apps for iOS and Android devices, enabling users to access reports on the go.
 
+# Hands On practice
+    - Download and install Power BI Desktop from the official Microsoft website.
+    - Connect to a sample dataset (e.g., Excel file, CSV, mysql database, pdf, txt) to explore data import and transformation features.
+    - Create basic visualizations (bar charts, line graphs, pie charts) using the imported data.
+    - Build a simple dashboard by arranging multiple visualizations on a single canvas.
+    - Publish the report to the Power BI service for sharing and collaboration.
+
+# Cardinality 
+    - Cardinality refers to the uniqueness of data values in a column or relationship between tables.
+    - Types of cardinality:
+        - One-to-One (1:1): Each record in one table corresponds to one record in another table.
+        - One-to-Many (1:N): A record in one table can relate to multiple records in another table.
+        - Many-to-Many (M:N): Records in one table can relate to multiple records in another table and vice versa.
+
+    - Understanding cardinality is crucial for designing efficient data models and relationships in Power BI.
+
+# Creating calculated feilds
+    - Calculated fields are custom fields created using DAX (Data Analysis Expressions) formulas in Power BI.
+    - They allow users to perform calculations on existing data, such as creating new metrics or aggregating values.
+    - Example: Creating a calculated field for total sales by multiplying quantity and price.
+
+### END OF LECTURE 9 UNDER SESSION 1 ###
