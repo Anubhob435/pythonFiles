@@ -1,0 +1,37 @@
+## PYTHON BEGINNER TO ADVANCED
+    - Python Basics
+    - Data Types
+    - Operators
+    - The Ternary Operator
+    - Strings
+    - Booleans
+    - Numbers
+    - Constants
+    - Enums
+    - User Input
+    - Control Statements
+    - Lists
+    - Tuples
+    - Dictionaries
+    - Sets
+    - Functions
+    - Objects
+    - Loops
+    - Classes
+    - Modules
+    - Python Standard Library
+    - Variable Scope
+    - Accepting Arguments
+    - Recursion
+    - Nested Functions
+    - Closures
+    - Decorators
+    - Docstrings
+    - Annotations
+    - Exceptions
+    - The with statement
+    - Lsit comprehensions
+    - Polymorphism
+    - Operator Overloading
+
+

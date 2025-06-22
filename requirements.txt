@@ -1,0 +1,29 @@
+# Data Science and Analysis
+numpy
+pandas
+matplotlib
+seaborn
+
+# Computer Vision and Image Processing
+opencv-python
+Pillow
+
+# Game Development
+pygame
+
+# Database Connectivity
+mysql-connector-python
+
+# Text and ASCII Art
+pyfiglet
+
+# Video Processing
+moviepy
+
+# GUI Development (tkinter is built-in, no need to install)
+
+# Web Scraping
+selenium
+
+# Standard library modules (no installation needed):
+# turtle, random, hashlib, json, os, time, math, sys, collections, datetime, enum, tkinter
