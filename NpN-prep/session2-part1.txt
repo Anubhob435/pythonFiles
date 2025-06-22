@@ -1,4 +1,8 @@
 ## PYTHON BEGINNER TO ADVANCED
+# Handbook Link:
+https://www.freecodecamp.org/news/the-python-handbook/
+
+# Topics Covered:
     - Python Basics
     - Data Types
     - Operators
