@@ -39,3 +39,16 @@ https://www.freecodecamp.org/news/the-python-handbook/
     - Operator Overloading
 
 
+# Python Advanced:
+    - Itarators
+    - Modules
+    - Generators
+    - Packages
+    - List Comprehensions
+    - Regular Expressions
+    - Serialization
+    - Partial Functions
+    - Closures
+    - Decorators
+    - Map, Filter, and Reduce
+
