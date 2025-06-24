@@ -52,3 +52,92 @@ https://www.freecodecamp.org/news/the-python-handbook/
     - Decorators
     - Map, Filter, and Reduce
 
+### END OF SESSION 2 LECTURE 2 ###
+
+## AWS Overveiw
+
+# What is AWS?
+    Amazon Web Services (AWS) is a comprehensive and widely adopted cloud platform, offering over 200 
+    fully featured services from data centers globally. It provides a range of services including computing power, 
+    storage options, and networking capabilities, enabling businesses to scale and grow efficiently.
+
+# Benifits of AWS:
+    - Cost-Effective: Pay-as-you-go pricing model allows businesses to only pay for the resources they use.
+    - Scalable: Easily scale resources up or down based on demand.
+    - Secure: Provides a secure cloud infrastructure with robust security features.
+    - Flexible: Offers a wide range of services and tools to meet diverse business needs.
+    - Global Reach: Data centers located around the world ensure low latency and high availability.
+
+# Types of AWS Services:
+    - Compute: Services that provide processing power, such as Amazon EC2 and AWS Lambda.
+    - Storage: Services for data storage, like Amazon S3 and Amazon EBS (Elastic Block Store).
+    - Database: Managed database services, including Amazon RDS and Amazon DynamoDB.
+    - Networking: Services for networking and content delivery, such as Amazon VPC and Amazon CloudFront.
+    - Developer Tools: Tools for software development and deployment, like AWS CodeCommit and AWS CodePipeline.
+
+    - Management & Governance: Services for managing and monitoring AWS resources, such as AWS CloudFormation and AWS CloudWatch.
+    - Application Integration: Services for integrating applications, like Amazon SNS (Simple Notification Service) 
+    - Security & Identity: Tools for managing security, access control, and identity management.
+    - Analytics: Services for data analytics, including Amazon Redshift and AWS Glue.
+    - Machine Learning: Tools for building and deploying machine learning models, like Amazon SageMaker.
+
+    - Ar and VR 
+    - Desktop and app streaming
+    - Game Development
+    - IOT
+
+# Most popular AWS Services:
+    - Amazon EC2 (Elastic Compute Cloud): Scalable virtual servers in the cloud.
+    - Amazon S3 (Simple Storage Service): Scalable object storage for data backup and archiving.
+    - Amazon RDS (Relational Database Service): Managed relational database service.
+    - AWS Lambda: Serverless computing service that runs code in response to events.
+    - Amazon VPC (Virtual Private Cloud): Isolated network environment for resources.
+
+
+# Compute Services:
+    - Amazon EC2 (Elastic Compute Cloud): Provides resizable compute capacity in the cloud, allowing users to run virtual servers.
+    - AWS Lambda: A serverless compute service that runs code in response to events, automatically managing the underlying infrastructure.
+    - Elastic Container Service (ECS): A fully managed container orchestration service that supports Docker containers.
+    - Elastic Load balencer (ELB): Distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses.
+    - LightSail: Simplified cloud platform for developers to build and deploy applications with virtual private servers, databases, and storage.
+    - Elastic Beanstalk: An easy-to-use service for deploying and scaling web applications and services developed in various languages.
+
+# Storage Services:
+    - Amazon S3 (Simple Storage Service): Scalable object storage for data backup, arch
+    - EBS (Elastic Block Store): Provides block storage volumes for use with Amazon EC2 instances.
+
+# Database Services:
+    - Amazon RDS (Relational Database Service): Managed relational database service that supports multiple database engines.
+    - Amazon DynamoDB: Fully managed NoSQL database service that provides fast and predictable performance.
+    - Amazon Aurora: A MySQL and PostgreSQL-compatible relational database built for the cloud, offering high performance and availability.
+    - Amazon Redshift: A fully managed data warehouse service designed for large-scale data analytics.
+    - MariaDB: An open-source relational database management system that is a drop-in replacement for MySQL.
+
+# Networking Services:
+    - Amazon VPC (Virtual Private Cloud): Allows users to create isolated networks within the AWS
+    - Route 53: A scalable domain name system (DNS) web service that provides reliable and cost-effective domain registration and routing.
+    - AWS Direct Connect: A dedicated network connection from on-premises data centers to AWS, enabling faster and more secure data transfer.
+    - Cloud Front: A content delivery network (CDN) that delivers data, videos, applications, and APIs securely with low latency.
+
+# Developer Tools Service
+    - CodeStar:
+    - codBuild
+    - CodeDeploy: A service that automates code deployments to any instance, including EC2 instances and on-premises servers.
+    - CodePipeline: A continuous integration and continuous delivery (CI/CD) service for automating the build, test, and deploy phases of applications.
+
+# Security Services:
+    - AWS Identity and Access Management (IAM): Manages user access and permissions to AWS resources.
+    - AWS Key Management Service (KMS): A managed service for creating and controlling encryption keys used to encrypt data.
+    - Cognito: A service that provides user sign-up, sign-in, and access control for web and mobile applications.
+
+# Identity and Access Management (IAM):
+    - IAM is a web service that helps you securely control access to AWS services and resources for your users.
+    - It allows you to create and manage AWS users and groups, and use permissions to allow or deny their access to AWS resources.
+    - IAM provides fine-grained access control, enabling you to specify who can access which resources and what actions they can perform.
+
+# AWS Management Console:
+    - The AWS Management Console is a web-based user interface for accessing and managing AWS services.
+    - CloudWatch
+    - CloudFormation
+
+

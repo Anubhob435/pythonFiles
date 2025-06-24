@@ -1,0 +1,196 @@
+STACKS, QUEUES, AND RECURSION IN JAVA
+
+=== STACKS ===
+
+A Stack is a Last-In-First-Out (LIFO) data structure where elements are added and removed from the same end (top).
+
+Key Operations:
+- push(item): Add element to top
+- pop(): Remove and return top element
+- peek()/top(): View top element without removing
+- isEmpty(): Check if stack is empty
+- size(): Get number of elements
+
+Java Implementation:
+import java.util.Stack;
+
+Stack<Integer> stack = new Stack<>();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+System.out.println(stack.pop()); // Output: 30
+System.out.println(stack.peek()); // Output: 20
+
+Custom Stack using Array:
+class ArrayStack {
+    private int[] arr;
+    private int top;
+    private int capacity;
+    
+    public ArrayStack(int size) {
+        arr = new int[size];
+        capacity = size;
+        top = -1;
+    }
+    
+    public void push(int x) {
+        if (top == capacity - 1) {
+            throw new RuntimeException("Stack Overflow");
+        }
+        arr[++top] = x;
+    }
+    
+    public int pop() {
+        if (top == -1) {
+            throw new RuntimeException("Stack Underflow");
+        }
+        return arr[top--];
+    }
+}
+
+=== QUEUES ===
+
+A Queue is a First-In-First-Out (FIFO) data structure where elements are added at rear and removed from front.
+
+Key Operations:
+- enqueue(item): Add element to rear
+- dequeue(): Remove and return front element
+- front(): View front element without removing
+- isEmpty(): Check if queue is empty
+- size(): Get number of elements
+
+Java Implementation:
+import java.util.Queue;
+import java.util.LinkedList;
+
+Queue<Integer> queue = new LinkedList<>();
+queue.offer(10);
+queue.offer(20);
+queue.offer(30);
+System.out.println(queue.poll()); // Output: 10
+System.out.println(queue.peek()); // Output: 20
+
+Custom Queue using Array:
+class ArrayQueue {
+    private int[] arr;
+    private int front, rear, size, capacity;
+    
+    public ArrayQueue(int cap) {
+        arr = new int[cap];
+        capacity = cap;
+        front = size = 0;
+        rear = capacity - 1;
+    }
+    
+    public void enqueue(int item) {
+        if (size == capacity) {
+            throw new RuntimeException("Queue is full");
+        }
+        rear = (rear + 1) % capacity;
+        arr[rear] = item;
+        size++;
+    }
+    
+    public int dequeue() {
+        if (size == 0) {
+            throw new RuntimeException("Queue is empty");
+        }
+        int item = arr[front];
+        front = (front + 1) % capacity;
+        size--;
+        return item;
+    }
+}
+
+=== RECURSION ===
+
+Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem.
+
+Components of Recursion:
+1. Base Case: Condition to stop recursion
+2. Recursive Case: Function calls itself with modified parameters
+
+Basic Structure:
+returnType recursiveMethod(parameters) {
+    if (baseCondition) {
+        return baseValue;
+    }
+    return recursiveMethod(modifiedParameters);
+}
+
+Examples:
+
+1. Factorial:
+public static int factorial(int n) {
+    if (n <= 1) {
+        return 1; // Base case
+    }
+    return n * factorial(n - 1); // Recursive case
+}
+
+2. Fibonacci:
+public static int fibonacci(int n) {
+    if (n <= 1) {
+        return n; // Base case
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case
+}
+
+3. Binary Search:
+public static int binarySearch(int[] arr, int target, int left, int right) {
+    if (left > right) {
+        return -1; // Base case: not found
+    }
+    
+    int mid = left + (right - left) / 2;
+    
+    if (arr[mid] == target) {
+        return mid; // Base case: found
+    } else if (arr[mid] > target) {
+        return binarySearch(arr, target, left, mid - 1);
+    } else {
+        return binarySearch(arr, target, mid + 1, right);
+    }
+}
+
+4. Tree Traversal (Inorder):
+class TreeNode {
+    int val;
+    TreeNode left, right;
+    TreeNode(int val) { this.val = val; }
+}
+
+public static void inorderTraversal(TreeNode root) {
+    if (root == null) {
+        return; // Base case
+    }
+    inorderTraversal(root.left);
+    System.out.print(root.val + " ");
+    inorderTraversal(root.right);
+}
+
+Stack vs Recursion:
+- Recursion internally uses the call stack
+- Every recursive call adds a new frame to the stack
+- When base case is reached, functions return in reverse order (LIFO)
+- Can convert recursive solutions to iterative using explicit stack
+
+Memory Considerations:
+- Each recursive call uses stack memory
+- Deep recursion can cause StackOverflowError
+- Tail recursion optimization (not in Java)
+- Consider iterative solutions for better space complexity
+
+Types of Recursion:
+1. Direct: Function calls itself
+2. Indirect: Function A calls Function B, which calls Function A
+3. Linear: Makes one recursive call
+4. Binary: Makes two recursive calls (like Fibonacci)
+5. Multiple: Makes multiple recursive calls
+
+Best Practices:
+- Always define clear base cases
+- Ensure progress toward base case
+- Consider time and space complexity
+- Use memoization for overlapping subproblems
+- Prefer iteration for simple cases
