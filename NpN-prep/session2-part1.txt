@@ -141,3 +141,8 @@ https://www.freecodecamp.org/news/the-python-handbook/
     - CloudFormation
 
 
+### END OF SESSION 2 LECTURE 3 ###
+
+
+
+
