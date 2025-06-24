@@ -143,6 +143,26 @@ https://www.freecodecamp.org/news/the-python-handbook/
 
 ### END OF SESSION 2 LECTURE 3 ###
 
+## MICROSOFT AZURE OVERVIEW
+
+# What is Cloud Computing?
+    Cloud computing is the delivery of computing services over the internet, allowing users to access and use resources such as servers, 
+    storage, databases, networking, software, and analytics without the need for on-premises infrastructure.
+
+# What is Microsoft Azure?
+    Microsoft Azure is a cloud computing platform and service created by Microsoft, providing a wide range of cloud services for building, 
+    deploying, and managing applications through Microsoft-managed data centers. 
 
 
+# What are the Services Offered by Azure?
+    - Compute: Virtual machines, app services, and container services for running applications.
+    - Storage: Scalable storage solutions including Blob storage, File storage, and Queue storage.
+    - Databases: Managed database services like Azure SQL Database, Cosmos DB, and Azure Database for MySQL.
+    - Networking: Virtual networks, load balancers, and VPN gateways for secure connectivity.
+    - AI and Machine Learning: Services for building AI models and integrating machine learning capabilities into applications.
 
+# Azure Compute Services:
+    - Azure Virtual Machines: Scalable virtual servers in the cloud for running applications.
+    - Azure App Service: A fully managed platform for building, deploying, and scaling web apps and APIs.
+    - Azure Functions: Serverless compute service that allows you to run code in response to events without managing infrastructure.
+    - Azure Kubernetes Service (AKS): Managed Kubernetes container orchestration service for deploying and managing containerized applications.
