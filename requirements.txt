@@ -20,6 +20,9 @@ pyfiglet
 # Video Processing
 moviepy
 
+# PDF Processing
+PyPDF2
+
 # GUI Development (tkinter is built-in, no need to install)
 
 # Web Scraping
