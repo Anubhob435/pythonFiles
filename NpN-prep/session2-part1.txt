@@ -166,3 +166,4 @@ https://www.freecodecamp.org/news/the-python-handbook/
     - Azure App Service: A fully managed platform for building, deploying, and scaling web apps and APIs.
     - Azure Functions: Serverless compute service that allows you to run code in response to events without managing infrastructure.
     - Azure Kubernetes Service (AKS): Managed Kubernetes container orchestration service for deploying and managing containerized applications.
+
