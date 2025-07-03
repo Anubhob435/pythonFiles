@@ -1,2 +1,16 @@
 ##  Python with Deep Learning
 
+# Numpy - Efficeient N-dimensional array processing
+
+# Scipy - Scientific computing library built on Numpy
+
+# Pandas - Data manipulation and analysis library built on Numpy
+
+# Matplotlib - Plotting library for creating static, animated, and interactive visualizations in Python
+
+# Seaborn - Statistical data visualization library based on Matplotlib
+
+# Statsmodels - Library for estimating and testing statistical models
+
+# scikit-learn - Machine learning library for Python, providing simple and efficient tools for data mining and data analysis
+
