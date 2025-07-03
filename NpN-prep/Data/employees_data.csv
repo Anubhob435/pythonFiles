@@ -1,0 +1,98 @@
+Parameter,Type,Description,Example
+data,Object,Contains the main data structure for the application or component,`{ users: [], products: [], settings: {} }`
+data.users,Array,Collection of user objects with user information,`[{ id: 1, name: "John", email: "john@example.com" }]`
+data.products,Array,List of product items available in the system,`[{ id: 1, title: "Product A", price: 29.99 }]`
+data.settings,Object,Configuration settings and preferences,`{ theme: "dark", language: "en" }`
+data.loading,Boolean,Indicates whether data is currently being fetched,`true` or `false`
+data.error,String,Error message if data loading fails,`"Failed to fetch data"`
+
+E1031,Aadhya Sharma,Human Resources,Training Specialist,Mumbai,2023-03-15,67000,4
+E1032,Arjun Patel,IT,Cybersecurity Analyst,Delhi,2022-08-22,95000,5
+E1033,Kavya Singh,Marketing,Brand Manager,Bangalore,2021-10-12,87000,4
+E1034,Dhruv Reddy,Finance,Budget Analyst,Hyderabad,2024-02-18,71000,3
+E1035,Riya Gupta,Sales,Regional Sales Manager,Kolkata,2020-05-30,112000,5
+E1036,Atharv Das,Engineering,Backend Developer,Mumbai,2023-06-25,102000,4
+E1037,Navya Kumar,Marketing,Digital Marketing Manager,Delhi,2022-11-14,79000,5
+E1038,Yash Joshi,IT,DevOps Lead,Bangalore,2021-01-08,118000,4
+E1039,Aarna Mehta,Human Resources,Compensation Analyst,Mumbai,2024-04-20,75000,4
+E1040,Kian Verma,Finance,Investment Analyst,Hyderabad,2023-07-03,93000,3
+E1041,Larisa Desai,Sales,Inside Sales Rep,Delhi,2022-09-11,58000,5
+E1042,Ved Chatterjee,Engineering,Mobile Developer,Kolkata,2023-12-05,96000,4
+E1043,Pihu Khan,Marketing,Public Relations Manager,Bangalore,2020-02-17,84000,5
+E1044,Aarav Menon,IT,Help Desk Technician,Mumbai,2024-01-30,48000,3
+E1045,Shanaya Rao,Finance,Tax Specialist,Hyderabad,2022-06-28,69000,4
+E1046,Reyansh Iyer,Sales,Business Development Manager,Delhi,2021-04-16,108000,5
+E1047,Mishka Agarwal,Engineering,Frontend Developer,Kolkata,2023-08-09,89000,4
+E1048,Ayaan Malhotra,Marketing,Market Research Analyst,Bangalore,2022-12-22,63000,3
+E1049,Kiara Nair,Human Resources,Benefits Administrator,Mumbai,2024-03-12,61000,4
+E1050,Aryan Pillai,IT,Technical Support Lead,Delhi,2021-07-24,77000,5
+E1051,Saanvi Khanna,Finance,Credit Analyst,Hyderabad,2023-05-07,72000,4
+E1052,Vihaan Banerjee,Sales,Key Account Manager,Kolkata,2022-01-19,91000,3
+E1053,Aadhya Sengupta,Engineering,Product Manager,Bangalore,2020-09-03,125000,5
+E1054,Rudra Choudhury,Marketing,Campaign Manager,Mumbai,2023-11-15,73000,4
+E1055,Advika Sundaram,IT,Solutions Architect,Delhi,2021-03-29,135000,5
+E1056,Sai Kumar,Finance,Financial Controller,Hyderabad,2022-08-06,115000,4
+E1057,Anvi Ghosh,Sales,Territory Manager,Kolkata,2024-05-21,86000,3
+E1058,Vivaan Srinivasan,Engineering,Security Engineer,Bangalore,2023-02-14,107000,4
+E1059,Tara Basu,Marketing,Events Coordinator,Mumbai,2022-10-27,56000,5
+E1060,Krish Reddy,Human Resources,Organizational Development,Delhi,2021-12-10,83000,4
+E1061,Myra Sharma,IT,Infrastructure Engineer,Hyderabad,2023-04-18,94000,3
+E1062,Arjun Patel,Finance,Risk Analyst,Kolkata,2022-07-13,78000,5
+E1063,Kavya Singh,Sales,Channel Partner Manager,Bangalore,2024-01-26,99000,4
+E1064,Dhruv Reddy,Engineering,Machine Learning Engineer,Mumbai,2020-06-08,122000,5
+E1065,Riya Gupta,Marketing,Product Marketing Manager,Delhi,2023-09-21,88000,4
+E1066,Atharv Das,IT,Application Developer,Hyderabad,2022-04-04,85000,3
+E1067,Navya Kumar,Finance,Treasury Analyst,Kolkata,2021-08-17,76000,4
+E1068,Yash Joshi,Sales,Enterprise Sales Rep,Bangalore,2024-02-09,97000,5
+E1069,Aarna Mehta,Engineering,Platform Engineer,Mumbai,2023-06-12,103000,4
+E1070,Kian Verma,Marketing,Growth Marketing Manager,Delhi,2022-11-25,81000,3
+E1071,Larisa Desai,Human Resources,Employee Relations Specialist,Hyderabad,2021-05-14,68000,5
+E1072,Ved Chatterjee,IT,Business Intelligence Analyst,Kolkata,2023-10-06,82000,4
+E1073,Pihu Khan,Finance,Payroll Specialist,Bangalore,2022-02-28,59000,3
+E1074,Aarav Menon,Sales,Customer Success Manager,Mumbai,2024-07-11,92000,4
+E1075,Shanaya Rao,Engineering,Site Reliability Engineer,Delhi,2021-01-23,116000,5
+E1076,Reyansh Iyer,Marketing,Affiliate Marketing Manager,Hyderabad,2023-03-30,74000,4
+E1077,Mishka Agarwal,IT,Data Engineer,Kolkata,2022-09-16,98000,3
+E1078,Ayaan Malhotra,Finance,Corporate Finance Analyst,Bangalore,2024-04-08,87000,5
+E1079,Kiara Nair,Sales,Sales Operations Manager,Mumbai,2021-11-21,105000,4
+E1080,Aryan Pillai,Engineering,Full Stack Developer,Delhi,2023-08-24,101000,5
+E1081,Anika Sharma,Human Resources,HR Generalist,Mumbai,2024-08-01,68000,4
+E1082,Rohan Patel,IT,System Administrator,Delhi,2023-01-15,80000,5
+E1083,Diya Singh,Marketing,Content Creator,Bangalore,2022-05-20,65000,4
+E1084,Ishaan Reddy,Finance,Financial Planner,Hyderabad,2024-03-10,75000,3
+E1085,Zara Gupta,Sales,Sales Associate,Kolkata,2021-09-05,60000,5
+E1086,Kabir Das,Engineering,Software Engineer,Mumbai,2023-10-12,105000,4
+E1087,Neha Kumar,Marketing,SEO Specialist,Delhi,2022-03-18,72000,5
+E1088,Arnav Joshi,IT,Cloud Engineer,Bangalore,2021-02-25,120000,4
+E1089,Priya Mehta,Human Resources,Recruiter,Mumbai,2024-05-28,70000,4
+E1090,Zain Verma,Finance,Auditor,Hyderabad,2023-11-01,90000,3
+E1091,Mira Desai,Sales,Account Executive,Delhi,2022-08-11,88000,5
+E1092,Arin Chatterjee,Engineering,Data Scientist,Kolkata,2023-04-05,110000,4
+E1093,Sia Khan,Marketing,Social Media Manager,Bangalore,2021-11-17,78000,5
+E1094,Dev Menon,IT,Network Engineer,Mumbai,2024-02-20,92000,3
+E1095,Anaya Rao,Finance,Compliance Officer,Hyderabad,2022-07-28,85000,4
+E1096,Samar Iyer,Sales,Sales Director,Delhi,2020-03-16,130000,5
+E1097,Ishika Agarwal,Engineering,QA Engineer,Kolkata,2023-09-09,83000,4
+E1098,Veer Malhotra,Marketing,Content Strategist,Bangalore,2022-01-22,75000,3
+E1099,Sana Nair,Human Resources,HR Manager,Mumbai,2024-04-12,95000,4
+E1100,Rohan Pillai,IT,Database Administrator,Delhi,2021-06-24,100000,5
+E1101,Aditi Khanna,Finance,Senior Accountant,Hyderabad,2023-06-07,98000,4
+E1102,Arjun Banerjee,Sales,Regional Director,Kolkata,2022-02-19,115000,3
+E1103,Zara Sengupta,Engineering,DevOps Engineer,Bangalore,2021-08-03,128000,5
+E1104,Kabir Choudhury,Marketing,Marketing Director,Mumbai,2023-12-15,140000,4
+E1105,Pari Sundaram,IT,IT Manager,Delhi,2020-04-29,150000,5
+E1106,Ayaan Kumar,Finance,Finance Director,Hyderabad,2022-09-06,160000,4
+E1107,Rhea Ghosh,Sales,VP of Sales,Kolkata,2024-06-21,200000,3
+E1108,Vihaan Srinivasan,Engineering,Chief Technology Officer,Bangalore,2023-03-14,250000,4
+E1109,Myra Basu,Marketing,Chief Marketing Officer,Mumbai,2022-11-27,220000,5
+E1110,Krish Reddy,Human Resources,Chief Human Resources Officer,Delhi,2021-10-10,230000,4
+E1111,Anika Sharma,IT,Chief Information Officer,Hyderabad,2023-05-18,240000,3
+E1112,Rohan Patel,Finance,Chief Financial Officer,Kolkata,2022-06-13,260000,5
+E1113,Diya Singh,Sales,Chief Revenue Officer,Bangalore,2024-02-26,280000,4
+E1114,Ishaan Reddy,Engineering,Chief Executive Officer,Mumbai,2020-07-08,500000,5
+E1115,Zara Gupta,Marketing,Marketing Analyst,Delhi,2023-10-21,70000,4
+E1116,Kabir Das,IT,IT Support Specialist,Hyderabad,2022-05-04,65000,3
+E1117,Neha Kumar,Finance,Junior Accountant,Kolkata,2021-09-17,55000,4
+E1118,Arnav Joshi,Sales,Sales Development Representative,Bangalore,2024-03-09,50000,5
+E1119,Priya Mehta,Engineering,Junior Developer,Mumbai,2023-07-12,80000,4
+E1120,Zain Verma,Marketing,Marketing Intern,Delhi,2022-12-25,30000,3

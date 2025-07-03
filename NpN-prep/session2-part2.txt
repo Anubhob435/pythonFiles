@@ -14,3 +14,13 @@
 
 # scikit-learn - Machine learning library for Python, providing simple and efficient tools for data mining and data analysis
 
+
+# Reading File Types in Python
+    - Text files
+    - csv files
+    - Excel files
+    - JSON files
+
+# use glob
+
+# Reading CSV files using pandas library
