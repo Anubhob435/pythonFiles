@@ -27,6 +27,9 @@
 
 
 
+### END OF SESSION 2 PART 5 ###
+
+
 ## Artificial Intelligence with Python
 
 # Introduction to AI
@@ -92,3 +95,13 @@
 
 # TensorFlow 
     - An open-source machine learning framework developed by Google, widely used for building and training deep learning models.
+
+# Theano
+    - A Python library for defining, optimizing, and evaluating mathematical expressions involving multi-dimensional arrays, often used for deep learning.
+
+# Keras
+    - An open-source neural network library written in Python, designed to enable fast experimentation with deep learning models. It can run on top of TensorFlow, Theano, or Microsoft Cognitive Toolkit (CNTK).
+
+# NLTK (Natural Language Toolkit)
+    - A leading platform for building Python programs to work with human language data, providing easy-to-use interfaces to over 50 corpora and lexical resources.
+
