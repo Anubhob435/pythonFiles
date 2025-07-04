@@ -24,3 +24,71 @@
 # use glob
 
 # Reading CSV files using pandas library
+
+
+
+## Artificial Intelligence with Python
+
+# Introduction to AI
+    - Definition of AI
+    - History of AI
+    - Applications of AI
+
+# Why Python for AI?
+    - Python's popularity in AI
+    - Libraries and frameworks for AI in Python
+    - Community support and resources
+    - Ease of learning and use
+    - Less code
+    - platform independence
+
+# Features of Python for AI
+    - Easy syntax and readability
+    - Extensive libraries and frameworks
+    - Strong community support
+    - Cross-platform compatibility
+
+# Python Packages for AI
+    - TensorFlow
+    - Keras
+    - PyTorch
+    - Scikit-learn
+    - NLTK (Natural Language Toolkit)
+    - OpenCV (Open Source Computer Vision Library)
+
+# Demand of Aartificial Intelligence
+    - Job opportunities in AI
+    - Industries adopting AI
+    - Future trends in AI
+
+# What is Artificial Intelligence?
+    - The theory and development of computer systems that can perform tasks that typically require human intelligence, such as visual perception, 
+      speech recognition, decision-making, and language translation between languages.
+
+# Machine Learning
+    - A subset of AI that involves the use of algorithms and statistical models to enable computers to improve their performance on a specific task 
+      through experience.
+# Deep Learning
+    - A subset of machine learning that uses neural networks with many layers to analyze various factors of
+
+# NLP
+    - Natural Language Processing, a field of AI that focuses on the interaction between computers and humans through natural language.
+
+# Computer Vision
+    - A field of AI that enables computers to interpret and understand visual information from the world,
+      such as images and videos.
+
+# Knowledge based
+    - A system that uses a knowledge base to solve complex problems by reasoning about the knowledge it contains.
+
+# Expert Systems
+    - AI systems that use a knowledge base and inference rules to solve specific problems, often in specialized domains.
+
+
+# Artificial Intellegence vs Artificial General Intelligence vs Artificial Super Intelligence
+    - Artificial Intelligence (AI) refers to the simulation of human intelligence in machines.
+    - Artificial General Intelligence (AGI) refers to a type of AI that can understand, learn, and apply knowledge across a wide range of tasks, similar to human intelligence.
+    - Artificial Super Intelligence (ASI) refers to a hypothetical AI that surpasses human intelligence in all aspects, including creativity, problem-solving, and emotional intelligence.
+
+# TensorFlow 
+    - An open-source machine learning framework developed by Google, widely used for building and training deep learning models.
