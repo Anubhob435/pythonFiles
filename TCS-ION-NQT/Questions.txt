@@ -1,6 +1,67 @@
+## Question 2
+
 Maximum size square sub-matrix with all 1s
 Given a binary matrix, find out the maximum size square sub-matrix with all 1s.
 
 For eg –  if the entered matrix is
 [{1,0,0,1,0},  {1,1,1,1,1},{1,0,1,1,1}, {0,0,1,1,0} , {1,1,1,1,1}], then the output will be
 [{1,1}, {1,1}, {1,1}, {1,1}]
+
+
+## Question 2
+
+Find Maximum Sum Submatrix in a given matrix
+Given a M x N matrix, calculate maximum sum submatrix of size k x k in a given M x N matrix in O(M*N) time. Here, 0 < k < M, N.
+
+For example, consider below 5 x 5 matrix
+
+[ 3 -4 6 -5 1 ]
+[ 1 -2 8 -4 -2 ]
+[ 3 -8 9 3 1 ]
+[ -7 3 4 2 7 ]
+[ -3 7 -5 7 -6 ]
+
+If k = 2, maximum sum k x k sub-matrix is
+
+[ 9 3 ]
+[ 4 2 ]
+
+If k = 3, maximum sum k x k sub-matrix is
+
+[ 8 -4 -2 ]
+[ 9 3 1 ]
+[ 4 2 7 ]
+
+
+## Question 3
+
+Given an n x n square matrix, find sum of all sub-squares of size k x k where k is smaller than or equal to n.
+
+How to solve this problem
+A Simple Solution is to one by one pick starting point (leftmost-topmost corner) of all possible sub-squares. Once the starting point is picked, calculate sum of sub-square starting with the picked starting point.
+
+Examples :
+
+Sample Input 1:
+n = 5, k = 3
+arr[][] = { {1, 1, 1, 1, 1},
+{2, 2, 2, 2, 2},
+{3, 3, 3, 3, 3},
+{4, 4, 4, 4, 4},
+{5, 5, 5, 5, 5},
+};
+Sample Output 1:
+18 18 18
+27 27 27
+36 36 36
+ 
+
+Sample Input 2:
+n = 3, k = 2
+arr[][] = { {1, 2, 3},
+{4, 5, 6},
+{7, 8, 9},
+};
+Sample Output 2:
+12 16
+24 28
