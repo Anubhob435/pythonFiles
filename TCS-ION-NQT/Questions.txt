@@ -1,0 +1,6 @@
+Maximum size square sub-matrix with all 1s
+Given a binary matrix, find out the maximum size square sub-matrix with all 1s.
+
+For eg –  if the entered matrix is
+[{1,0,0,1,0},  {1,1,1,1,1},{1,0,1,1,1}, {0,0,1,1,0} , {1,1,1,1,1}], then the output will be
+[{1,1}, {1,1}, {1,1}, {1,1}]
