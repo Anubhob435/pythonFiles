@@ -1,0 +1,22 @@
+Alice and Bob's Sequence Alignment Problem
+Problem Statement:
+In the fantastic Land of Swaps, there are two mighty wizards: Alice and Bob. They each have a sequence of N distinct positive integers — a for Alice and b for Bob.
+For the good of the kingdom, these two sequences must become identical, but initially they are not.
+Fortunately, they can use their magical abilities to perform coordinated swaps to make their sequences identical.
+
+Abilities:
+
+Alice's Ability (A[i]):
+She can choose any two positions L and R in her sequence and swap the numbers at those positions.
+
+Bob's Ability (B[i]):
+After Alice makes her swap between positions L and R, Bob must also swap elements in his sequence.
+However, he must choose two positions P and Q such that the distance between them is the same as Alice's swap (|L - R| = |P - Q|), and then swap those two elements.
+
+Goal:
+Using a series of such coordinated swaps, determine whether it is possible to make Alice’s and Bob’s sequences identical.
+
+Input Format:
+The first line contains a single integer N — the length of the sequences.
+The second line contains N space-separated distinct positive integers — the sequence Alice has.
+The third line contains N space-separated distinct positive integers — the sequence Bob has.
