@@ -1,0 +1,82 @@
+Problem Statement
+
+Lila and Theo, two daring adventurers, stumble upon a mysterious array of enchanted gems while exploring ancient ruins. Each gem carries a unique power value, and legends say that collecting them in the right order unlocks unimaginable power. Eager to prove their prowess, they decide to engage in a competitive game.
+
+The Game:
+
+An array A of N gems, each with a unique power value, lies before them. The rules are simple:
+
+Lila and Theo take turns picking a gem from either the left or right end of the array.
+Each chosen gem is added to their collection, which must always form a strictly increasing sequence in power values.
+Lila makes the first move.
+The objective is to be the adventurer who adds the final gem to their collection, making the last move.
+
+Both Lila and Theo play optimally, always choosing the best move to extend the game as long as possible.
+
+
+---
+
+🟦 Your Task:
+
+Given the starting array of gem power values, determine who will win the game — Lila or Theo, assuming both play perfectly.
+
+
+---
+
+🟨 Input Format
+
+The first line of input contains an integer N denoting the length of sequence A.
+
+The second line of input contains N space-separated integers representing the sequence itself.
+
+
+
+---
+
+🟦 Output Format
+
+Print the name of the winner of the game, print Lila if Lila wins else Theo.
+
+
+
+---
+
+🟪 Constraints
+
+
+
+
+
+
+
+---
+
+🧪 Sample Testcase 1
+
+Input
+
+1  
+5
+
+Output
+
+Lila
+
+Explanation
+There is only one gem in the array with power value 5.
+Since Lila is moving first, she will pick 5 and add it to the sequence.
+Now no element is left — Lila wins as she had the last move.
+
+
+---
+
+🧪 Sample Testcase 2
+
+Input
+
+3  
+5 6 5
+
+Output
+
+Theo
