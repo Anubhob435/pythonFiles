@@ -1,0 +1,74 @@
+🧩 Problem Statement
+You are presented with a game board which is a grid of size N×N with each entry as a positive integer. Your task is to locate the maximum number of integral numbers that can be collected in any typical path starting from the cell in the top-left corner to the bottom-right corner. There is a catch—while moving along the path, one is allowed to only move down or right, and there are some special properties: the cells are numbered, and there are "magic" cells.
+A magic cell is understood as a matrix cell that has a value equal to the numbers of the adjacent cells, located above, below, to the right or to the left of the cell. If a cell is a magic cell, it is possible to double the number in that cell when choosing the path to traverse to maximize the path sum.
+The problem, again, comes down to a special cell in the grid, and the values of the adjacent cells.
+A cell is considered magic if the sum of its value and the values of the four cells directly adjacent to it (up, down, left, right) equals the value of the current cell.
+In simpler terms, let’s break it down with an example:
+Suppose you have a grid, and you’re looking at a particular cell at position (i, j) with a value A[i][j]. This cell is surrounded by adjacent cells in four possible directions:
+Above: A[i-1][j]
+Below: A[i+1][j]
+Left: A[i][j-1]
+Right: A[i][j+1]
+Find the maximum sum of a path that one is allowed to traverse through the grid starting from the top-left corner — moving rightwards and downwards — while the user also has the option of doubling the value of the cells sometimes in the path?
+
+---
+
+📥 Input Format
+
+The first line contains an integer N, the size of the grid.
+The next N lines contain N integers each, representing the grid. Each integer A[i][j] is the value of the cell at position (i, j).
+
+📤 Output Format
+
+Output a single integer representing the maximum sum path from the top-left to the bottom-right corner of the grid.
+
+🧪 Sample Testcase 1
+
+Testcase Input
+
+3
+1 2 3
+4 5 6
+7 8 9
+
+Testcase Output
+
+29
+
+---
+
+🔍 Explanation
+
+1. Path 1: (0,0) → (0,1) → (0,2) → (1,2) → (2,2)
+
+Starting at (0,0): Value = 1
+Move right to (0,1): Value = 2
+Move right to (0,2): Value = 3
+Move down to (1,2): Value = 6
+Move down to (2,2): Value = 9
+Sum = 1 + 2 + 3 + 6 + 9 = 21
+
+2. Path 2: (0,0) → (0,1) → (1,1) → (1,2) → (2,2)
+Starting at (0,0): Value = 1
+Move right to (0,1): Value = 2
+Move down to (1,1): Value = 5
+Move right to (1,2): Value = 6
+Move down to (2,2): Value = 9
+Sum = 1 + 2 + 5 + 6 + 9 = 23
+
+3. Path 3: (0,0) → (1,0) → (1,1) → (1,2) → (2,2)
+Starting at (0,0): Value = 1
+Move down to (1,0): Value = 4
+Move right to (1,1): Value = 5
+Move right to (1,2): Value = 6
+Move down to (2,2): Value = 9
+Sum = 1 + 4 + 5 + 6 + 9 = 25
+
+4. Path 4: (0,0) → (1,0) → (2,0) → (2,1) → (2,2)
+
+
+
+
+---
+
+Let me know if you'd like the full code to solve this as well.
