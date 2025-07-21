@@ -1,9 +1,9 @@
-import pyfiglet
+import miscelenious.pyfiglet_script as pyfiglet_script
 import time
 
 def show_word_in_figlet(word):
     # Render the word in figlet style
-    ascii_art = pyfiglet.figlet_format(word, font="roman")
+    ascii_art = pyfiglet_script.figlet_format(word, font="roman")
     print(ascii_art)
 
 def read_lyrics_and_show_figlet(file_path):
