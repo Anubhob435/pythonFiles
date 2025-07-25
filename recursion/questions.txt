@@ -8,3 +8,70 @@
 8. Write a recursive function to check if a string is a palindrome.
 9. Write a recursive function to find the sum of digits of a number.
 10. Write a recursive function to calculate the power of a number (x^n).
+
+
+// 7. Print numbers from n to 1
+public static void printNumbers(int n) {
+    if (n <= 0) return;
+    System.out.println(n);
+    printNumbers(n - 1);
+}
+
+// 6. Count digits
+public static int countDigits(int n) {
+    if (n == 0) return 1;
+    if (n < 10) return 1;
+    return 1 + countDigits(n / 10);
+}
+
+// 1. Factorial
+public static int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+// 9. Sum of digits
+public static int sumOfDigits(int n) {
+    if (n == 0) return 0;
+    return (n % 10) + sumOfDigits(n / 10);
+}
+
+// 10. Power calculation
+public static int power(int x, int n) {
+    if (n == 0) return 1;
+    return x * power(x, n - 1);
+}
+
+// 2. Fibonacci
+public static int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// 4. Reverse string
+public static String reverseString(String str) {
+    if (str.length() <= 1) return str;
+    return reverseString(str.substring(1)) + str.charAt(0);
+}
+
+// 5. GCD
+public static int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+
+// 8. Check palindrome
+public static boolean isPalindrome(String str, int start, int end) {
+    if (start >= end) return true;
+    if (str.charAt(start) != str.charAt(end)) return false;
+    return isPalindrome(str, start + 1, end - 1);
+}
+
+
+    
+// 3. Sum of list elements
+public static int sumList(int[] arr, int index) {
+    if (index >= arr.length) return 0;
+    return arr[index] + sumList(arr, index + 1);
+}
