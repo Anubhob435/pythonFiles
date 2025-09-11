@@ -1,0 +1,97 @@
+Formatted questions:
+
+Question 1
+Problem Statement
+Write a function that accepts a string of length n that may contain the character ‘#’. Move all the ‘#’ characters to the front of the string and return the resulting string.
+
+Function signature (C-style)
+char* moveHash(char str[], int n);
+
+Example
+Input:
+Move#Hash#to#Front
+Output:
+###MoveHashtoFront
+
+---
+
+Question 2
+Problem Statement
+Given a string where characters may be repeated consecutively, compress the string by replacing consecutive runs with the character followed by the run length (omit the count when it is 1).
+
+Examples
+Input: aabbbbeeeeffggg
+Output: a2b4e4f2g3
+
+Input: abbccccc
+Output: ab2c5
+
+---
+
+Question 3
+Problem Statement
+Traverse a matrix in spiral order and print the elements in that order.
+
+Sample Input
+5 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+17 18 19 20
+
+Sample Output (spiral order)
+1 2 3 4 8 12 16 20 19 18 17 13 9 5 6 7 11 15 12 14 10
+
+(Note: preserve the exact expected output ordering as required by your test cases.)
+
+---
+
+Question 4
+Problem Statement
+Given a list of integers, count the occurrences of each distinct value and print the counts.
+
+Sample Input
+10
+1 2 3 3 4 1 4 5 1 2
+
+Sample Output
+1 occurs 3 times
+2 occurs 2 times
+3 occurs 2 times
+4 occurs 2 times
+5 occurs 1 time
+
+---
+
+Question 5
+Problem Statement
+Evaluate the expression a^3 + a^2 b + 2 a^2 b + 2 a b^2 + a b^2 + b^3. Write a program that accepts values for a, b (and c if required by your interface) and outputs the result of the expression.
+
+(Clarify whether c is needed; the expression uses only a and b.)
+
+---
+
+Question 6
+Problem Statement
+Given the number of dealerships and for each dealership the counts of cars and bikes, compute the total number of tyres for each dealership (assume each car has 4 tyres and each bike has 2 tyres).
+
+Sample Input
+3
+4 2
+4 0
+1 2
+
+Sample Output
+20
+16
+8
+
+Explanation
+Dealership 1: (4 cars × 4) + (2 bikes × 2) = 20
+Dealership 2: (4 × 4) + (0 × 2) = 16
+Dealership 3: (1 × 4) + (2 × 2) = 8
+
+---
+
+If you want, I can produce cleaned-up starter code for any of these problems (C/C++/Python).
