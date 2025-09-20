@@ -1,0 +1,9 @@
+QUESTION 1
+
+A special element in an array is defined as an element for which at least one of its factors (other than 1 and the element itself) appears at least once in the array. 
+Given an integer N followed by N elements of the array, find and return the count of such special elements in the array. 
+Read input from STDIN and write output to STDOUT. Output only the total count.
+
+QUESTION 2
+
+retun the length of where prefix and sufix are same
