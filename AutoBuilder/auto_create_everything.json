@@ -1,0 +1,41 @@
+{
+  "name": "auto_create_everything",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c7cf905f-daa3-4f10-9267-fb07e9b477a8",
+      "name": "Telegram Trigger",
+      "webhookId": "7086d4d6-fc07-419a-b6bb-46f4e6f0d6bc",
+      "credentials": {
+        "telegramApi": {
+          "id": "vR9rpZShiS9oXJlB",
+          "name": "auto_create_site_bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5dbf0f1a-7d1e-4d50-b2d1-376b99378b43",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f053a40281dec2fc5a49c3f7a573fb0eba58522fce9d746dd14bd1dcea8e7368"
+  },
+  "id": "yTZTdyB9ZV6Iw3eF",
+  "tags": []
+}
