@@ -1,0 +1,147 @@
+TwoScouts
+Problem Description
+
+Two elite scouts, Arin and Bran, are stationed in different towns. Their mission: each must deliver an encrypted message to the main outpost.
+
+In the distant land of Graphonia, towns are connected by a network of roads. Communication between these towns is crucial for survival. The main outpost has become the hub for vital resources and intelligence.
+
+Due to the sensitive nature of their information, the scouts must take separate routes to the outpost. They can only meet at the outpost—nowhere else. Each scout must travel along a path where:
+
+Each scout ensures that no town is visited more than once throughout their assignment.
+The two scouts' paths do not overlap at any town except the outpost.
+The High Council wants to minimize the total number of towns visited by both scouts to ensure efficiency and reduce risk.
+
+Your task: As the Royal Programmer, determine the minimum total number of towns visited by both scouts. If it is impossible for both scouts to reach the outpost under these constraints, report "Impossible".
+
+Constraints
+3 <= N <= 15
+
+Input
+
+The first line contains two space-separated integers:
+
+N — the number of towns
+
+M — the number of roads connecting them
+
+The next M lines each contain two space-separated integers, a and b, indicating that town a and town b are connected by a road.
+
+The following line contains two space-separated integers: the starting towns of the two scouts.
+
+The last line contains the integer representing the outpost town.
+
+Output
+
+Output a single integer: the minimum number of towns visited by both scouts, or "Impossible" if such paths do not exist.
+
+Time Limit (secs)
+1
+
+Examples
+
+Example 1
+
+input
+
+14 16
+
+1 2
+
+2 3
+
+3 4
+
+4 5
+
+5 6
+
+6 7
+
+1 8
+
+8 9
+
+9 10
+
+10 7
+
+1 11
+
+11 12
+
+11 13
+
+13 14
+
+14 7
+
+10 11
+
+1 12
+
+7
+
+Output
+
+8
+
+Explanation
+
+From the first line it is seen that there are 14 towns and 16 roads connecting them.
+
+Arin is in town 1 and Bran is in town 12 and the outpost at 7.
+
+com.tcs.cv.automata.ei.middleware.DocxToHtmlConverter@265b5f05:image1.png
+
+Let us take paths taken by scouts as
+
+Path taken by Arin: 1 -> 8 -> 9 -> 10 -> 7
+
+Path taken by Bran: 12 -> 11 -> 13 -> 14 -> 7
+
+The towns visited are: 1, 8, 9, 10, 11, 12, 13, 14 (8 towns in total). Hence 8 is the output.
+
+Example 2
+
+Input
+
+8 9
+
+1 2
+
+2 3
+
+3 4
+
+4 9
+
+5 9
+
+3 6
+
+6 5
+
+1 8
+
+8 6
+
+1 2
+
+5
+
+Output
+
+7
+
+Explanation
+
+The scouts start at towns 1 and 2, with the outpost at town 5.
+
+com.tcs.cv.automata.ei.middleware.DocxToHtmlConverter@265b5f05:image2.png
+
+Let us take paths taken by scouts as
+
+Arin's path: 1 -> 8 -> 6 -> 5
+
+Bran's path: 2 -> 3 -> 4 -> 9 -> 5
+The total number of unique towns visited is 7.
