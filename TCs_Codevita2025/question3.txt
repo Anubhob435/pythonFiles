@@ -1,0 +1,175 @@
+SecretKeyMarks: 100
+Problem Description
+
+Rupa was on the internet when she found a tough challenge called "Can you guess the Secret Key?" Let's see what it is.
+
+In this challenge, Rupa is presented with an N×M grid of English letters. Hidden in this grid is a secret key, a word of length T. The key can start at any cell, and each next letter must be reached by moving exactly one step up, down, left, or right (no diagonals), without revisiting any cell. Each move takes one second, so the first letter is at time 1, the second at time 2, and so on.
+
+Instead of the exact positions of the key's letters, you are given clues. Each clue tells you that at time t, the next letter is not in a specific sub grid (from (x1, y1) to (x2, y2), 1-based indexing).
+
+Using these clues, Rupa needs to deduce the secret key from the grid. Help Rupa.
+
+Your task:
+
+If the clues uniquely determine the secret key, print the key.
+If there are multiple possible keys, or if any letter cannot be found based on the clues, print "Not enough clues".
+
+For example, consider a 3×3 grid. If there is a clue stating that at time T, the next letter is not present in the sub grid from (1, 1) to (3, 3) (using 1-based indexing), it implies that the letter does not exist anywhere in the grid at time T seconds.
+
+Constraints
+
+1 <= N, M <= 25
+
+1 <= T <= 25
+
+1 <= I <= 30
+
+The grid will have only alphabets of any case.
+
+Input
+
+First line: Two integers N and M (1 <= N, M <= 25) - grid size.
+Next N lines: Each contains M space-separated letters - the grid.
+Next line: Integer T (1 <= T <= 25) - length of the secret key and also the number of time units required to form the secret word.
+Next line: Integer I (1 <= I <= 30) - number of clues.
+Next 2×I lines: For each clue:
+Line 1: Integer t (1 <= t <= T) - time step.
+Line 2: Four integers x1 y1 x2 y2 - top-left and bottom-right corners of the sub grid where the letter at time t is not located.
+Output
+
+Print the secret key if it can be uniquely determined.
+Otherwise, print "Not enough clues".
+Notes
+
+You cannot revisit any cell.
+If a clue excludes the entire grid for a time step, print "Not enough clues ".
+Time Limit (secs)
+1
+
+Examples
+
+Example 1
+
+Input
+
+4 4
+
+A b c D
+
+e F g h
+
+i J k l
+
+m n o P
+
+4
+
+8
+
+1
+
+1 1 1 2
+
+1
+
+1 1 4 1
+
+1
+
+2 1 4 4
+
+1
+
+2 4 4 4
+
+2
+
+1 1 4 3
+
+3
+
+1 1 4 3
+
+3
+
+3 1 4 4
+
+4
+
+1 1 4 3
+
+Output
+
+cDhl
+
+Explanation
+
+According to the given details, at time T = 1, the character won't be in the sub grids from (1,1) to (1,2), (1,1) to (4,1), (2,1) to (4,4) and (2,4) to (4,4). Thus, the cells in which the character can be present at time T = 1 are (1,3) and (1,4). At time T = 2, the character won't be in the sub grid from (1,1) to (4,3), so the cells where the character can be present are (1,4), (2,4), (3,4), and (4,4). Likewise, at time T = 3, the cells in which the character can be present are (1,4) and (2,4), and at time T = 4, the valid positions are (1,4), (2,4), (3,4), and (4,4).
+
+Given that the character can only move up, down, left, or right, let's assume the starting cell at T = 1 is (1,3). From (1,3), we can move right to (1,4), then down to (2,4), and again down to (3,4). According to the clues, this is a valid path, and no other valid traversals are found. Hence, the characters in the visited cells form the secret key, which is cDhl.
+
+Example 2
+
+Input
+
+3 3
+
+v a i
+
+s h n
+
+a v i
+
+3
+
+2
+
+1
+
+1 1 2 2
+
+3
+
+2 1 3 3
+
+Output
+
+Not enough clues
+
+Explanation
+
+According to the given clues, at time T = 1, the character can be in the cells (1, 3), (2, 3), (3, 1), (3, 2), (3, 3) and at time T = 3, the character can be in the cells (1, 1), (1, 2), (1, 3)
+
+But we can see that these clues aren't sufficient to find the secret cell. Hence print the "Not enough clues".
+
+Example 3
+
+Input
+
+3 3
+
+a d j
+
+a c e
+
+n c y
+
+3
+
+2
+
+1
+
+1 1 2 2
+
+3
+
+1 1 3 3
+
+Output
+
+Not enough clues
+
+Explanation
+
+According to the given clues, at time T = 3, the sub grid from (1,1) to (3,3) does not contain the character (i.e., the 3rd character of the secret key). As a result, the clues are insufficient / incorrect to determine the character at this position, so we simply print the same.

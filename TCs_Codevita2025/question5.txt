@@ -1,0 +1,93 @@
+ReduceExp
+Problem Description
+
+Dr. Ada adjusted her glasses, focusing intently on the equations scrawled across the whiteboard. Her team was working on an artificial neural network, where each neuron evaluated a specific mathematical expression. They noticed that the network's performance was slow, and the culprit was the time it took to evaluate these expressions.
+
+The computation time directly depended on the number of mathematical operations involved — primarily multiplication and addition.
+
+Example: Consider the equation x × (1 + 2) + 1 + 3 × 1. This expression requires 5 operations to evaluate fully. However, by simplifying it to 3x + 4, the team reduced the required operations to just 2. Replacing complex equations with their simplified counterparts could significantly enhance the network's speed.
+
+Further exploration revealed that certain quadratic equations could be factored without changing their results, further reducing the number of operations needed for evaluation. Ada's team identified three common forms amenable to this simplification:
+
+Form 1: a1a2xx + a1b2x + a2b1x + b1b2 can be simplified to (a1x + b1) (a2x + b2).
+Form 2: a1a2xy + a1b2x + a2b1y + b1b2 can be simplified to (a1x + b1) (a2y + b2).
+Form 3: a1a2xx + a1b2x + a2b1xy + b1b2y can be simplified to (a1x + b1y) (a2x + b2).
+Here, x and y represent variables, while a1, a2, b1, and b2 are constants. The key is matching the variable structure, not necessarily the exact equation coefficients. For instance, a1a2yy + a1b2y + a2b1y + b1b2 or a1a2yy + (a1b2+a2b1) y + b1b2 still fits Form 1.
+
+The equation will contain only the variables x and y. The expression will never contain cubic terms, and it only have square terms (i.e., have x*x, x*y and not x*x*x, x*x*y etc.). Follow precedence with order of brackets, multiplication and then addition.
+
+The Challenge: You are tasked with optimizing a given quadratic equation to minimize the number of operations required for evaluation. You can only apply multiplication, addition, and one of the three factoring forms mentioned above.
+
+Good luck!
+
+Note: You can apply only one form to the given equation to reduce it.
+
+Constraints
+Coefficients of the variables < 100
+
+Input
+
+A single-line equation involving the elements x,y,*,+,(,), and integers.
+
+Output
+
+Single integer representing minimum operations required after optimizing the equation.
+
+Time Limit (secs)
+1
+
+Examples
+
+Example 1
+
+Input
+
+x*(x+2+1)+1+1
+
+Output
+
+3
+
+Explanation
+
+We can do the usual reduction of multiplication and addition which will result in - xx+3x+2 and the number of operations required is 4.
+
+After careful observation we can say that the equation is in first given form to factorize.
+
+Applying it will give us - (x+1)*(x+2)
+
+Above optimized equation requires only 3 operation which is the minimum possible. Hence print 3.
+
+Example 2
+
+Input
+
+2*x*y+4*x+y+2+y*y
+
+Output
+
+6
+
+Explanation
+
+The given input equation requires 8 operations.
+
+Now there is no further reduction by addiction and subtraction.
+
+Factorizing it (2*x+1)*(y+2)+y*y now it requires 6 operation, which is the minimum. Hence print 6.
+
+Example 3
+
+Input
+
+10*5+6*3
+
+Output
+
+0
+
+Explanation
+
+As we can see that the equation consists of only integers, and it can be evaluated fully to get the result 68.
+
+Thus, the reduced one (68) have no operations to perform, hence print 0.

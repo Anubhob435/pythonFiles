@@ -1,0 +1,113 @@
+Treasure Hunt
+Problem Description
+Explorers have found a treasure grid high in the mountains. This grid is made up of stacked cells - some contain sparkling treasures, while others are blocked by heavy rocks. The rocks can be used for climbing above, but you cannot stand in the cell where rock is present.
+
+You begin your journey from a specific cell in the grid, aiming to collect as much treasure as possible. However, there are special rules you must follow:
+
+Gravity: You can only stand on a treasure cell if it is stable. A cell is stable if there is a rock directly beneath it. If you step onto an unstable treasure, you will slide down until you reach a stable cell or the bottom of the grid.
+Obstacles: Rocks (#) are obstacles. You cannot stand on them, but you can use them to climb upward into an available cell.
+Moves: You may move left or right to adjacent treasure cells, or climb upward, following the rules. Each move, slide, or climb counts toward your maximum step limit, K. Climbing onto rocks does not count as a move.
+The treasures you may find are:
+
++ -> Diamond
+$ -> Pearl
+% -> Gold
+* -> Platinum
+# -> Rock (obstacle)
+Each treasure has a value, which will be given in the input.
+
+Goal:
+Start from the source cell and reach a stable treasure cell within at most K steps. The last row is always stable (no gravity applies), but you cannot end your journey on a cell in the last row.
+
+Constraints
+
+1 <= N, M <= 20
+
+1 <= K <= 20
+
+The index of top left cell is (0,0) and the bottom right cell is (N-1, M-1).
+
+The starting cell is always stable.
+
+Input
+
+The first line contains two integers: N (number of rows) and M (number of columns).
+
+The next N lines describe the grid.
+
+The following line contains two integers: the x and y coordinates of the starting cell.
+
+The next line lists the values for pearl, platinum, gold, and diamond (in that order).
+
+The last line contains the integer K (maximum allowed steps).
+
+Output
+Print a single integer: the maximum value of treasures you can collect within K moves, ending on a stable cell.
+
+Time Limit (secs)
+
+1
+
+Examples
+
+Example 1
+
+Input
+
+5 5
+
+* $ * % *
+
+# * # # +
+
+* % $ * %
+
+# * # # +
+
+* $ * % *
+
+0 0
+
+1 2 3 4
+
+9
+
+Output
+
+21
+
+Explanation
+
+We start at the top-left cell (0,0) on Platinum, collecting 2 points. Moving right to (0,1) adds a Pearl worth 1 point, but since it is unstable, the path slides down through the column, picking up Platinum at (1,1) for 2 points, Gold at (2,1) for 3 points, and another Platinum at (3,1) for 2 points, finally stopping at (4,1) on Pearl for 1 point. From there, the path continues right to (4,2) for Platinum worth 2 points and further right to (4,3) for Gold worth 3 points. Climbing upward, it reaches (2,3) for Platinum worth 2 points and finally (0,3) for Gold worth 3 points. The total treasure collected along this route is 21 points. points. Adding all the treasures collected along this journey gives a maximum total of 21 points.
+
+Example 2
+
+Input
+
+6 3
+
+* % *
+
+# + $
+
+$ * +
+
+% # *
+
++ $ #
+
+# * %
+
+3 2
+
+5 9 4 1
+
+5
+
+Output
+
+9
+
+Explanation
+
+From the given cell, no moves to neighbouring stable cells are possible. The only treasure collected is the platinum at the starting location, worth 9 points.
