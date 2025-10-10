@@ -1,0 +1,70 @@
+Optimal Arrangement
+Problem Description
+
+The coastal nation of Bayland has implemented a strict environmental policy: large cargo ships must anchor in the ocean, starting 1 km from the shore, with each ship placed 1 km apart. This is to reduce gas emissions.
+Bayland's policy requires cargo ships to anchor offshore, beginning at 1 km from the beach and spaced 1 km apart. On the land side, precious goodie containers are lined up, also starting 1 km from the shore and spaced 1 km apart. Each goodie has a label indicating which cargo ship it should be loaded onto. Multiple goodies may share the same label, but their weights can differ.
+A specialized amphibious ship is used to transport goodies from land to their assigned cargo ships. This ship can carry only one goodie at a time. For each goodie, the ship starts at its land position, picks up the goodie, and travels directly to the designated cargo ship to unload it.
+The transport cost for each goodie is calculated as:
+Cost = goodie weight × distance traveled while carrying the goodie
+The distance is the number of kilometers between the goodies position on land and the cargo ship's position at sea.
+Before loading begins, Bayland allows a one-time rearrangement of the cargo ships in any order. However, the order of the goodies is fixed and must be followed as given.
+Objective:
+Arrange the cargo ships in the most optimal way to minimize the total transport cost. If multiple arrangements yield the same minimum cost, order them alphabetically and output the Kth arrangement.
+
+Constraints
+
+1 <= N <= 100
+1 <= length of the label of goodies <= 100
+Each unique goodie will always have a corresponding cargo ship.
+K is always valid; the Kth arrangement exists.
+No more than five goodies have the same weight.
+
+Input
+
+The first line contains an integer N, the number of goodies to be loaded.
+The next N lines each contain two space-separated items: the goodie's label (a string) and its weight (an integer).
+The final line contains a single integer K, indicating the Kth alphabetical arrangement to be printed.
+
+Output
+
+The first line should display the minimum total cost (an integer)
+The second line should show the cargo ship arrangement (space-separated), starting from the shore and moving inward toward the sea.
+
+Time Limit (secs)
+
+1
+
+Examples
+
+Example 1
+Input
+8
+Diesel 1
+Alloy 4
+Battery 5
+Alloy 1
+Car 5
+Zirconium 7
+Vinyl 3
+Wine 1
+6
+Output
+204
+Zirconium Battery Alloy Car Vinyl Wine Diesel
+Explanation
+We have eight goodies on land, each with a label and weight, and seven cargo ships at sea. Each goodie must go to its labelled ship, and the cost is calculated as the weight multiplied by the distance from land to ship.
+By following the arrangement - "Zirconium Alloy Battery Car Vinyl Diesel Wine", we will get a total cost of 204 which is minimum possible and the sixth arrangement among all those giving same minimum cost, in alphabetical order is "Zirconium Battery Alloy Car Vinyl Wine Diesel". Hence print the same.
+Example 2
+Input
+4
+Can 5
+Alloy 4
+Battery 5
+Alloy 1
+3
+Output
+62
+Battery Alloy Can
+Explanation
+We have four goodies on land, each with a label and weight, and three cargo ships at sea. Each goodie must go to its labelled ship, and the cost is calculated as the weight multiplied by the distance from land to ship.
+By following the arrangement - "Alloy Battery Can", we will get a total cost of 62 which is minimum possible and the third arrangement among all those giving same minimum cost, in alphabetical order is "Battery Alloy Can". Hence print the same.
