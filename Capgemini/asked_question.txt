@@ -6,4 +6,6 @@ Read input from STDIN and write output to STDOUT. Output only the total count.
 
 QUESTION 2
 
-retun the length of where prefix and sufix are same
+retun the highest length of where prefix and sufix are same.
+example Abcdefabc
+ans: 3
