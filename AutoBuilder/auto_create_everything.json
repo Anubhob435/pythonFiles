@@ -6,13 +6,15 @@
         "updates": [
           "message"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "download_attachments": true
+        }
       },
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
       "position": [
-        0,
-        0
+        100,
+        200
       ],
       "id": "c7cf905f-daa3-4f10-9267-fb07e9b477a8",
       "name": "Telegram Trigger",
@@ -23,10 +25,101 @@
           "name": "auto_create_site_bot"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c7cf905f-daa3-4f10-9267-fb07e9b477a9",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "rightType": "any"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c7cf905f-daa3-4f10-9267-fb07e9b477a9",
+      "name": "Check Message",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        300,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c7cf905f-daa3-4f10-9267-fb07e9b477aa",
+              "name": "website_description",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "c7cf905f-daa3-4f10-9267-fb07e9b477ab", 
+              "name": "user_id",
+              "value": "={{ $json.message.from.id }}",
+              "type": "number"
+            },
+            {
+              "id": "c7cf905f-daa3-4f10-9267-fb07e9b477ac",
+              "name": "chat_id", 
+              "value": "={{ $json.message.chat.id }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c7cf905f-daa3-4f10-9267-fb07e9b477aa",
+      "name": "Extract Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        200
+      ]
     }
   ],
   "pinData": {},
-  "connections": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Check Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Message": {
+      "main": [
+        [
+          {
+            "node": "Extract Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "active": false,
   "settings": {
     "executionOrder": "v1"

@@ -21,3 +21,6 @@ __pycache__/
 .idea
 The_Bhagavad_Gita.pdf
 bhagavad_gita_parts/
+
+*.iml
+/out

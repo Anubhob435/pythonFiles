@@ -1,0 +1,105 @@
+{
+  "name": "auto_create_everything_http",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "create-website",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        100,
+        200
+      ],
+      "id": "webhook-trigger-001",
+      "name": "Website Creation Webhook",
+      "webhookId": "create-website-webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "assignment-001",
+              "name": "website_description",
+              "value": "={{ $json.description }}",
+              "type": "string"
+            },
+            {
+              "id": "assignment-002", 
+              "name": "images",
+              "value": "={{ $json.images }}",
+              "type": "array"
+            },
+            {
+              "id": "assignment-003",
+              "name": "project_name", 
+              "value": "={{ $json.project_name || 'auto-generated-site' }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "extract-data-001",
+      "name": "Extract Project Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"success\", \"message\": \"Website creation started\", \"project_name\": $json.project_name } }}"
+      },
+      "id": "response-001",
+      "name": "Send Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        200
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Website Creation Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Project Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Project Data": {
+      "main": [
+        [
+          {
+            "node": "Send Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
