@@ -1,0 +1,66 @@
+Lab Assignment - 1
+
+Programs on the following topic:
+Develop a lexical analyzer to recognize a few patterns in C. (Ex. identifiers, constants,
+Comments, operators etc.)
+
+1.    Write a C program to check if a user given string is a valid identifier or not?
+2.    Write a C program to check if a user given C program statement is a valid Comment or not?
+3.    Write a C program to read a program written in a file and remove all comments. After removing all comments, rewrite the program in a separate file.
+4.    Write a C program to convert an infix statement into a postfix statement.
+5.    Write a C program to evaluate an arithmetic expression which is given as a string. Consider the input has no parentheses and contains the following operators only: +, -, *, /
+
+
+Lab Assignment 2
+
+Implementation of Lexical Analyzer using Lex Tool
+ 
+1.    Write a Lex Program to count the number of characters, words, keyword, number, spaces, end of lines in a given input file.
+2.    Write a Lex Program to count the number of vowels and consonants in a given string.
+3.    Write a Lex Program to count no of: a) +ve and –ve integers b) +ve and –ve fractions
+4.    Write a Lex Program to count the no of comment line in a given C program. Also eliminate them and copy that program into separate file.
+5.    Write a Lex Program to count the no of ‘scanf’ and ‘printf’ statements in a C program. Replace them with ‘readf’ and ‘writef’ statements respectively
+6.    Write a Lex Program to recognize a valid arithmetic expression and identify the identifiers and operators present. Print them separately.
+7.    Write a Lex Program to recognize whether a given sentence is simple or compound.
+8.    Write a Lex Program to implement arithmetic calculator.
+
+
+Lab Assignment 3-A
+
+Programs on the following topic:
+Generate YACC specification for a few syntactic categories.
+a.    Program to recognize a valid arithmetic expression that uses operator +, – , * and /.
+b.    Program to recognize a valid variable which starts with a letter followed by any number of letters or digits.
+c.    Implementation of Calculator using LEX and YACC
+ 
+1.    Write a Lex Program to recognize and count the number of identifiers in a given input file.
+2.    Write a YAAC Program to test the validity of a simple expression involving operators +, -, * and /
+3.    Write a YAAC Program to recognize nested IF control statements and display the levels of nesting.
+4.    Write a YAAC Program to check the syntax of a simple expression involving operators +, -, * and /
+5.    Write a YAAC Program to evaluate an arithmetic expression involving operating +, -, * and /  
+6.    Write a YAAC Program to recognize a valid variable, which starts with a letter, followed by any number of letters or digits.
+7.    Write a YAAC Program to recognize strings ‘aaab’, ‘abbb’, ‘ab’ and ‘a’ using grammar (an b n , n>=0)
+8.    Write a YAAC Program to recognize the grammar (an b, n>=10)
+9.    Write a YACC Program to implement arithmetic calculator.
+
+
+Lab Assignment 4
+
+Problem Statement
+1. Write a Program to implement Symbol Table.
+2. Write a Program to Convert the BNF rules into YACC form and write code to generate Abstract Syntax Tree
+3. Write a C program to implement type checking.
+4. Write a C program to implement control flow analysis and Data flow Analysis.
+
+
+Lab Assignment 5: Project
+
+1. Write a C program to implement Stack storage allocation strategies.
+
+2. Write a C program to implement DAG.
+
+3. Implement the back end of the compiler which takes the three
+address code and produces the 8086 assembly language instructions
+that can be assembled and run using a 8086 assembler. The target
+assembly instructions can be simple move, add, sub, jump. Also
+simple addressing modes are used.

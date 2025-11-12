@@ -1,0 +1,624 @@
+/*******************************************************************************
+ * LAB ASSIGNMENT - 1
+ * Lexical Analyzer Programs for C Language Patterns
+ ******************************************************************************/
+
+/*******************************************************************************
+ * PROGRAM 1: Check if a given string is a valid identifier
+ * 
+ * Rules for valid identifier in C:
+ * - Must start with a letter (a-z, A-Z) or underscore (_)
+ * - Can contain letters, digits (0-9), and underscores
+ * - Cannot be a C keyword
+ * - Case sensitive
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int isKeyword(char *str) {
+    char keywords[32][10] = {
+        "auto", "break", "case", "char", "const", "continue", "default", "do",
+        "double", "else", "enum", "extern", "float", "for", "goto", "if",
+        "int", "long", "register", "return", "short", "signed", "sizeof", "static",
+        "struct", "switch", "typedef", "union", "unsigned", "void", "volatile", "while"
+    };
+    
+    for (int i = 0; i < 32; i++) {
+        if (strcmp(str, keywords[i]) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int isValidIdentifier(char *str) {
+    // Check if string is empty
+    if (str == NULL || strlen(str) == 0) {
+        return 0;
+    }
+    
+    // First character must be letter or underscore
+    if (!isalpha(str[0]) && str[0] != '_') {
+        return 0;
+    }
+    
+    // Check remaining characters (letters, digits, or underscore)
+    for (int i = 1; str[i] != '\0'; i++) {
+        if (!isalnum(str[i]) && str[i] != '_') {
+            return 0;
+        }
+    }
+    
+    // Check if it's a keyword
+    if (isKeyword(str)) {
+        return 0;
+    }
+    
+    return 1;
+}
+
+int main() {
+    char identifier[100];
+    
+    printf("Enter a string to check if it's a valid identifier: ");
+    scanf("%s", identifier);
+    
+    if (isValidIdentifier(identifier)) {
+        printf("'%s' is a VALID identifier.\n", identifier);
+    } else {
+        printf("'%s' is NOT a valid identifier.\n", identifier);
+    }
+    
+    return 0;
+}
+
+/*
+Sample Output:
+Enter a string to check if it's a valid identifier: _myVar123
+'_myVar123' is a VALID identifier.
+
+Enter a string to check if it's a valid identifier: 123abc
+'123abc' is NOT a valid identifier.
+
+Enter a string to check if it's a valid identifier: int
+'int' is NOT a valid identifier.
+*/
+
+
+/*******************************************************************************
+ * PROGRAM 2: Check if a given C program statement is a valid comment
+ * 
+ * Types of comments in C:
+ * 1. Single-line comment: // comment
+ * 2. Multi-line comment: /* comment */
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int isValidComment(char *str) {
+    int len = strlen(str);
+    
+    // Check for empty string
+    if (len == 0) {
+        return 0;
+    }
+    
+    // Check for single-line comment
+    if (len >= 2 && str[0] == '/' && str[1] == '/') {
+        return 1; // Valid single-line comment
+    }
+    
+    // Check for multi-line comment
+    if (len >= 4 && str[0] == '/' && str[1] == '*') {
+        // Check if it ends with */
+        if (str[len - 2] == '*' && str[len - 1] == '/') {
+            return 2; // Valid multi-line comment
+        } else {
+            return 0; // Incomplete multi-line comment
+        }
+    }
+    
+    return 0; // Not a comment
+}
+
+int main() {
+    char statement[500];
+    
+    printf("Enter a C statement to check if it's a valid comment:\n");
+    fgets(statement, sizeof(statement), stdin);
+    
+    // Remove newline character if present
+    statement[strcspn(statement, "\n")] = 0;
+    
+    int result = isValidComment(statement);
+    
+    if (result == 1) {
+        printf("This is a VALID single-line comment.\n");
+    } else if (result == 2) {
+        printf("This is a VALID multi-line comment.\n");
+    } else {
+        printf("This is NOT a valid comment.\n");
+    }
+    
+    return 0;
+}
+
+/*
+Sample Output:
+Enter a C statement to check if it's a valid comment:
+// This is a single line comment
+This is a VALID single-line comment.
+
+Enter a C statement to check if it's a valid comment:
+/* This is a multi-line comment */
+This is a VALID multi-line comment.
+
+Enter a C statement to check if it's a valid comment:
+int x = 10;
+This is NOT a valid comment.
+*/
+
+
+/*******************************************************************************
+ * PROGRAM 3: Remove all comments from a C program file
+ * 
+ * Reads a C program from input file, removes all comments (both single-line
+ * and multi-line), and writes the cleaned program to output file
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void removeComments(FILE *input, FILE *output) {
+    char ch, next_ch;
+    int in_single_line_comment = 0;
+    int in_multi_line_comment = 0;
+    int in_string = 0;
+    int in_char = 0;
+    
+    while ((ch = fgetc(input)) != EOF) {
+        // Handle string literals (don't remove comments inside strings)
+        if (ch == '"' && !in_char && !in_single_line_comment && !in_multi_line_comment) {
+            in_string = !in_string;
+            fputc(ch, output);
+            continue;
+        }
+        
+        // Handle character literals
+        if (ch == '\'' && !in_string && !in_single_line_comment && !in_multi_line_comment) {
+            in_char = !in_char;
+            fputc(ch, output);
+            continue;
+        }
+        
+        // If we're inside a string or character literal, just write and continue
+        if (in_string || in_char) {
+            fputc(ch, output);
+            continue;
+        }
+        
+        // Handle single-line comments
+        if (in_single_line_comment) {
+            if (ch == '\n') {
+                in_single_line_comment = 0;
+                fputc(ch, output); // Preserve newline
+            }
+            continue;
+        }
+        
+        // Handle multi-line comments
+        if (in_multi_line_comment) {
+            if (ch == '*') {
+                next_ch = fgetc(input);
+                if (next_ch == '/') {
+                    in_multi_line_comment = 0;
+                } else {
+                    ungetc(next_ch, input);
+                }
+            }
+            continue;
+        }
+        
+        // Check for start of comment
+        if (ch == '/') {
+            next_ch = fgetc(input);
+            
+            if (next_ch == '/') {
+                // Single-line comment starts
+                in_single_line_comment = 1;
+            } else if (next_ch == '*') {
+                // Multi-line comment starts
+                in_multi_line_comment = 1;
+            } else {
+                // Not a comment, write both characters
+                fputc(ch, output);
+                ungetc(next_ch, input);
+            }
+        } else {
+            // Regular character, write to output
+            fputc(ch, output);
+        }
+    }
+}
+
+int main() {
+    FILE *input, *output;
+    char input_file[100], output_file[100];
+    
+    printf("Enter input file name: ");
+    scanf("%s", input_file);
+    
+    printf("Enter output file name: ");
+    scanf("%s", output_file);
+    
+    input = fopen(input_file, "r");
+    if (input == NULL) {
+        printf("Error: Cannot open input file '%s'\n", input_file);
+        return 1;
+    }
+    
+    output = fopen(output_file, "w");
+    if (output == NULL) {
+        printf("Error: Cannot create output file '%s'\n", output_file);
+        fclose(input);
+        return 1;
+    }
+    
+    removeComments(input, output);
+    
+    fclose(input);
+    fclose(output);
+    
+    printf("Comments removed successfully!\n");
+    printf("Output written to '%s'\n", output_file);
+    
+    return 0;
+}
+
+/*
+Sample Input File (input.c):
+#include <stdio.h>
+
+// This is a single line comment
+int main() {
+    int x = 10; /* This is a multi-line
+                   comment */
+    printf("x = %d\n", x); // Print value
+    return 0;
+}
+
+Sample Output File (output.c):
+#include <stdio.h>
+
+int main() {
+    int x = 10; 
+    printf("x = %d\n", x); 
+    return 0;
+}
+*/
+
+
+/*******************************************************************************
+ * PROGRAM 4: Convert infix expression to postfix expression
+ * 
+ * Algorithm: Uses stack-based approach
+ * Operators supported: +, -, *, /, ^
+ * Handles parentheses and operator precedence
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX 100
+
+// Stack implementation
+char stack[MAX];
+int top = -1;
+
+void push(char ch) {
+    if (top >= MAX - 1) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    stack[++top] = ch;
+}
+
+char pop() {
+    if (top < 0) {
+        printf("Stack Underflow\n");
+        return '\0';
+    }
+    return stack[top--];
+}
+
+char peek() {
+    if (top < 0) {
+        return '\0';
+    }
+    return stack[top];
+}
+
+int isEmpty() {
+    return top == -1;
+}
+
+// Function to get precedence of operators
+int precedence(char ch) {
+    switch (ch) {
+        case '+':
+        case '-':
+            return 1;
+        case '*':
+        case '/':
+            return 2;
+        case '^':
+            return 3;
+        default:
+            return 0;
+    }
+}
+
+// Function to check if character is an operator
+int isOperator(char ch) {
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^');
+}
+
+// Function to convert infix to postfix
+void infixToPostfix(char *infix, char *postfix) {
+    int i = 0, j = 0;
+    char ch;
+    
+    while ((ch = infix[i++]) != '\0') {
+        // If character is alphanumeric, add to output
+        if (isalnum(ch)) {
+            postfix[j++] = ch;
+        }
+        // If character is '(', push to stack
+        else if (ch == '(') {
+            push(ch);
+        }
+        // If character is ')', pop until '(' is found
+        else if (ch == ')') {
+            while (!isEmpty() && peek() != '(') {
+                postfix[j++] = pop();
+            }
+            if (!isEmpty() && peek() == '(') {
+                pop(); // Remove '(' from stack
+            }
+        }
+        // If character is an operator
+        else if (isOperator(ch)) {
+            while (!isEmpty() && precedence(peek()) >= precedence(ch)) {
+                postfix[j++] = pop();
+            }
+            push(ch);
+        }
+        // Ignore spaces
+        else if (ch == ' ') {
+            continue;
+        }
+    }
+    
+    // Pop remaining operators from stack
+    while (!isEmpty()) {
+        postfix[j++] = pop();
+    }
+    
+    postfix[j] = '\0';
+}
+
+int main() {
+    char infix[MAX], postfix[MAX];
+    
+    printf("Enter an infix expression: ");
+    fgets(infix, sizeof(infix), stdin);
+    
+    // Remove newline character
+    infix[strcspn(infix, "\n")] = 0;
+    
+    // Reset stack
+    top = -1;
+    
+    infixToPostfix(infix, postfix);
+    
+    printf("Infix Expression:   %s\n", infix);
+    printf("Postfix Expression: %s\n", postfix);
+    
+    return 0;
+}
+
+/*
+Sample Output:
+Enter an infix expression: A+B*C
+Infix Expression:   A+B*C
+Postfix Expression: ABC*+
+
+Enter an infix expression: (A+B)*C-D
+Infix Expression:   (A+B)*C-D
+Postfix Expression: AB+C*D-
+
+Enter an infix expression: A+B*C-D/E
+Infix Expression:   A+B*C-D/E
+Postfix Expression: ABC*+DE/-
+*/
+
+
+/*******************************************************************************
+ * PROGRAM 5: Evaluate arithmetic expression (no parentheses)
+ * 
+ * Evaluates expressions with operators: +, -, *, /
+ * No parentheses allowed
+ * Follows operator precedence rules
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX 100
+
+// Stack for operands
+double operand_stack[MAX];
+int operand_top = -1;
+
+// Stack for operators
+char operator_stack[MAX];
+int operator_top = -1;
+
+void push_operand(double val) {
+    operand_stack[++operand_top] = val;
+}
+
+double pop_operand() {
+    return operand_stack[operand_top--];
+}
+
+void push_operator(char op) {
+    operator_stack[++operator_top] = op;
+}
+
+char pop_operator() {
+    return operator_stack[operator_top--];
+}
+
+char peek_operator() {
+    if (operator_top < 0) return '\0';
+    return operator_stack[operator_top];
+}
+
+int get_precedence(char op) {
+    if (op == '*' || op == '/') return 2;
+    if (op == '+' || op == '-') return 1;
+    return 0;
+}
+
+double apply_operation(double a, double b, char op) {
+    switch (op) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': 
+            if (b == 0) {
+                printf("Error: Division by zero\n");
+                exit(1);
+            }
+            return a / b;
+        default: return 0;
+    }
+}
+
+double evaluate_expression(char *expr) {
+    int i = 0;
+    
+    while (expr[i] != '\0') {
+        // Skip whitespace
+        if (expr[i] == ' ') {
+            i++;
+            continue;
+        }
+        
+        // If character is a digit or decimal point
+        if (isdigit(expr[i]) || expr[i] == '.') {
+            double value = 0;
+            int decimal_places = 0;
+            int in_decimal = 0;
+            
+            // Parse the number
+            while (isdigit(expr[i]) || expr[i] == '.') {
+                if (expr[i] == '.') {
+                    in_decimal = 1;
+                } else {
+                    if (in_decimal) {
+                        decimal_places++;
+                        value = value * 10 + (expr[i] - '0');
+                    } else {
+                        value = value * 10 + (expr[i] - '0');
+                    }
+                }
+                i++;
+            }
+            
+            // Adjust for decimal places
+            while (decimal_places > 0) {
+                value /= 10;
+                decimal_places--;
+            }
+            
+            push_operand(value);
+            continue;
+        }
+        
+        // If character is an operator
+        if (expr[i] == '+' || expr[i] == '-' || expr[i] == '*' || expr[i] == '/') {
+            // Process operators with higher or equal precedence
+            while (operator_top >= 0 && 
+                   get_precedence(peek_operator()) >= get_precedence(expr[i])) {
+                char op = pop_operator();
+                double b = pop_operand();
+                double a = pop_operand();
+                push_operand(apply_operation(a, b, op));
+            }
+            
+            push_operator(expr[i]);
+            i++;
+        } else {
+            i++;
+        }
+    }
+    
+    // Process remaining operators
+    while (operator_top >= 0) {
+        char op = pop_operator();
+        double b = pop_operand();
+        double a = pop_operand();
+        push_operand(apply_operation(a, b, op));
+    }
+    
+    return pop_operand();
+}
+
+int main() {
+    char expression[MAX];
+    
+    printf("Enter an arithmetic expression (no parentheses): ");
+    fgets(expression, sizeof(expression), stdin);
+    
+    // Remove newline
+    expression[strcspn(expression, "\n")] = 0;
+    
+    // Reset stacks
+    operand_top = -1;
+    operator_top = -1;
+    
+    double result = evaluate_expression(expression);
+    
+    printf("Expression: %s\n", expression);
+    printf("Result: %.2f\n", result);
+    
+    return 0;
+}
+
+/*
+Sample Output:
+Enter an arithmetic expression (no parentheses): 10 + 20 * 3
+Expression: 10 + 20 * 3
+Result: 70.00
+
+Enter an arithmetic expression (no parentheses): 100 / 2 - 30
+Expression: 100 / 2 - 30
+Result: 20.00
+
+Enter an arithmetic expression (no parentheses): 5 + 3 * 2 - 8 / 4
+Expression: 5 + 3 * 2 - 8 / 4
+Result: 9.00
+*/
+
+
+/*******************************************************************************
+ * END OF LAB ASSIGNMENT - 1
+ ******************************************************************************/

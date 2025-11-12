@@ -1,0 +1,447 @@
+Lab Assignment 5: Project - Solutions (C programs & notes)
+============================================================
+
+This file contains three C programs and explanations for:
+1) Stack storage allocation strategies (simulation & examples)
+2) Directed Acyclic Graph (DAG) implementation for expression optimization
+3) A simple compiler back-end that translates three-address code (TAC) to 8086 assembly
+
+Save each program into its own `.c` file (filenames shown). Compile with `gcc <file>.c -o <exe>` and run as described in each section.
+
+-------------------------------------------------------------------------------
+1) Stack storage allocation strategies (stack_strategies.c)
+-------------------------------------------------------------------------------
+Description:
+This program demonstrates three storage allocation strategies:
+ a) Static allocation (global/static arrays)
+ b) Stack allocation (LIFO push/pop simulation)
+ c) Activation-record-like allocation for function calls (simulate frame push/pop)
+
+Compile: gcc stack_strategies.c -o stack_strategies
+Run: ./stack_strategies
+
+Code:
+----------------------------------------
+/* stack_strategies.c
+   Demonstrates simple storage allocation strategies in C.
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* ---- Static allocation (global) ---- */
+#define STATIC_SIZE 10
+int static_area[STATIC_SIZE]; /* zero-initialized at program start */
+
+/* ---- Stack allocation (LIFO) simulation ---- */
+#define STACK_SIZE 100
+int stack_area[STACK_SIZE];
+int sp = 0; /* stack pointer: index of next free slot */
+
+/* push onto our simulated stack */
+void push(int v) {
+    if (sp >= STACK_SIZE) {
+        fprintf(stderr, "Stack overflow\n");
+        exit(1);
+    }
+    stack_area[sp++] = v;
+}
+
+/* pop from our simulated stack */
+int pop(void) {
+    if (sp <= 0) {
+        fprintf(stderr, "Stack underflow\n");
+        exit(1);
+    }
+    return stack_area[--sp];
+}
+
+/* ---- Activation record simulation ---- */
+/* We'll keep a simple frame stack that records base pointer and size. */
+typedef struct {
+    int bp; /* base pointer (index into stack_area) */
+    int size; /* number of slots used by frame */
+} Frame;
+
+#define MAX_FRAMES 50
+Frame frames[MAX_FRAMES];
+int frame_top = 0;
+
+void enter_frame(int locals) {
+    if (frame_top >= MAX_FRAMES) { fprintf(stderr, "Too many frames\n"); exit(1); }
+    frames[frame_top].bp = sp;
+    frames[frame_top].size = locals;
+    frame_top++;
+    /* allocate local slots */
+    for (int i=0;i<locals;i++) push(0);
+}
+
+void leave_frame(void) {
+    if (frame_top <= 0) { fprintf(stderr, "No frame to leave\n"); exit(1); }
+    Frame f = frames[--frame_top];
+    /* pop locals */
+    for (int i=0;i<f.size;i++) pop();
+}
+
+/* Example function that uses activation-record simulation */
+int simulated_function(int a, int b) {
+    /* enter frame with 2 local variables */
+    enter_frame(2);
+    /* local slots are at indices bp .. bp+size-1 (relative to stack) */
+    int bp = frames[frame_top-1].bp;
+    stack_area[bp] = a;       /* local 0 = a */
+    stack_area[bp+1] = b;     /* local 1 = b */
+    int res = stack_area[bp] + stack_area[bp+1]; /* add locals */
+    leave_frame();
+    return res;
+}
+
+int main(void) {
+    printf("=== Static Allocation ===\n");
+    for (int i=0;i<STATIC_SIZE;i++) static_area[i] = i * 2;
+    for (int i=0;i<STATIC_SIZE;i++) printf("static_area[%d] = %d\n", i, static_area[i]);
+
+    printf("\n=== Stack Allocation (push/pop) ===\n");
+    push(10); push(20); push(30);
+    printf("popped: %d\n", pop());
+    printf("popped: %d\n", pop());
+    push(99);
+    printf("popped: %d\n", pop());
+    printf("current SP = %d\n", sp);
+
+    printf("\n=== Activation-record Simulation ===\n");
+    int x = simulated_function(7, 8);
+    printf("simulated_function(7,8) returned %d\n", x);
+
+    printf("\nNotes:\n");
+    printf("- Static allocation uses fixed/global memory; lifetime = program run.\n");
+    printf("- Stack allocation (LIFO) gives fast push/pop and automatic lifetime.\n");
+    printf("- Activation records simulate function-local storage allocated on the stack.\n");
+    return 0;
+}
+----------------------------------------
+
+-------------------------------------------------------------------------------
+2) DAG implementation (dag_optimizer.c)
+-------------------------------------------------------------------------------
+Description:
+This program builds a DAG (Directed Acyclic Graph) from an arithmetic expression (in three-address-like form)
+to eliminate common subexpressions. For simplicity, it supports binary operations: + - * / and integer constants and identifiers.
+Input format: multiple lines, each of the form "t1 = a + b" or "t2 = t1 * c" or "a = b" etc.
+The DAG merges nodes with the same operator and identical children (i.e., common subexpressions) and prints optimized three-address code.
+
+Compile: gcc dag_optimizer.c -o dag_optimizer
+Run: ./dag_optimizer < tac_input.txt
+
+Code:
+----------------------------------------
+/* dag_optimizer.c
+   Build a DAG from three-address code to eliminate common subexpressions.
+   Very simplified: assumes input tokens separated by spaces and binary ops.
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAXN 1000
+#define MAXTOK 64
+
+typedef struct Node {
+    char op[8];          /* operator or "id"/"const" */
+    char name[32];       /* a representative name (for id/const) */
+    int left, right;     /* child node indices (-1 if none) */
+} Node;
+
+Node nodes[MAXN];
+int node_count = 0;
+
+/* simple node equality: op same AND children indexes same AND (name for id/const) same */
+int node_equal(int i, const char *op, int l, int r, const char *name) {
+    if (strcmp(nodes[i].op, op) != 0) return 0;
+    if (nodes[i].left != l) return 0;
+    if (nodes[i].right != r) return 0;
+    if (name) {
+        if (strcmp(nodes[i].name, name) != 0) return 0;
+    }
+    return 1;
+}
+
+/* find existing node matching given signature */
+int find_node(const char *op, int l, int r, const char *name) {
+    for (int i=0;i<node_count;i++) {
+        if (node_equal(i, op, l, r, name)) return i;
+    }
+    return -1;
+}
+
+/* create or reuse node */
+int get_node(const char *op, int l, int r, const char *name) {
+    int idx = find_node(op,l,r,name);
+    if (idx >= 0) return idx;
+    /* create */
+    idx = node_count++;
+    strncpy(nodes[idx].op, op, sizeof(nodes[idx].op)-1);
+    nodes[idx].left = l; nodes[idx].right = r;
+    nodes[idx].name[0] = '\0';
+    if (name) strncpy(nodes[idx].name, name, sizeof(nodes[idx].name)-1);
+    return idx;
+}
+
+/* mapping from temporary/identifier names to node indices */
+typedef struct Map { char sym[32]; int node; } Map;
+Map symmap[MAXN];
+int symmap_count = 0;
+int find_sym(const char *s) {
+    for (int i=0;i<symmap_count;i++) if (strcmp(symmap[i].sym, s)==0) return symmap[i].node;
+    return -1;
+}
+void set_sym(const char *s, int node) {
+    int idx = find_sym(s);
+    if (idx >= 0) { symmap[idx].node = node; return; }
+    strncpy(symmap[symmap_count].sym, s, sizeof(symmap[symmap_count].sym)-1);
+    symmap[symmap_count].node = node;
+    symmap_count++;
+}
+
+/* parse a line like: t1 = a + b */
+void process_line(char *line) {
+    char lhs[32], eq[8], a[32], op[8], b[32];
+    int items = sscanf(line, " %31s %7s %31s %7s %31s", lhs, eq, a, op, b);
+    if (items < 3) return; /* blank or malformed */
+    if (items == 3) {
+        /* form: x = y  (assignment) */
+        int nd;
+        int src = find_sym(a);
+        if (src < 0) {
+            /* create id/const node for a */
+            nd = get_node("id", -1, -1, a);
+        } else nd = src;
+        set_sym(lhs, nd);
+        return;
+    }
+    /* binary op expected */
+    int left_node = find_sym(a);
+    if (left_node < 0) left_node = get_node("id", -1, -1, a);
+    int right_node = find_sym(b);
+    if (right_node < 0) right_node = get_node("id", -1, -1, b);
+    int opnode = get_node(op, left_node, right_node, NULL);
+    set_sym(lhs, opnode);
+}
+
+/* Emit optimized three-address code by traversing nodes and printing assignments for named symbols. */
+void emit_code(void) {
+    /* We'll print nodes that are referenced by symbols.
+       For each symbol, generate code by recursively emitting children first.
+    */
+    int emitted[MAXN]; memset(emitted,0,sizeof(emitted));
+    char buf[256];
+
+    /* recursive emit */
+    void emit_node(int n) {
+        if (n < 0 || emitted[n]) return;
+        if (strcmp(nodes[n].op,"id")==0) { /* leaf */
+            emitted[n]=1; return;
+        }
+        /* emit children */
+        if (nodes[n].left >=0) emit_node(nodes[n].left);
+        if (nodes[n].right>=0) emit_node(nodes[n].right);
+        /* print operation */
+        printf("t%d = ", n);
+        if (nodes[n].left >= 0) {
+            if (strcmp(nodes[nodes[n].left].op,"id")==0) printf("%s", nodes[nodes[n].left].name);
+            else printf("t%d", nodes[n].left);
+        } else printf("??");
+        printf(" %s ", nodes[n].op);
+        if (nodes[n].right >= 0) {
+            if (strcmp(nodes[nodes[n].right].op,"id")==0) printf("%s", nodes[nodes[n].right].name);
+            else printf("t%d", nodes[n].right);
+        } else printf("??");
+        printf("\n");
+        emitted[n]=1;
+    }
+
+    /* emit for each named symbol in symmap */
+    for (int i=0;i<symmap_count;i++) {
+        int n = symmap[i].node;
+        emit_node(n);
+        /* finally assign to symbol (if node is not a simple id) */
+        if (strcmp(nodes[n].op,"id")!=0) {
+            printf("%s = t%d\n", symmap[i].sym, n);
+        } else {
+            /* id leaf: assignment already implicit */
+            printf("%s = %s\n", symmap[i].sym, nodes[n].name);
+        }
+    }
+}
+
+int main(void) {
+    char line[256];
+    printf("Enter three-address statements (one per line). EOF (Ctrl+D) to finish.\n");
+    while (fgets(line,sizeof(line),stdin)) {
+        /* strip newline */
+        char *p = strchr(line,'\n'); if (p) *p=0;
+        process_line(line);
+    }
+    printf("\n--- Optimized TAC (via DAG) ---\n");
+    emit_code();
+    return 0;
+}
+----------------------------------------
+
+Example input (tac_input.txt):
+a = 2
+b = 3
+t1 = a + b
+t2 = a + b
+t3 = t1 * t2
+x = t3
+
+Output will merge t1 and t2 as the same node, reducing redundant computation.
+
+-------------------------------------------------------------------------------
+3) Simple back end: translate three-address code to 8086 assembly (tac_to_8086.c)
+-------------------------------------------------------------------------------
+Description:
+This C program reads simple three-address code lines and emits equivalent 8086-style assembly using simple instructions: MOV, ADD, SUB, MUL (via IMUL), DIV, JMP and labels. It performs a straightforward mapping:
+ - x = y               -> MOV x, y
+ - x = y op z          -> MOV ax, y ; OP ax, z ; MOV x, ax   (uses AX as temp)
+ - if x goto L         -> CMP x, 0 ; JNE L   (non-zero test)
+ - goto L              -> JMP L
+ - label:              -> label:
+
+This is a pedagogical translator suitable for small examples. The generated assembly assumes simple variables (no memory addressing complexities).
+
+Compile: gcc tac_to_8086.c -o tac_to_8086
+Run: ./tac_to_8086 < tac_input.txt > out.asm
+
+Code:
+----------------------------------------
+/* tac_to_8086.c
+   Very simple translator from a tiny subset of TAC to 8086 assembly.
+   Supports lines such as:
+      t1 = a + b
+      x = y
+      if t1 goto L1
+      goto L2
+      L1:
+*/
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+/* trim helper */
+char *trim(char *s) {
+    while (isspace((unsigned char)*s)) s++;
+    if (*s == 0) return s;
+    char *end = s + strlen(s) - 1;
+    while (end > s && isspace((unsigned char)*end)) end--;
+    end[1] = '\\0';
+    return s;
+}
+
+/* check if token is number */
+int is_number(const char *s) {
+    if (!s || !*s) return 0;
+    if (*s=='+' || *s=='-') s++;
+    while (*s) { if (!isdigit((unsigned char)*s) && *s!='.') return 0; s++; }
+    return 1;
+}
+
+/* emit a safe operand: immediate or memory/register name unchanged */
+void emit_operand(const char *op) {
+    printf("%s", op);
+}
+
+/* map binary op to assembly sequence using AX as temp */
+void translate_binop(const char *dst, const char *a, const char *op, const char *b) {
+    /* move left operand into AX */
+    if (is_number(a)) printf("    MOV AX, %s\n", a);
+    else printf("    MOV AX, %s\n", a);
+    /* perform op with right operand */
+    if (strcmp(op, "+") == 0) {
+        if (is_number(b)) printf("    ADD AX, %s\n", b); else printf("    ADD AX, %s\n", b);
+    } else if (strcmp(op, "-") == 0) {
+        if (is_number(b)) printf("    SUB AX, %s\n", b); else printf("    SUB AX, %s\n", b);
+    } else if (strcmp(op, "*") == 0) {
+        if (is_number(b)) printf("    IMUL AX, %s\n", b); else printf("    IMUL AX, %s\n", b);
+    } else if (strcmp(op, "/") == 0) {
+        /* for division, place dividend in DX:AX and use DIV; we will simplify */
+        printf("    ; -- division: simplified sequence --\n");
+        if (!is_number(b)) printf("    MOV BX, %s\n", b);
+        printf("    XOR DX, DX\n    DIV %s\n", (is_number(b) ? b : "BX"));
+    } else {
+        printf("    ; unknown op %s\n", op);
+    }
+    /* store back to destination */
+    printf("    MOV %s, AX\n", dst);
+}
+
+int main(void) {
+    char line[256];
+    printf("; --- translated 8086 assembly (generated) ---\n");
+    while (fgets(line, sizeof(line), stdin)) {
+        char *s = trim(line);
+        if (s[0] == 0) continue;
+        /* label? */
+        int len = strlen(s);
+        if (s[len-1]==':') {
+            printf("%s\n", s); continue;
+        }
+        /* goto */
+        if (strncmp(s, "goto ", 5) == 0) {
+            char lbl[64]; sscanf(s+5, "%63s", lbl);
+            printf("    JMP %s\n", lbl); continue;
+        }
+        /* if x goto L  (we interpret as if x != 0 goto L) */
+        if (strncmp(s, "if ", 3) == 0) {
+            char var[64], tmp[8], lbl[64];
+            if (sscanf(s+3, "%63s goto %63s", var, lbl) == 2) {
+                printf("    CMP %s, 0\n", var);
+                printf("    JNE %s\n", lbl);
+                continue;
+            }
+        }
+        /* assignment forms: x = y  or x = y op z */
+        char lhs[64], eq[8], a[64], op[8], b[64];
+        int items = sscanf(s, "%63s %7s %63s %7s %63s", lhs, eq, a, op, b);
+        if (items >= 3) {
+            if (items == 3) {
+                /* x = y */
+                printf("    MOV %s, %s\n", lhs, a);
+            } else if (items == 5) {
+                /* binary op */
+                translate_binop(lhs, a, op, b);
+            } else {
+                printf("    ; cannot parse line: %s\n", s);
+            }
+            continue;
+        }
+        printf("    ; unrecognized: %s\n", s);
+    }
+    return 0;
+}
+----------------------------------------
+
+Example TAC input (tac_input.txt):
+a = 2
+b = 3
+t1 = a + b
+t2 = t1 * b
+if t2 goto L1
+goto L2
+L1:
+x = t2 - 5
+L2:
+
+Generated assembly (out.asm) will contain MOV/ADD/IMUL/JMP/CMP/JNE instructions; refine further as needed for real 8086 assembly constraints.
+
+-------------------------------------------------------------------------------
+Notes & Recommendations
+-------------------------------------------------------------------------------
+- These programs are pedagogical and intentionally simple to illustrate concepts.
+- For production-quality compiler backends, you'd handle register allocation, better instruction selection, memory addressing, calling conventions, and emit proper prologue/epilogue sequences for 8086.
+- For the DAG optimizer, many extensions are possible: handle commutative operator canonicalization (a+b vs b+a), constant folding, copy propagation, and mapping back to efficient temporaries or registers.
+
+-- End of Lab Assignment 5 solutions --
