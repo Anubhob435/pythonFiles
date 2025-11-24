@@ -6,69 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISC Class 11 Java File Handling Prep</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chosen Palette: Tailwind Cool Gray + Blue -->
-    <!-- 
-    Application Structure Plan: The application is designed as a single-page app with a sticky tab-based navigation, dividing the content into "Theory Questions", "Programming Problems", and "Key Classes". This structure directly serves the user's goal (exam prep) by segmenting content logically. The primary interaction is a "flashcard" model (toggling answers/solutions) and an "accordion" model for key class summaries. This active-recall-based design is more effective for studying than a static, linear report, allowing users to self-test and quickly find reference material.
-    -->
-    <!-- 
-    Visualization & Content Choices: 
-    - Report Info: Theory Q&A. Goal: Test knowledge. Presentation: Interactive "card" with toggle-able answer. Interaction: JS onClick to show/hide. Justification: Active recall. Library: Vanilla JS.
-    - Report Info: Programming Problems. Goal: Test code knowledge. Presentation: Card with problem and toggle-able solution in a <pre> block. Interaction: JS onClick to show/hide. Justification: Active recall, proper code formatting. Library: Vanilla JS.
-    - Report Info: Key Class Details. Goal: Quick reference. Presentation: Accordion list. Interaction: JS onClick to expand/collapse. Justification: Compact, on-demand info. Library: Vanilla JS.
-    - (Charts like Chart.js/Plotly are not used, as the source content is purely textual and code-based. Interactive HTML elements are the optimal presentation method.)
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        html {
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #f9fafb;
-            color: #1f2937;
-        }
-
-        .tab-active {
-            border-bottom-color: #2563eb;
-            color: #2563eb;
-            font-weight: 600;
-        }
-
-        .page-content {
-            display: none;
-        }
-
-        pre {
-            background-color: #1f2937;
-            color: #f9fafb;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            font-size: 0.875rem;
-        }
-
-        .answer-content {
-            display: none;
-        }
-
-        .accordion-icon {
-            transform: rotate(0deg);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .accordion-open .accordion-icon {
-            transform: rotate(180deg);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="min-h-screen">
 
     <header class="bg-white shadow-md w-full">
-        <div class="container mx-auto px-4 py-4 md:px-6">
-            <h1 class="text-2xl md:text-3xl font-bold text-blue-700">ISC Class 11 Java File Handling</h1>
-            <p class="text-md text-gray-600">Your Interactive Exam Preparation Guide</p>
+        <div class="container mx-auto px-4 py-4 md:px-6 flex items-center">
+            <a href="index.html" class="mr-4 text-[var(--text-light)] hover:text-[var(--primary)] transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+            </a>
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-700">ISC Class 11 Java File Handling</h1>
+                <p class="text-md text-gray-600">Your Interactive Exam Preparation Guide</p>
+            </div>
         </div>
     </header>
 
@@ -111,9 +65,11 @@
                                 files.</li>
                             <li>Operate on data 8 bits at a time.</li>
                             <li>Base abstract classes are <strong>InputStream</strong> and
-                                <strong>OutputStream</strong>.</li>
+                                <strong>OutputStream</strong>.
+                            </li>
                             <li>Examples: <code>FileInputStream</code>, <code>FileOutputStream</code>,
-                                <code>DataInputStream</code>.</li>
+                                <code>DataInputStream</code>.
+                            </li>
                         </ul>
                         <p><strong>Character Streams (java.io.*Reader / *Writer):</strong></p>
                         <ul class="list-disc list-inside ml-4">
@@ -123,7 +79,8 @@
                             <li>Operate on data 16 bits at a time (Java's char type).</li>
                             <li>Base abstract classes are <strong>Reader</strong> and <strong>Writer</strong>.</li>
                             <li>Examples: <code>FileReader</code>, <code>FileWriter</code>, <code>BufferedReader</code>,
-                                <code>PrintWriter</code>.</li>
+                                <code>PrintWriter</code>.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +95,8 @@
                             <li>Stores data as human-readable characters (e.g., ASCII, UTF-8).</li>
                             <li>Can be opened and read by simple text editors (like Notepad).</li>
                             <li>Typically handled using Character Streams (<code>FileReader</code>,
-                                <code>FileWriter</code>, <code>PrintWriter</code>).</li>
+                                <code>FileWriter</code>, <code>PrintWriter</code>).
+                            </li>
                             <li>Uses special characters for newlines (e.g., \n, \r\n).</li>
                         </ul>
                         <p><strong>Binary File:</strong></p>
@@ -147,9 +105,11 @@
                                 1s).</li>
                             <li>Not human-readable; appears as gibberish in a text editor.</li>
                             <li>Used for images, audio, executables, or structured data (like saving a
-                                <code>double</code> or <code>int</code> directly).</li>
+                                <code>double</code> or <code>int</code> directly).
+                            </li>
                             <li>Typically handled using Byte Streams (<code>FileInputStream</code>,
-                                <code>FileOutputStream</code>, <code>DataInputStream</code>).</li>
+                                <code>FileOutputStream</code>, <code>DataInputStream</code>).
+                            </li>
                             <li>More compact and faster to read/write for non-textual data.</li>
                         </ul>
                     </div>
@@ -161,7 +121,8 @@
                     <button class="toggle-btn text-sm text-blue-600 font-medium hover:underline">Show Answer</button>
                     <div class="answer-content mt-4 text-gray-700 space-y-2">
                         <p>Buffered streams add a <strong>memory buffer</strong> to other streams (like
-                            <code>FileReader</code> or <code>FileWriter</code>) to improve I/O performance.</p>
+                            <code>FileReader</code> or <code>FileWriter</code>) to improve I/O performance.
+                        </p>
                         <p>Instead of making a system call for every single byte or character read/written (which is
                             very slow), buffered streams read/write large chunks of data into/from the buffer at once.
                             Subsequent read/write operations are then performed on this fast memory buffer.</p>
@@ -189,7 +150,8 @@
                             <li>Provides basic <code>write()</code> methods to write single characters, character
                                 arrays, or strings.</li>
                             <li>Does not have methods to directly write primitive data types (like <code>int</code>,
-                                <code>double</code>) in their text form.</li>
+                                <code>double</code>) in their text form.
+                            </li>
                             <li>Does not have a method to automatically add a newline, like <code>println()</code>. You
                                 must manually write <code>\n</code>.</li>
                             <li>Throws <code>IOException</code> which must be handled.</li>
@@ -200,10 +162,12 @@
                             <li>Provides the very convenient <code>print()</code> and
                                 <strong><code>println()</code></strong> methods, which can write any primitive data type
                                 (<code>int</code>, <code>double</code>, <code>boolean</code>, etc.) as a human-readable
-                                string.</li>
+                                string.
+                            </li>
                             <li>The <code>println()</code> method automatically adds a newline character.</li>
                             <li>It can "wrap" other streams, like a <code>FileWriter</code> (often wrapped in a
-                                <code>BufferedWriter</code> for efficiency).</li>
+                                <code>BufferedWriter</code> for efficiency).
+                            </li>
                             <li>It has an "auto-flush" capability (optional).</li>
                         </ul>
                         <p><strong>In summary:</strong> You almost always want to use <code>PrintWriter</code> (wrapped
@@ -247,15 +211,18 @@
                         <ul class="list-disc list-inside ml-4">
                             <li><strong><code>BufferedReader.readLine()</code></strong>: Returns
                                 <strong><code>null</code></strong> when it tries to read past the end of the file. This
-                                is the most common way for text files.</li>
+                                is the most common way for text files.
+                            </li>
                             <li><strong><code>FileReader.read()</code></strong> (or
                                 <code>FileInputStream.read()</code>): These character/byte-level read methods return
-                                <strong><code>-1</code></strong> when the end of the stream is reached.</li>
+                                <strong><code>-1</code></strong> when the end of the stream is reached.
+                            </li>
                             <li><strong><code>DataInputStream.read...()</code></strong>: When reading primitive data
                                 types (e.g., <code>readInt()</code>, <code>readDouble()</code>), if the stream ends
                                 before the data type is fully read, it throws an
                                 <strong><code>EOFException</code></strong> (End of File Exception). This is typically
-                                caught in a <code>try-catch</code> block.</li>
+                                caught in a <code>try-catch</code> block.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -266,13 +233,15 @@
                     <div class="answer-content mt-4 text-gray-700 space-y-2">
                         <p><strong><code>RandomAccessFile</code></strong> is a special class that is not part of the
                             <code>InputStream</code>/<code>OutputStream</code> hierarchy. It combines features of both
-                            reading and writing to a file.</p>
+                            reading and writing to a file.
+                        </p>
                         <p><strong>Key Differences:</strong></p>
                         <ul class="list-disc list-inside ml-4">
                             <li><strong>Non-Sequential Access:</strong> Unlike streams, which read/write data
                                 sequentially from start to finish, <code>RandomAccessFile</code> allows you to move a
                                 <strong>file pointer</strong> (or "seek") to any byte position in the file and
-                                read/write from that exact location.</li>
+                                read/write from that exact location.
+                            </li>
                             <li><strong>Read/Write:</strong> It can both read and write to the same file, depending on
                                 the "mode" it's opened in.
                                 <ul class="list-disc list-inside ml-4">
@@ -282,10 +251,12 @@
                             </li>
                             <li><strong>File Pointer:</strong> It uses a file pointer (a long integer) to track the
                                 current location. Methods like <code>seek(long pos)</code> move the pointer, and
-                                <code>getFilePointer()</code> returns its current position.</li>
+                                <code>getFilePointer()</code> returns its current position.
+                            </li>
                             <li><strong>Data Types:</strong> It has methods similar to <code>DataInputStream</code> and
                                 <code>DataOutputStream</code> (e.g., <code>readInt()</code>, <code>writeDouble()</code>,
-                                <code>readLine()</code>) for handling binary data.</li>
+                                <code>readLine()</code>) for handling binary data.
+                            </li>
                         </ul>
                         <p>It is very useful for database-like operations, such as updating a specific record in the
                             middle of a file without rewriting the entire file.</p>
@@ -643,7 +614,8 @@ public class CopyFile {
                     <div class="answer-content px-4 pb-4 text-gray-700">
                         <p><strong>Purpose:</strong> A "wrapper" stream that adds a buffer to another
                             <code>Reader</code> (like <code>FileReader</code>) for efficient reading. Provides
-                            line-by-line reading.</p>
+                            line-by-line reading.
+                        </p>
                         <p class="font-medium mt-2">Common Methods:</p>
                         <ul class="list-disc list-inside ml-4 text-sm">
                             <li><code>String readLine()</code>: Reads a full line of text, excluding the newline
@@ -663,7 +635,8 @@ public class CopyFile {
                     <div class="answer-content px-4 pb-4 text-gray-700">
                         <p><strong>Purpose:</strong> A "wrapper" stream that adds convenient <code>print()</code> and
                             <code>println()</code> methods for writing formatted text. This is the preferred class for
-                            writing to text files.</p>
+                            writing to text files.
+                        </p>
                         <p class="font-medium mt-2">Common Methods:</p>
                         <ul class="list-disc list-inside ml-4 text-sm">
                             <li><code>void println(String s)</code>: Prints a string followed by a newline.</li>
@@ -747,58 +720,7 @@ public class CopyFile {
         </div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.nav-tab');
-            const pages = document.querySelectorAll('.page-content');
-            const mainContent = document.querySelector('main');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', (e) => {
-                    const targetId = e.currentTarget.getAttribute('data-target');
-
-                    pages.forEach(page => {
-                        page.style.display = 'none';
-                    });
-
-                    tabs.forEach(t => {
-                        t.classList.remove('tab-active');
-                    });
-
-                    document.getElementById(targetId).style.display = 'block';
-                    e.currentTarget.classList.add('tab-active');
-                });
-            });
-
-            mainContent.addEventListener('click', (e) => {
-                const toggleButton = e.target.classList.contains('toggle-btn') ? e.target : null;
-                const accordionButton = e.target.closest('.toggle-accordion');
-
-                if (toggleButton) {
-                    e.preventDefault();
-                    const answerContent = toggleButton.nextElementSibling;
-                    const isHidden = answerContent.style.display === 'none';
-
-                    answerContent.style.display = isHidden ? 'block' : 'none';
-                    toggleButton.textContent = isHidden ? 'Hide Answer' : 'Show Answer';
-                }
-
-                if (accordionButton) {
-                    e.preventDefault();
-                    const answerContent = accordionButton.nextElementSibling;
-                    const isHidden = answerContent.style.display === 'none';
-
-                    answerContent.style.display = isHidden ? 'block' : 'none';
-                    if (isHidden) {
-                        accordionButton.classList.add('accordion-open');
-                    } else {
-                        accordionButton.classList.remove('accordion-open');
-                    }
-                }
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
