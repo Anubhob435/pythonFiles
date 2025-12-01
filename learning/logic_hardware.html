@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC Class 11 Logic & Hardware Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border-color)]">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-[var(--text-light)] hover:text-[var(--primary)] transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-2xl font-bold text-[var(--primary)]">Logic & Hardware</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#gates" class="nav-link">Logic Gates</a>
+                <a href="#propositional" class="nav-link">Propositional Logic</a>
+                <a href="#numbers" class="nav-link">Number Systems</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[var(--text-light)] hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-[var(--border-color)]">
+            <a href="index.html" class="block py-2 nav-link mobile-nav-link font-semibold text-[var(--primary)]">← Back
+                to Home</a>
+            <a href="#gates" class="block py-2 nav-link mobile-nav-link">Logic Gates</a>
+            <a href="#propositional" class="block py-2 nav-link mobile-nav-link">Propositional Logic</a>
+            <a href="#numbers" class="block py-2 nav-link mobile-nav-link">Number Systems</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section id="gates" class="scroll-mt-20">
+            <h2>Logic Gates</h2>
+            <p class="section-intro">Logic gates are the building blocks of digital circuits. They perform basic logical
+                operations on binary inputs.</p>
+
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Basic Gates</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">AND Gate</h4>
+                    <p class="text-[var(--text-light)] mb-3">Output is 1 only when ALL inputs are 1</p>
+                    <pre><code class="code-block">Truth Table:
+A | B | Output
+0 | 0 |   0
+0 | 1 |   0
+1 | 0 |   0
+1 | 1 |   1</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">OR Gate</h4>
+                    <p class="text-[var(--text-light)] mb-3">Output is 1 when ANY input is 1</p>
+                    <pre><code class="code-block">Truth Table:
+A | B | Output
+0 | 0 |   0
+0 | 1 |   1
+1 | 0 |   1
+1 | 1 |   1</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">NOT Gate</h4>
+                    <p class="text-[var(--text-light)] mb-3">Inverts the input (1→0, 0→1)</p>
+                    <pre><code class="code-block">Truth Table:
+A | Output
+0 |   1
+1 |   0</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Universal Gates</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">NAND Gate (Universal)</h4>
+                    <p class="text-[var(--text-light)] mb-3">NOT + AND. Output is 0 only when ALL inputs are 1</p>
+                    <pre><code class="code-block">A | B | Output
+0 | 0 |   1
+0 | 1 |   1
+1 | 0 |   1
+1 | 1 |   0</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">NOR Gate (Universal)</h4>
+                    <p class="text-[var(--text-light)] mb-3">NOT + OR. Output is 1 only when ALL inputs are 0</p>
+                    <pre><code class="code-block">A | B | Output
+0 | 0 |   1
+0 | 1 |   0
+1 | 0 |   0
+1 | 1 |   0</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Other Gates</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">XOR Gate (Exclusive OR)</h4>
+                    <p class="text-[var(--text-light)] mb-3">Output is 1 when inputs are DIFFERENT</p>
+                    <pre><code class="code-block">A | B | Output
+0 | 0 |   0
+0 | 1 |   1
+1 | 0 |   1
+1 | 1 |   0</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">XNOR Gate</h4>
+                    <p class="text-[var(--text-light)] mb-3">Output is 1 when inputs are SAME</p>
+                    <pre><code class="code-block">A | B | Output
+0 | 0 |   1
+0 | 1 |   0
+1 | 0 |   0
+1 | 1 |   1</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Adder Circuits</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Half Adder</h4>
+                    <p class="text-[var(--text-light)] mb-3">Adds two 1-bit numbers. Outputs: Sum and Carry</p>
+                    <pre><code class="code-block">A | B | Sum | Carry
+0 | 0 |  0  |   0
+0 | 1 |  1  |   0
+1 | 0 |  1  |   0
+1 | 1 |  0  |   1
+
+Sum = A XOR B
+Carry = A AND B</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Full Adder</h4>
+                    <p class="text-[var(--text-light)] mb-3">Adds three 1-bit numbers (A, B, Carry-in)</p>
+                    <pre><code class="code-block">A | B | Cin | Sum | Cout
+0 | 0 |  0  |  0  |  0
+0 | 0 |  1  |  1  |  0
+0 | 1 |  0  |  1  |  0
+0 | 1 |  1  |  0  |  1
+1 | 0 |  0  |  1  |  0
+1 | 0 |  1  |  0  |  1
+1 | 1 |  0  |  0  |  1
+1 | 1 |  1  |  1  |  1</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="propositional" class="scroll-mt-20">
+            <h2>Propositional Logic</h2>
+            <p class="section-intro">Propositional logic deals with statements that are either true or false.</p>
+
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Well-Formed Formulae (WFF)</h3>
+                    <p class="text-[var(--text-light)] mb-4">Rules for creating valid logical expressions:</p>
+                    <ul class="space-y-2 text-[var(--text-light)]">
+                        <li>• A propositional variable (p, q, r) is a WFF</li>
+                        <li>• If A is a WFF, then ¬A (NOT A) is a WFF</li>
+                        <li>• If A and B are WFFs, then (A ∧ B), (A ∨ B), (A → B) are WFFs</li>
+                    </ul>
+                    <pre><code class="code-block">Examples of WFF:
+p
+¬p
+(p ∧ q)
+((p ∨ q) → r)
+
+Not WFF:
+p ∧ ∧ q
+(p q)</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Truth Tables</h3>
+                    <p class="text-[var(--text-light)] mb-4">Example: (p ∧ q) ∨ ¬r</p>
+                    <pre><code class="code-block">p | q | r | ¬r | p∧q | (p∧q)∨¬r
+0 | 0 | 0 | 1  |  0  |    1
+0 | 0 | 1 | 0  |  0  |    0
+0 | 1 | 0 | 1  |  0  |    1
+0 | 1 | 1 | 0  |  0  |    0
+1 | 0 | 0 | 1  |  0  |    1
+1 | 0 | 1 | 0  |  0  |    0
+1 | 1 | 0 | 1  |  1  |    1
+1 | 1 | 1 | 0  |  1  |    1</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="numbers" class="scroll-mt-20">
+            <h2>Number Systems</h2>
+            <p class="section-intro">Understanding different number bases and conversions.</p>
+
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Number Bases</h3>
+                    <pre><code class="code-block">Binary (Base 2): 0, 1
+Octal (Base 8): 0-7
+Decimal (Base 10): 0-9
+Hexadecimal (Base 16): 0-9, A-F</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Conversions</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Decimal to Binary</h4>
+                    <pre><code class="code-block">Example: 13₁₀ to Binary
+13 ÷ 2 = 6 remainder 1
+6 ÷ 2 = 3 remainder 0
+3 ÷ 2 = 1 remainder 1
+1 ÷ 2 = 0 remainder 1
+Result: 1101₂</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Binary to Decimal</h4>
+                    <pre><code class="code-block">Example: 1101₂ to Decimal
+1×2³ + 1×2² + 0×2¹ + 1×2⁰
+= 8 + 4 + 0 + 1 = 13₁₀</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Binary Addition</h4>
+                    <pre><code class="code-block">  1011
++  110
+------
+ 10001
+
+Rules: 0+0=0, 0+1=1, 1+1=10</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-mt-20">
+            <h2>Key Points</h2>
+            <div class="max-w-4xl mx-auto card p-8">
+                <ul class="space-y-3 text-[var(--text-light)]">
+                    <li>• NAND and NOR are universal gates</li>
+                    <li>• XOR outputs 1 when inputs differ</li>
+                    <li>• Half adder: adds 2 bits, Full adder: adds 3 bits</li>
+                    <li>• WFF must follow logical syntax rules</li>
+                    <li>• Binary uses base 2, Hex uses base 16</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-12 border-t border-[var(--border-color)] mt-16">
+        <p class="text-[var(--text-light)]">An interactive guide for ISC Class 11 Computer Science.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

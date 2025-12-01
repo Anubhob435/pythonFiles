@@ -10,165 +10,108 @@
 </head>
 
 <body class="bg-[var(--bg-main)] min-h-screen flex flex-col">
-
     <header class="bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border-color)]">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-[var(--primary)]">ISC CS Guide</a>
         </nav>
     </header>
-
     <main class="container mx-auto px-6 py-12 flex-grow flex flex-col justify-center items-center">
         <div class="text-center max-w-2xl mb-12">
             <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Master Your ISC Exams</h1>
-            <p class="text-xl text-[var(--text-light)]">Interactive study guides designed to help you understand complex
-                concepts through visualization and practice.</p>
+            <p class="text-xl text-[var(--text-light)]">Interactive study guides for ISC Class 11 Computer Science.</p>
         </div>
-
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
-            <!-- Recursion Card -->
             <a href="recursion.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        🔄
-                    </div>
+                        🔄</div>
                     <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Recursion
                     </h2>
-                    <p class="text-[var(--text-light)] mb-6">Visualize the call stack, understand base cases, and solve
-                        classic problems like Factorial and Fibonacci.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                    <p class="text-[var(--text-light)] mb-6">Visualize call stack, base cases, Factorial and Fibonacci.
+                    </p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
-
-            <!-- File Handling Card -->
             <a href="file_handling.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        📂
-                    </div>
+                        📂</div>
                     <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">File
                         Handling</h2>
-                    <p class="text-[var(--text-light)] mb-6">Master text vs. binary files, learn about Streams, and
-                        practice reading/writing data in Java.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                    <p class="text-[var(--text-light)] mb-6">Text vs binary files, Streams, reading/writing data.</p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
-
-            <!-- Java Packages Card -->
             <a href="java_packages.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        📦
-                    </div>
+                        📦</div>
                     <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Java
                         Packages</h2>
-                    <p class="text-[var(--text-light)] mb-6">Learn what packages are, why they're useful, and how to
-                        create and use them with simple examples.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                    <p class="text-[var(--text-light)] mb-6">Learn packages, why they're useful, and how to use them.
+                    </p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
-
-            <!-- Java Arrays Card -->
             <a href="java_arrays.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        🔢
-                    </div>
-                    <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Java
-                        Arrays</h2>
-                    <p class="text-[var(--text-light)] mb-6">Master 1D and 2D arrays, understand indexing, and learn
-                        essential operations like searching and sorting.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                        🔢</div>
+                    <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Java Arrays
+                    </h2>
+                    <p class="text-[var(--text-light)] mb-6">1D and 2D arrays, indexing, searching and sorting.</p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
-
-            <!-- Java Strings Card -->
             <a href="java_strings.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        💬
-                    </div>
-                    <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Java
-                        Strings</h2>
-                    <p class="text-[var(--text-light)] mb-6">Learn string methods like equals, split, substring, and
-                        solve common string manipulation problems.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                        💬</div>
+                    <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Java Strings
+                    </h2>
+                    <p class="text-[var(--text-light)] mb-6">String methods: equals, split, substring, and more.</p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
-
-            <!-- Statements & Scope Card -->
             <a href="statements_scope.html"
                 class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <div class="p-8 h-full flex flex-col items-center text-center">
                     <div
                         class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
-                        🔀
-                    </div>
+                        🔀</div>
                     <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Statements &
                         Scope</h2>
-                    <p class="text-[var(--text-light)] mb-6">Master conditional statements, loops, control flow, and
-                        understand variable scope and visibility.</p>
-                    <span class="mt-auto text-[var(--primary)] font-medium flex items-center">
-                        Start Learning
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </span>
+                    <p class="text-[var(--text-light)] mb-6">Conditionals, loops, control flow, variable scope.</p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
+                </div>
+            </a>
+            <a href="logic_hardware.html"
+                class="card group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="p-8 h-full flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">
+                        ⚡</div>
+                    <h2 class="text-2xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Logic &
+                        Hardware</h2>
+                    <p class="text-[var(--text-light)] mb-6">Logic gates, propositional logic, number systems.</p>
+                    <span class="mt-auto text-[var(--primary)] font-medium">Start Learning →</span>
                 </div>
             </a>
         </div>
     </main>
-
     <footer class="text-center py-8 border-t border-[var(--border-color)] bg-white">
         <p class="text-[var(--text-light)]">Built for ISC Class 11 Students.</p>
     </footer>
-
 </body>
 
 </html>
