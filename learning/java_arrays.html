@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC Class 11 Java Arrays Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border-color)]">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-[var(--text-light)] hover:text-[var(--primary)] transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-2xl font-bold text-[var(--primary)]">Java Arrays</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#intro" class="nav-link">Introduction</a>
+                <a href="#index" class="nav-link">Index Numbers</a>
+                <a href="#1d-arrays" class="nav-link">1D Arrays</a>
+                <a href="#2d-arrays" class="nav-link">2D Arrays</a>
+                <a href="#operations" class="nav-link">Operations</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[var(--text-light)] hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-[var(--border-color)]">
+            <a href="index.html" class="block py-2 nav-link mobile-nav-link font-semibold text-[var(--primary)]">← Back
+                to Home</a>
+            <a href="#intro" class="block py-2 nav-link mobile-nav-link">Introduction</a>
+            <a href="#index" class="block py-2 nav-link mobile-nav-link">Index Numbers</a>
+            <a href="#1d-arrays" class="block py-2 nav-link mobile-nav-link">1D Arrays</a>
+            <a href="#2d-arrays" class="block py-2 nav-link mobile-nav-link">2D Arrays</a>
+            <a href="#operations" class="block py-2 nav-link mobile-nav-link">Operations</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <section id="intro" class="scroll-mt-20">
+            <h2>What is an Array?</h2>
+            <p class="section-intro">
+                An <strong>array</strong> is a collection of elements of the same data type stored in contiguous memory
+                locations. Think of it as a row of boxes, where each box can hold a value. Arrays are one of the most
+                fundamental data structures in programming and are essential for storing and managing multiple values
+                efficiently.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <span class="text-5xl mb-4 block">📊</span>
+                    <h3 class="text-2xl font-bold mb-2">Why Use Arrays?</h3>
+                    <ul class="space-y-2 text-[var(--text-light)]">
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Store multiple values in a single variable</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Access elements quickly using index numbers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Organize related data together</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Efficient memory usage</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-8">
+                    <span class="text-5xl mb-4 block">🔑</span>
+                    <h3 class="text-2xl font-bold mb-2">Key Characteristics</h3>
+                    <ul class="space-y-2 text-[var(--text-light)]">
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Fixed Size:</strong> Once created, size cannot change</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Same Type:</strong> All elements must be the same data type</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Zero-Indexed:</strong> First element is at index 0</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Contiguous:</strong> Elements stored in adjacent memory</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="index" class="scroll-mt-20">
+            <h2>Understanding Index Numbers</h2>
+            <p class="section-intro">
+                An <strong>index</strong> is a number that represents the position of an element in an array. In Java,
+                array indexing starts at <strong>0</strong>, which means the first element is at index 0, the second at
+                index 1, and so on.
+            </p>
+            <div class="max-w-5xl mx-auto card p-8">
+                <h3 class="text-xl font-bold mb-6 text-center">Visual Representation of Array Indexing</h3>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-[var(--text-light)] mb-4 text-center">
+                            Example: <code>int[] numbers = {10, 20, 30, 40, 50};</code>
+                        </p>
+                        <div class="flex justify-center items-center space-x-2 mb-2">
+                            <div class="text-center">
+                                <div
+                                    class="bg-blue-100 border-2 border-blue-500 p-4 w-20 h-20 flex items-center justify-center font-bold text-lg">
+                                    10
+                                </div>
+                                <div class="mt-2 text-sm font-medium text-blue-600">Index 0</div>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-blue-100 border-2 border-blue-500 p-4 w-20 h-20 flex items-center justify-center font-bold text-lg">
+                                    20
+                                </div>
+                                <div class="mt-2 text-sm font-medium text-blue-600">Index 1</div>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-blue-100 border-2 border-blue-500 p-4 w-20 h-20 flex items-center justify-center font-bold text-lg">
+                                    30
+                                </div>
+                                <div class="mt-2 text-sm font-medium text-blue-600">Index 2</div>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-blue-100 border-2 border-blue-500 p-4 w-20 h-20 flex items-center justify-center font-bold text-lg">
+                                    40
+                                </div>
+                                <div class="mt-2 text-sm font-medium text-blue-600">Index 3</div>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="bg-blue-100 border-2 border-blue-500 p-4 w-20 h-20 flex items-center justify-center font-bold text-lg">
+                                    50
+                                </div>
+                                <div class="mt-2 text-sm font-medium text-blue-600">Index 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                        <h4 class="font-bold mb-3 flex items-center">
+                            <span class="text-2xl mr-2">⚠️</span>
+                            Important Index Rules
+                        </h4>
+                        <ul class="space-y-2 text-[var(--text-light)]">
+                            <li class="flex items-start">
+                                <span class="text-[var(--primary)] mr-2">•</span>
+                                <span>First index is always <code>0</code></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[var(--primary)] mr-2">•</span>
+                                <span>Last index is always <code>array.length - 1</code></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[var(--primary)] mr-2">•</span>
+                                <span>Accessing an invalid index causes
+                                    <code>ArrayIndexOutOfBoundsException</code></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="1d-arrays" class="scroll-mt-20">
+            <h2>1D Arrays (One-Dimensional Arrays)</h2>
+            <p class="section-intro">
+                A one-dimensional array is like a single row of elements. It's the simplest form of an array and is
+                used to store a list of values.
+            </p>
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Creating a 1D Array</h3>
+                    <p class="text-[var(--text-light)] mb-4">There are three main ways to create a 1D array in Java:</p>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Method 1: Declare and Initialize Separately</h4>
+                    <pre><code class="code-block">// Declare an array of 5 integers
+int[] numbers = new int[5];
+
+// Initialize elements one by one
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Method 2: Declare and Initialize Together</h4>
+                    <pre><code class="code-block">// Create and initialize in one line
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Or with the 'new' keyword
+int[] numbers = new int[]{10, 20, 30, 40, 50};</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Method 3: Different Data Types</h4>
+                    <pre><code class="code-block">// String array
+String[] names = {"Alice", "Bob", "Charlie"};
+
+// Double array
+double[] prices = {19.99, 29.99, 39.99};
+
+// Boolean array
+boolean[] flags = new boolean[3]; // All false by default</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Accessing and Modifying Elements</h3>
+                    <pre><code class="code-block">int[] numbers = {10, 20, 30, 40, 50};
+
+// Access elements using index
+System.out.println(numbers[0]);  // Output: 10
+System.out.println(numbers[2]);  // Output: 30
+
+// Modify elements
+numbers[1] = 25;  // Change 20 to 25
+System.out.println(numbers[1]);  // Output: 25
+
+// Get array length
+System.out.println("Array length: " + numbers.length);  // Output: 5</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Traversing a 1D Array</h3>
+                    <p class="text-[var(--text-light)] mb-4">Use loops to process all elements in an array:</p>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Using a for loop</h4>
+                    <pre><code class="code-block">int[] numbers = {10, 20, 30, 40, 50};
+
+// Print all elements
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println("Element at index " + i + ": " + numbers[i]);
+}</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Using an enhanced for loop (for-each)</h4>
+                    <pre><code class="code-block">int[] numbers = {10, 20, 30, 40, 50};
+
+// Print all elements (simpler syntax)
+for (int num : numbers) {
+    System.out.println(num);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="2d-arrays" class="scroll-mt-20">
+            <h2>2D Arrays (Two-Dimensional Arrays)</h2>
+            <p class="section-intro">
+                A two-dimensional array is like a table with rows and columns. It's essentially an "array of arrays"
+                and is perfect for representing matrices, grids, or tabular data.
+            </p>
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-xl font-bold mb-6 text-center">Visual Representation of 2D Array</h3>
+                    <p class="text-[var(--text-light)] mb-4 text-center">
+                        Example: <code>int[][] matrix = new int[3][4];</code> (3 rows, 4 columns)
+                    </p>
+                    <div class="flex justify-center mb-6">
+                        <div class="inline-block">
+                            <div class="grid grid-cols-4 gap-2">
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [0][0]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [0][1]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [0][2]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [0][3]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [1][0]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [1][1]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [1][2]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [1][3]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [2][0]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [2][1]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [2][2]
+                                </div>
+                                <div
+                                    class="bg-green-100 border-2 border-green-500 p-3 w-16 h-16 flex items-center justify-center text-xs font-bold">
+                                    [2][3]
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center text-sm text-[var(--text-light)]">
+                                <p><strong>Row 0, 1, 2</strong> (first index)</p>
+                                <p><strong>Column 0, 1, 2, 3</strong> (second index)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Creating a 2D Array</h3>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Method 1: Declare with Size</h4>
+                    <pre><code class="code-block">// Create a 3x4 array (3 rows, 4 columns)
+int[][] matrix = new int[3][4];
+
+// Initialize elements
+matrix[0][0] = 1;
+matrix[0][1] = 2;
+matrix[1][0] = 5;
+// ... and so on</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Method 2: Declare and Initialize Together</h4>
+                    <pre><code class="code-block">// Create and initialize in one step
+int[][] matrix = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+// String 2D array example
+String[][] students = {
+    {"Alice", "A+"},
+    {"Bob", "B"},
+    {"Charlie", "A"}
+};</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Accessing 2D Array Elements</h3>
+                    <pre><code class="code-block">int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Access elements using [row][column]
+System.out.println(matrix[0][0]);  // Output: 1 (first row, first column)
+System.out.println(matrix[1][2]);  // Output: 6 (second row, third column)
+System.out.println(matrix[2][1]);  // Output: 8 (third row, second column)
+
+// Modify elements
+matrix[1][1] = 50;  // Change 5 to 50
+
+// Get dimensions
+System.out.println("Rows: " + matrix.length);        // Output: 3
+System.out.println("Columns: " + matrix[0].length);  // Output: 3</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Traversing a 2D Array</h3>
+                    <p class="text-[var(--text-light)] mb-4">Use nested loops to process all elements:</p>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Using nested for loops</h4>
+                    <pre><code class="code-block">int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Print all elements row by row
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();  // New line after each row
+}
+
+// Output:
+// 1 2 3
+// 4 5 6
+// 7 8 9</code></pre>
+
+                    <h4 class="font-bold text-lg mt-6 mb-3">Using enhanced for loops</h4>
+                    <pre><code class="code-block">int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Print all elements
+for (int[] row : matrix) {
+    for (int element : row) {
+        System.out.print(element + " ");
+    }
+    System.out.println();
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="operations" class="scroll-mt-20">
+            <h2>Common Array Operations</h2>
+            <p class="section-intro">
+                Let's explore some common operations you'll perform with arrays, including storing elements, searching,
+                and finding maximum/minimum values.
+            </p>
+            <div class="max-w-5xl mx-auto space-y-6">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">1. Storing Elements (Input from User)</h3>
+                    <pre><code class="code-block">import java.util.Scanner;
+
+public class ArrayInput {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Create array
+        int[] numbers = new int[5];
+        
+        // Store elements from user input
+        System.out.println("Enter 5 numbers:");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print("Enter number " + (i + 1) + ": ");
+            numbers[i] = sc.nextInt();
+        }
+        
+        // Display the array
+        System.out.println("\nYou entered:");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">2. Searching for an Element (Linear Search)</h3>
+                    <pre><code class="code-block">public class ArraySearch {
+    public static void main(String[] args) {
+        int[] numbers = {10, 25, 30, 45, 50};
+        int searchValue = 30;
+        int foundIndex = -1;
+        
+        // Search for the element
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == searchValue) {
+                foundIndex = i;
+                break;  // Stop searching once found
+            }
+        }
+        
+        // Display result
+        if (foundIndex != -1) {
+            System.out.println(searchValue + " found at index " + foundIndex);
+        } else {
+            System.out.println(searchValue + " not found in array");
+        }
+    }
+}</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">3. Finding Maximum and Minimum</h3>
+                    <pre><code class="code-block">public class ArrayMinMax {
+    public static void main(String[] args) {
+        int[] numbers = {45, 12, 78, 23, 91, 34};
+        
+        // Initialize with first element
+        int max = numbers[0];
+        int min = numbers[0];
+        
+        // Find max and min
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+        }
+        
+        System.out.println("Maximum value: " + max);  // Output: 91
+        System.out.println("Minimum value: " + min);  // Output: 12
+    }
+}</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">4. Calculating Sum and Average</h3>
+                    <pre><code class="code-block">public class ArraySumAverage {
+    public static void main(String[] args) {
+        int[] marks = {85, 90, 78, 92, 88};
+        int sum = 0;
+        
+        // Calculate sum
+        for (int mark : marks) {
+            sum += mark;
+        }
+        
+        // Calculate average
+        double average = (double) sum / marks.length;
+        
+        System.out.println("Total marks: " + sum);        // Output: 433
+        System.out.println("Average: " + average);        // Output: 86.6
+    }
+}</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">5. Copying an Array</h3>
+                    <pre><code class="code-block">public class ArrayCopy {
+    public static void main(String[] args) {
+        int[] original = {1, 2, 3, 4, 5};
+        
+        // Method 1: Manual copy
+        int[] copy1 = new int[original.length];
+        for (int i = 0; i < original.length; i++) {
+            copy1[i] = original[i];
+        }
+        
+        // Method 2: Using System.arraycopy()
+        int[] copy2 = new int[original.length];
+        System.arraycopy(original, 0, copy2, 0, original.length);
+        
+        // Method 3: Using clone()
+        int[] copy3 = original.clone();
+        
+        // All three methods create independent copies
+    }
+}</code></pre>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">6. Reversing an Array</h3>
+                    <pre><code class="code-block">public class ArrayReverse {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        
+        // Reverse the array in place
+        int start = 0;
+        int end = numbers.length - 1;
+        
+        while (start < end) {
+            // Swap elements
+            int temp = numbers[start];
+            numbers[start] = numbers[end];
+            numbers[end] = temp;
+            
+            start++;
+            end--;
+        }
+        
+        // Display reversed array
+        for (int num : numbers) {
+            System.out.print(num + " ");  // Output: 5 4 3 2 1
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-mt-20">
+            <h2>Key Points to Remember</h2>
+            <div class="max-w-4xl mx-auto card p-8">
+                <ul class="space-y-4 text-[var(--text-light)]">
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Arrays have a <strong>fixed size</strong> that cannot be changed after creation.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Array indexing starts at <strong>0</strong> and ends at <code>length - 1</code>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>All elements in an array must be of the <strong>same data type</strong>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Use <code>array.length</code> to get the size of a 1D array.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>For 2D arrays, <code>array.length</code> gives rows, <code>array[0].length</code> gives
+                            columns.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Use <strong>for loops</strong> to traverse arrays; nested loops for 2D arrays.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Default values: <code>0</code> for numbers, <code>false</code> for boolean,
+                            <code>null</code> for objects.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Always check array bounds to avoid <code>ArrayIndexOutOfBoundsException</code>.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-12 border-t border-[var(--border-color)] mt-16">
+        <p class="text-[var(--text-light)]">An interactive guide for ISC Class 11 Computer Science.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
