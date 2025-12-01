@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC Class 11 Java Strings Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border-color)]">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-[var(--text-light)] hover:text-[var(--primary)] transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-2xl font-bold text-[var(--primary)]">Java Strings</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#intro" class="nav-link">Introduction</a>
+                <a href="#creating" class="nav-link">Creating Strings</a>
+                <a href="#methods" class="nav-link">String Methods</a>
+                <a href="#examples" class="nav-link">Examples</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[var(--text-light)] hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-[var(--border-color)]">
+            <a href="index.html" class="block py-2 nav-link mobile-nav-link font-semibold text-[var(--primary)]">← Back
+                to Home</a>
+            <a href="#intro" class="block py-2 nav-link mobile-nav-link">Introduction</a>
+            <a href="#creating" class="block py-2 nav-link mobile-nav-link">Creating Strings</a>
+            <a href="#methods" class="block py-2 nav-link mobile-nav-link">String Methods</a>
+            <a href="#examples" class="block py-2 nav-link mobile-nav-link">Examples</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <section id="intro" class="scroll-mt-20">
+            <h2>What are Strings?</h2>
+            <p class="section-intro">
+                In Java, a <strong>String</strong> is a sequence of characters. Strings are objects of the
+                <code>String</code> class and are one of the most commonly used data types. Unlike primitive types,
+                Strings are <strong>immutable</strong>, meaning once created, their values cannot be changed.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-8">
+                    <span class="text-5xl mb-4 block">📝</span>
+                    <h3 class="text-2xl font-bold mb-2">Key Characteristics</h3>
+                    <ul class="space-y-2 text-[var(--text-light)]">
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Immutable:</strong> Cannot be changed after creation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Objects:</strong> Strings are objects, not primitives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Zero-indexed:</strong> First character is at index 0</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span><strong>Case-sensitive:</strong> "Hello" ≠ "hello"</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-8">
+                    <span class="text-5xl mb-4 block">⚡</span>
+                    <h3 class="text-2xl font-bold mb-2">Why Use Strings?</h3>
+                    <ul class="space-y-2 text-[var(--text-light)]">
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Store and manipulate text data</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Process user input and output</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Read and write files</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[var(--primary)] mr-2">•</span>
+                            <span>Build dynamic messages and reports</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="creating" class="scroll-mt-20">
+            <h2>Creating Strings</h2>
+            <p class="section-intro">
+                There are multiple ways to create strings in Java. Here are the most common methods.
+            </p>
+            <div class="max-w-5xl mx-auto card p-8">
+                <h3 class="text-2xl font-bold mb-4">String Creation Methods</h3>
+
+                <h4 class="font-bold text-lg mt-6 mb-3">Method 1: Using String Literals (Most Common)</h4>
+                <pre><code class="code-block">String name = "Alice";
+String greeting = "Hello World";
+String empty = "";  // Empty string</code></pre>
+
+                <h4 class="font-bold text-lg mt-6 mb-3">Method 2: Using the new Keyword</h4>
+                <pre><code class="code-block">String message = new String("Hello");
+String text = new String("Java Programming");</code></pre>
+
+                <h4 class="font-bold text-lg mt-6 mb-3">Method 3: From Character Array</h4>
+                <pre><code class="code-block">char[] chars = {'J', 'a', 'v', 'a'};
+String word = new String(chars);
+System.out.println(word);  // Output: Java</code></pre>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-6">
+                    <h4 class="font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-2">💡</span>
+                        Best Practice
+                    </h4>
+                    <p class="text-[var(--text-light)]">
+                        Use string literals (Method 1) whenever possible. It's more efficient because Java reuses
+                        string literals from a special memory area called the "string pool."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="methods" class="scroll-mt-20">
+            <h2>Essential String Methods</h2>
+            <p class="section-intro">
+                Java provides many built-in methods to work with strings. Here are the most important ones for ISC Class
+                11.
+            </p>
+            <div class="max-w-5xl mx-auto space-y-6">
+
+                <!-- Length Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">1. length() - Get String Length</h3>
+                    <pre><code class="code-block">String text = "Hello World";
+int len = text.length();
+System.out.println(len);  // Output: 11</code></pre>
+                </div>
+
+                <!-- charAt Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">2. charAt() - Get Character at Index</h3>
+                    <pre><code class="code-block">String text = "Java";
+char ch = text.charAt(0);
+System.out.println(ch);  // Output: J
+
+// Get last character
+char last = text.charAt(text.length() - 1);
+System.out.println(last);  // Output: a</code></pre>
+                </div>
+
+                <!-- equals Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">3. equals() - Compare Strings (Case-Sensitive)</h3>
+                    <pre><code class="code-block">String str1 = "Hello";
+String str2 = "Hello";
+String str3 = "hello";
+
+System.out.println(str1.equals(str2));  // Output: true
+System.out.println(str1.equals(str3));  // Output: false
+
+// IMPORTANT: Never use == to compare strings!
+// == compares memory addresses, not content</code></pre>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+                        <p class="text-[var(--text-light)]">
+                            <strong>⚠️ Warning:</strong> Always use <code>.equals()</code> to compare strings, never
+                            <code>==</code>!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- equalsIgnoreCase Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">4. equalsIgnoreCase() - Compare Ignoring Case</h3>
+                    <pre><code class="code-block">String str1 = "Hello";
+String str2 = "hello";
+String str3 = "HELLO";
+
+System.out.println(str1.equalsIgnoreCase(str2));  // Output: true
+System.out.println(str1.equalsIgnoreCase(str3));  // Output: true</code></pre>
+                </div>
+
+                <!-- compareTo Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">5. compareTo() - Lexicographic Comparison</h3>
+                    <pre><code class="code-block">String str1 = "Apple";
+String str2 = "Banana";
+String str3 = "Apple";
+
+System.out.println(str1.compareTo(str2));  // Output: negative (Apple < Banana)
+System.out.println(str2.compareTo(str1));  // Output: positive (Banana > Apple)
+System.out.println(str1.compareTo(str3));  // Output: 0 (equal)
+
+// Returns:
+// 0 if strings are equal
+// Negative if first string comes before second
+// Positive if first string comes after second</code></pre>
+                </div>
+
+                <!-- toUpperCase and toLowerCase Methods -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">6. toUpperCase() and toLowerCase() - Change Case</h3>
+                    <pre><code class="code-block">String text = "Hello World";
+
+String upper = text.toUpperCase();
+System.out.println(upper);  // Output: HELLO WORLD
+
+String lower = text.toLowerCase();
+System.out.println(lower);  // Output: hello world
+
+// Original string remains unchanged (immutable)
+System.out.println(text);  // Output: Hello World</code></pre>
+                </div>
+
+                <!-- substring Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">7. substring() - Extract Part of String</h3>
+                    <pre><code class="code-block">String text = "Hello World";
+
+// From index to end
+String sub1 = text.substring(6);
+System.out.println(sub1);  // Output: World
+
+// From start index to end index (exclusive)
+String sub2 = text.substring(0, 5);
+System.out.println(sub2);  // Output: Hello</code></pre>
+                </div>
+
+                <!-- indexOf Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">8. indexOf() - Find Position of Character/Substring</h3>
+                    <pre><code class="code-block">String text = "Hello World";
+
+int pos1 = text.indexOf('o');
+System.out.println(pos1);  // Output: 4 (first occurrence)
+
+int pos2 = text.indexOf("World");
+System.out.println(pos2);  // Output: 6
+
+int pos3 = text.indexOf('z');
+System.out.println(pos3);  // Output: -1 (not found)</code></pre>
+                </div>
+
+                <!-- replace Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">9. replace() - Replace Characters/Substrings</h3>
+                    <pre><code class="code-block">String text = "Hello World";
+
+String replaced1 = text.replace('o', 'a');
+System.out.println(replaced1);  // Output: Hella Warld
+
+String replaced2 = text.replace("World", "Java");
+System.out.println(replaced2);  // Output: Hello Java</code></pre>
+                </div>
+
+                <!-- trim Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">10. trim() - Remove Leading/Trailing Spaces</h3>
+                    <pre><code class="code-block">String text = "   Hello World   ";
+String trimmed = text.trim();
+System.out.println(trimmed);  // Output: Hello World
+System.out.println(trimmed.length());  // Output: 11</code></pre>
+                </div>
+
+                <!-- split Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">11. split() - Split String into Array</h3>
+                    <pre><code class="code-block">String text = "Apple,Banana,Orange";
+
+// Split by comma
+String[] fruits = text.split(",");
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+// Output:
+// Apple
+// Banana
+// Orange
+
+// Split by space
+String sentence = "Java is fun";
+String[] words = sentence.split(" ");
+System.out.println(words[0]);  // Output: Java
+System.out.println(words[1]);  // Output: is
+System.out.println(words[2]);  // Output: fun</code></pre>
+                </div>
+
+                <!-- startsWith and endsWith Methods -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">12. startsWith() and endsWith() - Check Prefix/Suffix</h3>
+                    <pre><code class="code-block">String filename = "document.pdf";
+
+boolean isPdf = filename.endsWith(".pdf");
+System.out.println(isPdf);  // Output: true
+
+String url = "https://example.com";
+boolean isSecure = url.startsWith("https");
+System.out.println(isSecure);  // Output: true</code></pre>
+                </div>
+
+                <!-- concat Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">13. concat() - Concatenate Strings</h3>
+                    <pre><code class="code-block">String first = "Hello";
+String second = " World";
+
+// Method 1: Using concat()
+String result1 = first.concat(second);
+System.out.println(result1);  // Output: Hello World
+
+// Method 2: Using + operator (more common)
+String result2 = first + second;
+System.out.println(result2);  // Output: Hello World</code></pre>
+                </div>
+
+                <!-- contains Method -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">14. contains() - Check if Substring Exists</h3>
+                    <pre><code class="code-block">String text = "Java Programming";
+
+boolean hasJava = text.contains("Java");
+System.out.println(hasJava);  // Output: true
+
+boolean hasPython = text.contains("Python");
+System.out.println(hasPython);  // Output: false</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="scroll-mt-20">
+            <h2>Practical String Examples</h2>
+            <p class="section-intro">
+                Let's apply what we've learned with some practical programming examples commonly asked in ISC exams.
+            </p>
+            <div class="max-w-5xl mx-auto space-y-6">
+
+                <!-- Count Vowels Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 1: Count Vowels in a String</h3>
+                    <pre><code class="code-block">public class CountVowels {
+    public static void main(String[] args) {
+        String text = "Hello World";
+        int count = 0;
+        
+        text = text.toLowerCase();
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                count++;
+            }
+        }
+        
+        System.out.println("Number of vowels: " + count);  // Output: 3
+    }
+}</code></pre>
+                </div>
+
+                <!-- Reverse String Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 2: Reverse a String</h3>
+                    <pre><code class="code-block">public class ReverseString {
+    public static void main(String[] args) {
+        String text = "Java";
+        String reversed = "";
+        
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed += text.charAt(i);
+        }
+        
+        System.out.println(reversed);  // Output: avaJ
+    }
+}</code></pre>
+                </div>
+
+                <!-- Palindrome Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 3: Check if String is Palindrome</h3>
+                    <pre><code class="code-block">public class Palindrome {
+    public static void main(String[] args) {
+        String text = "madam";
+        String reversed = "";
+        
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed += text.charAt(i);
+        }
+        
+        if (text.equals(reversed)) {
+            System.out.println(text + " is a palindrome");
+        } else {
+            System.out.println(text + " is not a palindrome");
+        }
+    }
+}</code></pre>
+                </div>
+
+                <!-- Count Words Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 4: Count Words in a Sentence</h3>
+                    <pre><code class="code-block">public class CountWords {
+    public static void main(String[] args) {
+        String sentence = "Java is a programming language";
+        
+        String[] words = sentence.split(" ");
+        System.out.println("Number of words: " + words.length);  // Output: 5
+    }
+}</code></pre>
+                </div>
+
+                <!-- Replace Spaces Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 5: Replace Spaces with Underscores</h3>
+                    <pre><code class="code-block">public class ReplaceSpaces {
+    public static void main(String[] args) {
+        String text = "Hello World Java";
+        String result = text.replace(' ', '_');
+        System.out.println(result);  // Output: Hello_World_Java
+    }
+}</code></pre>
+                </div>
+
+                <!-- Extract Initials Example -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Example 6: Extract Initials from Name</h3>
+                    <pre><code class="code-block">public class ExtractInitials {
+    public static void main(String[] args) {
+        String name = "John Doe Smith";
+        String[] parts = name.split(" ");
+        String initials = "";
+        
+        for (String part : parts) {
+            initials += part.charAt(0);
+        }
+        
+        System.out.println(initials);  // Output: JDS
+    }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-mt-20">
+            <h2>Key Points to Remember</h2>
+            <div class="max-w-4xl mx-auto card p-8">
+                <ul class="space-y-4 text-[var(--text-light)]">
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Strings are <strong>immutable</strong> - methods like <code>toUpperCase()</code> return a
+                            new String.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Always use <code>.equals()</code> to compare strings, never <code>==</code>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>String indices start at <strong>0</strong>, just like arrays.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Strings are <strong>case-sensitive</strong> unless you use
+                            <code>equalsIgnoreCase()</code>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Use <code>split()</code> to convert a string into an array of substrings.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span><code>substring(start, end)</code> - end index is <strong>exclusive</strong>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span><code>indexOf()</code> returns <code>-1</code> if the character/substring is not
+                            found.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[var(--primary)] mr-3 text-xl">•</span>
+                        <span>Use <code>trim()</code> to remove leading and trailing whitespace.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-12 border-t border-[var(--border-color)] mt-16">
+        <p class="text-[var(--text-light)]">An interactive guide for ISC Class 11 Computer Science.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
