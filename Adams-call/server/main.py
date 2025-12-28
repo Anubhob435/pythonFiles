@@ -164,22 +164,30 @@ def main():
 ╚═══════════════════════════════════════════════════════════╝
 """)
     
-    # Generate SSL certificates
-    key_path, cert_path = generate_ssl_certs()
-    
-    # Create SSL context
-    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    ssl_context.load_cert_chain(str(cert_path), str(key_path))
-    
     # Create and run app
     app = create_app()
     
-    print(f"🚀 Server starting on https://{HOST}:{PORT}")
-    print(f"📁 Static files: {STATIC_DIR}")
-    print(f"⚠️  Note: Accept the self-signed certificate warning in your browser")
-    print()
+    # Check if running in production (Render sets RENDER env var)
+    is_production = os.environ.get("RENDER") or os.environ.get("PRODUCTION")
     
-    web.run_app(app, host=HOST, port=PORT, ssl_context=ssl_context)
+    if is_production:
+        # Production: SSL handled by reverse proxy (Render, etc.)
+        print(f"🚀 Server starting on http://{HOST}:{PORT}")
+        print(f"📁 Static files: {STATIC_DIR}")
+        print(f"🌐 Running in production mode (SSL handled by platform)")
+        print()
+        web.run_app(app, host=HOST, port=PORT)
+    else:
+        # Development: Use self-signed certificates
+        key_path, cert_path = generate_ssl_certs()
+        ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        ssl_context.load_cert_chain(str(cert_path), str(key_path))
+        
+        print(f"🚀 Server starting on https://{HOST}:{PORT}")
+        print(f"📁 Static files: {STATIC_DIR}")
+        print(f"⚠️  Note: Accept the self-signed certificate warning in your browser")
+        print()
+        web.run_app(app, host=HOST, port=PORT, ssl_context=ssl_context)
 
 
 if __name__ == "__main__":
