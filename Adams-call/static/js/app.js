@@ -383,19 +383,15 @@ class App {
                 await this.startLocalVideo();
                 this.showScreen('call');
 
-                // If there are existing participants, initiate connections
-                if (data.participants) {
+                // If there are existing participants, initiate connections sequentially
+                if (data.participants && data.participants.length > 0) {
                     for (const p of data.participants) {
                         this.participants.set(p.user_id, p);
-                        // Initiate WebRTC connection
-                        const offer = await this.webrtc.createOffer(p.user_id);
-                        this.sendSignalingMessage({
-                            type: 'offer',
-                            target_user_id: p.user_id,
-                            offer: offer
-                        });
                     }
                     this.updateParticipantsCount();
+                    
+                    // Connect to each participant with a delay to prevent overwhelming
+                    this.connectToParticipants(data.participants);
                 }
                 break;
 
@@ -419,20 +415,34 @@ class App {
                 break;
 
             case 'offer':
-                const answer = await this.webrtc.handleOffer(data.from_user_id, data.offer);
-                this.sendSignalingMessage({
-                    type: 'answer',
-                    target_user_id: data.from_user_id,
-                    answer: answer
-                });
+                try {
+                    const answer = await this.webrtc.handleOffer(data.from_user_id, data.offer);
+                    if (answer) {
+                        this.sendSignalingMessage({
+                            type: 'answer',
+                            target_user_id: data.from_user_id,
+                            answer: answer
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error handling offer:', error);
+                }
                 break;
 
             case 'answer':
-                await this.webrtc.handleAnswer(data.from_user_id, data.answer);
+                try {
+                    await this.webrtc.handleAnswer(data.from_user_id, data.answer);
+                } catch (error) {
+                    console.error('Error handling answer:', error);
+                }
                 break;
 
             case 'ice_candidate':
-                await this.webrtc.handleIceCandidate(data.from_user_id, data.candidate);
+                try {
+                    await this.webrtc.handleIceCandidate(data.from_user_id, data.candidate);
+                } catch (error) {
+                    console.error('Error handling ICE candidate:', error);
+                }
                 break;
 
             case 'chat_message':
@@ -541,6 +551,32 @@ class App {
         } catch (error) {
             console.error('Error starting local video:', error);
             this.showToast('Could not access camera/microphone', 'error');
+        }
+    }
+
+    /**
+     * Connect to multiple participants sequentially with delays
+     */
+    async connectToParticipants(participants) {
+        for (let i = 0; i < participants.length; i++) {
+            const p = participants[i];
+            // Small delay between connections to prevent overwhelming
+            if (i > 0) {
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+            
+            try {
+                const offer = await this.webrtc.createOffer(p.user_id);
+                if (offer) {
+                    this.sendSignalingMessage({
+                        type: 'offer',
+                        target_user_id: p.user_id,
+                        offer: offer
+                    });
+                }
+            } catch (error) {
+                console.error(`Error connecting to ${p.username}:`, error);
+            }
         }
     }
 
