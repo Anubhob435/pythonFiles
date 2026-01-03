@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Music Streaming App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-music"></i> Music Streaming App</h1>
+            <p class="subtitle">Your personal music player</p>
+        </header>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & Drop music files here or click to browse</p>
+                <p class="supported-formats">Supported: MP3, WAV, OGG, M4A, FLAC</p>
+                <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.m4a,.flac" multiple hidden>
+                <button class="btn-upload" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-folder-open"></i> Choose Files
+                </button>
+            </div>
+        </div>
+
+        <!-- Music Player -->
+        <div class="player-section">
+            <div class="now-playing">
+                <div class="album-art">
+                    <i class="fas fa-compact-disc rotating"></i>
+                </div>
+                <div class="song-info">
+                    <h2 id="currentSongTitle">No song playing</h2>
+                    <p id="currentSongArtist">Select a song from the playlist</p>
+                </div>
+            </div>
+
+            <audio id="audioPlayer" preload="auto"></audio>
+
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn-control" id="prevBtn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="btn-control btn-play-pause" id="playPauseBtn" title="Play">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="btn-control" id="nextBtn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                </div>
+                <button class="btn-control" id="shuffleBtn" title="Shuffle">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="btn-control" id="repeatBtn" title="Repeat">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-section">
+            <div class="playlist-header">
+                <h3><i class="fas fa-list"></i> Playlist</h3>
+                <span id="playlistCount">0 songs</span>
+            </div>
+            <div class="playlist" id="playlist">
+                {% if playlist %}
+                    {% for song in playlist %}
+                    <div class="playlist-item" data-id="{{ song.id }}" data-src="/stream/{{ song.id }}">
+                        <div class="song-number">{{ loop.index }}</div>
+                        <div class="song-details">
+                            <div class="song-title">{{ song.title }}</div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="btn-play-song" onclick="playSongById({{ song.id }})">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteSong({{ song.id }})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-playlist">
+                        <i class="fas fa-music"></i>
+                        <p>No songs in playlist</p>
+                        <p class="hint">Upload some music to get started!</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html>
