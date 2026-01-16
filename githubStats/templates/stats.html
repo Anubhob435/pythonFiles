@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.login }} - GitHub Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <div class="profile-header">
+                <img src="{{ user.avatar_url }}" alt="Avatar" class="avatar">
+                <div class="profile-info">
+                    <h2>{{ user.name or user.login }}</h2>
+                    <p class="bio">{{ user.bio or 'No bio provided' }}</p>
+                    <p class="subtitle">@{{ user.login }}</p>
+                    {% if user.location %}
+                    <p class="subtitle" style="font-size: 0.9rem; margin-top: -1rem;">📍 {{ user.location }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">{{ user.public_repos }}</span>
+                    <span class="stat-label">Repositories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ user.followers }}</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ stars }}</span>
+                    <span class="stat-label">Total Stars</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ forks }}</span>
+                    <span class="stat-label">Total Forks</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ total_contributions }}</span>
+                    <span class="stat-label">Total Contributions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ total_commits }}</span>
+                    <span class="stat-label">Total Commits</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ current_streak }} days</span>
+                    <span class="stat-label">Current Streak</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">{{ longest_streak }} days</span>
+                    <span class="stat-label">Longest Streak</span>
+                </div>
+            </div>
+
+            <div class="languages-section">
+                <h3>Top Languages</h3>
+                {% if languages %}
+                {% set max_val = languages[0][1] %}
+                {% for lang, count in languages %}
+                <div class="lang-item">
+                    <span class="lang-name">{{ lang }}</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ (count / max_val * 100) }}%"></div>
+                    </div>
+                    <span style="min-width: 30px; text-align: right;">{{ count }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p style="color: var(--text-secondary);">No language data available.</p>
+                {% endif %}
+            </div>
+
+            <a href="/" class="button back-btn"
+                style="margin-top: 2rem; color: white; text-decoration: none; display: inline-block;">Back to Search</a>
+        </div>
+    </div>
+</body>
+
+</html>

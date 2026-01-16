@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <h1>GitHub Stats</h1>
+            <p class="subtitle">Enter a username to generate stats</p>
+            
+            <form action="/stats" method="GET" class="search-box">
+                <input type="text" name="username" placeholder="github username" required autocomplete="off">
+                <button type="submit">Generate</button>
+            </form>
+
+            {% if error %}
+            <div class="error-msg">{{ error }}</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
