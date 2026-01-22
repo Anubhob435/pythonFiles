@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Network</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+
+        <div id="landing-page" class="glass-panel">
+            <h2>Welcome</h2>
+            <p>Play with a friend on your network!</p>
+            <div class="actions">
+                <button id="btn-create" class="btn">Create Room</button>
+                <div class="join-area">
+                    <input type="text" id="room-code-input" placeholder="Enter Room Code">
+                    <button id="btn-join" class="btn">Join Room</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-room" class="glass-panel hidden">
+            <div class="room-info">
+                <span>Room: <strong id="display-room-code"></strong></span>
+                <span id="player-status">Waiting for opponent...</span>
+            </div>
+
+            <div id="game-board" class="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <div id="game-result" class="result-modal hidden">
+                <h3 id="result-message"></h3>
+                <button id="btn-replay" class="btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+
+</html>

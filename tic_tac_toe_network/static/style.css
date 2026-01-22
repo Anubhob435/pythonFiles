@@ -1,0 +1,127 @@
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+    --hover-color: #222222;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: 2px solid var(--text-color);
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Replaces the old glass-panel look */
+.glass-panel {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: none;
+}
+
+input {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    padding: 15px;
+    color: var(--text-color);
+    font-family: inherit;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+input:focus {
+    outline: none;
+    background: var(--hover-color);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 30px;
+    border: 2px solid var(--border-color);
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.cell:hover {
+    background: var(--hover-color);
+}
+
+/* X and O styling */
+.cell.x {
+    color: #ff3e3e;
+    /* Bright Red */
+}
+
+.cell.o {
+    color: #3e3eff;
+    /* Bright Blue */
+}
+
+.result-modal {
+    margin-top: 30px;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    background: var(--bg-color);
+}
