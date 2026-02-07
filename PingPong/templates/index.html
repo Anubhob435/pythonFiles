@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong - Multiplayer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>PING PONG</h1>
+
+        <!-- Landing Page -->
+        <div id="menu" class="panel">
+            <div class="section">
+                <h2>CREATE GAME</h2>
+                <button id="createBtn" class="btn block">Create Room</button>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <div class="section">
+                <h2>JOIN GAME</h2>
+                <input type="text" id="roomInput" placeholder="ENTER ROOM CODE" maxlength="4">
+                <button id="joinBtn" class="btn block">Join Room</button>
+            </div>
+
+            <div id="roomCode" class="room-code hidden">
+                <div class="code-display">
+                    ROOM: <strong id="roomCodeText">----</strong>
+                </div>
+            </div>
+
+            <div id="status" class="status-msg"></div>
+        </div>
+
+        <!-- Game Room -->
+        <div id="game" class="panel hidden">
+            <div class="header-info">
+                <span>ROOM: <strong id="currentRoom">----</strong></span>
+                <span id="scoreDisplay">0 - 0</span>
+            </div>
+
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+            <div class="controls">
+                <div class="control-hint">USE ↑ ↓ ARROW KEYS</div>
+                <div class="button-group">
+                    <button id="resetBtn" class="btn">Reset Game</button>
+                    <button id="leaveBtn" class="btn">Leave Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>

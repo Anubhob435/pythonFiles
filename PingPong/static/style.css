@@ -1,0 +1,203 @@
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+    --accent-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border: 4px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.panel {
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    background: var(--bg-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.divider {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Control Elements */
+input {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+input:focus {
+    outline: none;
+    background: var(--accent-color);
+}
+
+.btn {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.btn.block {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Room Code Display */
+.room-code {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    background: var(--accent-color);
+}
+
+.code-display {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.code-display strong {
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+}
+
+.status-msg {
+    font-size: 1.1rem;
+    margin: 20px 0;
+    min-height: 2em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Game Interface */
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1.2rem;
+}
+
+#scoreDisplay {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#gameCanvas {
+    border: 3px solid var(--border-color);
+    border-radius: 0;
+    background: #000;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.control-hint {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    letter-spacing: 2px;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+}

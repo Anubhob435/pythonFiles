@@ -13,13 +13,13 @@ def filter_and_sort_logs(logs):
     
     # Function to convert date string to comparable format
     def date_to_comparable(date_str):
-        """Convert DD-MM-YYYY to YYYY-MM-DD for comparison"""
+
         day, month, year = date_str.split('-')
         return (int(year), int(month), int(day))
     
     # Function to convert time string to comparable format
     def time_to_comparable(time_str):
-        """Convert HH:MM to (hours, minutes) tuple"""
+
         hours, minutes = time_str.split(':')
         return (int(hours), int(minutes))
     
