@@ -1,0 +1,33 @@
+{
+  "county": "Alameda",
+  "school": "Coastline Christian Schools",
+  "cds_code": "01 61119 6204697",
+  "school_address": "1801 North Loop Rd. Alameda, CA 94502-8006",
+  "google_map_link": "https://www.google.com/maps/place/1801+North+Loop+Rd.+Alameda+CA+94502-8006",
+  "mailing_address": "1801 North Loop Rd. Alameda, CA 94502-8006",
+  "phone_number": "(510) 522-0200",
+  "fax_number": "Information Not Available",
+  "email": "office@ccs-rams.org",
+  "web_address": "http://coastlinechristian.org",
+  "web_address_link": "http://coastlinechristian.org",
+  "administrators": [
+    {
+      "info": "Mr. Edward Yue Principal office@ccs-rams.org",
+      "email": "office@ccs-rams.org"
+    },
+    {
+      "info": "Mrs. Gloria Yiu (Custodian of Records) gloriayiu@ccs-rams.org",
+      "email": "gloriayiu@ccs-rams.org"
+    }
+  ],
+  "status": "Active",
+  "open_date": "August 12, 2004",
+  "school_type": "Elementary School (Private)",
+  "educational_program_type": "Information Not Available",
+  "low_grade": "K",
+  "high_grade": "8",
+  "public_school": "No",
+  "statistical_info": "Link to CDE Private School Data page",
+  "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+  "last_updated": "February 4, 2026"
+}

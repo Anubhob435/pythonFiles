@@ -1,0 +1,822 @@
+[
+  {
+    "cds_code": "36678196975007",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "San Antonio Christian School",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196975007",
+    "requested_name": "San Antonio Christian School",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "San Antonio Christian School",
+      "cds_code": "36 67819 6975007",
+      "school_address": "1722 East 8th St. Ontario, CA 91764-1234",
+      "google_map_link": "https://www.google.com/maps/place/1722+East+8th+St.+Ontario+CA+91764-1234",
+      "mailing_address": "1722 East 8th St. Ontario, CA 91764-1234",
+      "phone_number": "(909) 982-2301",
+      "fax_number": "(909) 982-0921",
+      "email": "sacsoffice@sachristianschool.org",
+      "web_address": "http://sachristianschool.org",
+      "web_address_link": "http://sachristianschool.org",
+      "administrators": [
+        {
+          "info": "Mrs. Karen Dunbar Principal karen.dunbar@sachristianschool.org",
+          "email": "karen.dunbar@sachristianschool.org"
+        },
+        {
+          "info": "Miss Rabel Ortiz (Custodian of Records) Rabel.Ortiz@seccsda.org",
+          "email": "Rabel.Ortiz@seccsda.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "8",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "September 25, 2025"
+    }
+  },
+  {
+    "cds_code": "36678196975122",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "St. George",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196975122",
+    "requested_name": "St. George",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "St. George",
+      "cds_code": "36 67819 6975122",
+      "school_address": "322 West D St. Ontario, CA 91762-3414",
+      "google_map_link": "https://www.google.com/maps/place/322+West+D+St.+Ontario+CA+91762-3414",
+      "mailing_address": "322 West D St. Ontario, CA 91762-3414",
+      "phone_number": "(909) 984-9123",
+      "fax_number": "Information Not Available",
+      "email": "principal@stgeorgeontario.com",
+      "web_address": "www.stgeorgeontario.com/",
+      "web_address_link": "http://www.stgeorgeontario.com/",
+      "administrators": [
+        {
+          "info": "Mr. Andrew Ramirez Principal principal@stgeorgeontario.com",
+          "email": "principal@stgeorgeontario.com"
+        },
+        {
+          "info": "Vanessa Solis (Custodian of Records) office.mgr@stgeorgeontario.com",
+          "email": "office.mgr@stgeorgeontario.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "8",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "August 28, 2025"
+    }
+  },
+  {
+    "cds_code": "36678196133169",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "International Montessori School",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196133169",
+    "requested_name": "International Montessori School",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "International Montessori School",
+      "cds_code": "36 67819 6133169",
+      "school_address": "205 E. Arrow Hwy. Claremont, CA 91711-5007",
+      "google_map_link": "https://www.google.com/maps/place/205+E.+Arrow+Hwy.+Claremont+CA+91711-5007",
+      "mailing_address": "205 E. Arrow Hwy. Claremont, CA 91711-5007",
+      "phone_number": "(909) 398-1077",
+      "fax_number": "Information Not Available",
+      "email": "mc@internationalmontessorischools.com",
+      "web_address": "http://internationalmontessorischools.com",
+      "web_address_link": "http://internationalmontessorischools.com",
+      "administrators": [
+        {
+          "info": "Ms. Wendy Mitchell Director mc@internationalmontessorischools.com",
+          "email": "mc@internationalmontessorischools.com"
+        },
+        {
+          "info": "Ms. Wendy Mitchell (Custodian of Records) v.sarajohnson@gmail.com",
+          "email": "v.sarajohnson@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "August 2, 2007",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "1",
+      "high_grade": "8",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "February 13, 2025"
+    }
+  },
+  {
+    "cds_code": "36678196171565",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "Kraft Academy",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196171565",
+    "requested_name": "Kraft Academy",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Kraft Academy",
+      "cds_code": "36 67819 6171565",
+      "school_address": "1021 W B St. Ontario, CA 91762-3341",
+      "google_map_link": "https://www.google.com/maps/place/1021+W+B+St.+Ontario+CA+91762-3341",
+      "mailing_address": "1021 W B St. Ontario, CA 91762-3341",
+      "phone_number": "(909) 275-9751",
+      "fax_number": "Information Not Available",
+      "email": "Danielkraft28@icloud.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mr. Daniel Kraft Administrator Danielkraft28@icloud.com",
+          "email": "Danielkraft28@icloud.com"
+        },
+        {
+          "info": "Mr. Daniel Kraft (Custodian of Records) Danielkraft28@icloud.com",
+          "email": "Danielkraft28@icloud.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "February 10, 2025",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "12",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "February 13, 2025"
+    }
+  },
+  {
+    "cds_code": "36678196145957",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "Orion International Academy",
+    "school_type": "High Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196145957",
+    "requested_name": "Orion International Academy",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Orion International Academy",
+      "cds_code": "36 67819 6145957",
+      "school_address": "11255 Central Ave. Ontario, CA 91762-4512",
+      "google_map_link": "https://www.google.com/maps/place/11255+Central+Ave.+Ontario+CA+91762-4512",
+      "mailing_address": "11255 Central Ave. Ontario, CA 91762-4512",
+      "phone_number": "(909) 999-0025",
+      "fax_number": "(626) 400-1234",
+      "email": "info@orionschools.org",
+      "web_address": "www.orionschools.com",
+      "web_address_link": "http://www.orionschools.com",
+      "administrators": [
+        {
+          "info": "Mrs. Sally Wu Executive Director swu@orionschools.org",
+          "email": "swu@orionschools.org"
+        },
+        {
+          "info": "Dr. Sally Wu (Custodian of Records) swu@orionschools.org",
+          "email": "swu@orionschools.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "October 8, 2013",
+      "school_type": "High Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "February 2, 2026"
+    }
+  },
+  {
+    "cds_code": "36678196993885",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "Ontario Christian Elementary",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196993885",
+    "requested_name": "Ontario Christian Elementary",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Ontario Christian Elementary",
+      "cds_code": "36 67819 6993885",
+      "school_address": "1907 South Euclid Ave. Ontario, CA 91762-6512",
+      "google_map_link": "https://www.google.com/maps/place/1907+South+Euclid+Ave.+Ontario+CA+91762-6512",
+      "mailing_address": "1907 South Euclid Ave. Ontario, CA 91762-6512",
+      "phone_number": "(909) 983-4644",
+      "fax_number": "(909) 295-4145",
+      "email": "kvos@ocschools.org",
+      "web_address": "www.ocschools.org",
+      "web_address_link": "http://www.ocschools.org",
+      "administrators": [
+        {
+          "info": "Rob Behnke Principal rbhenke@ocschools.org",
+          "email": "rbhenke@ocschools.org"
+        },
+        {
+          "info": "Claudia Hernandez (Custodian of Records) ctran@ocschools.org",
+          "email": "ctran@ocschools.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "8",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "September 25, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436920300",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Ahrens Child Care Center",
+    "school_type": "Kindergartens (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436920300",
+    "requested_name": "Ahrens Child Care Center",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Ahrens Child Care Center",
+      "cds_code": "36 67843 6920300",
+      "school_address": "201 N. Unniversity St. Redlands, Ca 92374",
+      "google_map_link": "https://www.google.com/maps/place/201+N.+Unniversity+St.+Redlands+Ca+92374",
+      "mailing_address": "201 N. Unniversity St. Redlands, Ca 92374",
+      "phone_number": "(909) 793-8601",
+      "fax_number": "Information Not Available",
+      "email": "ahrenschildcarecenter@yahoo.com",
+      "web_address": "http://ahrenschildcarecenter.net",
+      "web_address_link": "http://ahrenschildcarecenter.net",
+      "administrators": [
+        {
+          "info": "Mr. John Ahrens Director ahrenschildcarecenter@yahoo.com",
+          "email": "ahrenschildcarecenter@yahoo.com"
+        },
+        {
+          "info": "Mr. John Ahrens (Custodian of Records) ahrenschildcarecenter@yahoo.com",
+          "email": "ahrenschildcarecenter@yahoo.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "Kindergartens (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "K",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "November 26, 2024"
+    }
+  },
+  {
+    "cds_code": "36678276172266",
+    "county": "San Bernardino",
+    "district": "Oro Grande",
+    "school": "Choices Life Plan Mentoring Program",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678276172266",
+    "requested_name": "Choices Life Plan Mentoring Program",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Choices Life Plan Mentoring Program",
+      "cds_code": "36 67827 6172266",
+      "school_address": "14500 Owl Ct Victorville, CA 92394",
+      "google_map_link": "https://www.google.com/maps/place/14500+Owl+Ct+Victorville+CA+92394",
+      "mailing_address": "17868 Hwy 18, 333 Apple Valley, CA 92307",
+      "phone_number": "(310) 242-3428",
+      "fax_number": "(442) 225-4484",
+      "email": "choiceslifeplan@gmail.com",
+      "web_address": "http://ChoicesLifePlan.com",
+      "web_address_link": "http://ChoicesLifePlan.com",
+      "administrators": [
+        {
+          "info": "Ms. Tershama Hill Executive Director tershamahill@gmail.com",
+          "email": "tershamahill@gmail.com"
+        },
+        {
+          "info": "Ms. Tershama Hill (Custodian of Records) tershamahill@gmail.com",
+          "email": "tershamahill@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "August 4, 2025",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "1",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "August 13, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436911234",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Arrowhead Christian Academy-Upper School-Redlands Christian School",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436911234",
+    "requested_name": "Arrowhead Christian Academy-Upper School",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Arrowhead Christian Academy-Upper School-Redlands Christian School",
+      "cds_code": "36 67843 6911234",
+      "school_address": "105 Tennessee St. Redlands, CA 92373-5437",
+      "google_map_link": "https://www.google.com/maps/place/105+Tennessee+St.+Redlands+CA+92373-5437",
+      "mailing_address": "105 Tennessee St. Redlands, CA 92373-5437",
+      "phone_number": "(909) 793-0601",
+      "fax_number": "(909) 792-5691",
+      "email": "bbell@redlandschristian.org",
+      "web_address": "www.redlandschristian.org",
+      "web_address_link": "http://www.redlandschristian.org",
+      "administrators": [
+        {
+          "info": "Mr. Ben Snyder Principal bsnyder@redlandschristian.org",
+          "email": "bsnyder@redlandschristian.org"
+        },
+        {
+          "info": "Mr. David Best (Custodian of Records) dbest@redlandschristian.org",
+          "email": "dbest@redlandschristian.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "October 15, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436158232",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "California University Preparatory Academy",
+    "school_type": "High Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436158232",
+    "requested_name": "California University Preparatory Academ",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "California University Preparatory Academy",
+      "cds_code": "36 67843 6158232",
+      "school_address": "1229 Sunnyside Ave. Redlands, CA 92373-6534",
+      "google_map_link": "https://www.google.com/maps/place/1229+Sunnyside+Ave.+Redlands+CA+92373-6534",
+      "mailing_address": "1229 Sunnyside Ave. Redlands, CA 92373-6534",
+      "phone_number": "(909) 569-9961",
+      "fax_number": "Information Not Available",
+      "email": "liyang1012@gmail.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mr. Yang Li Executive Director (909) 569-9961 liyang1012@gmail.com",
+          "email": "liyang1012@gmail.com"
+        },
+        {
+          "info": "Mr. Yang Li (Custodian of Records) liyang1012@gmail.com",
+          "email": "liyang1012@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "May 13, 2019",
+      "school_type": "High Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "7",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "April 29, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436172076",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Barton House Playschool",
+    "school_type": "Kindergartens (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436172076",
+    "requested_name": "Barton House Playschool",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Barton House Playschool",
+      "cds_code": "36 67843 6172076",
+      "school_address": "32 Nevada St Redlands, CA 92373-4220",
+      "google_map_link": "https://www.google.com/maps/place/32+Nevada+St+Redlands+CA+92373-4220",
+      "mailing_address": "32 Nevada St Redlands, CA 92373-4220",
+      "phone_number": "(909) 335-3191",
+      "fax_number": "Information Not Available",
+      "email": "info@bhplayschool.com",
+      "web_address": "www.bhplayschool.com",
+      "web_address_link": "http://www.bhplayschool.com",
+      "administrators": [
+        {
+          "info": "Mrs. Melissa Burgess Director melissa@bhplayschool.com",
+          "email": "melissa@bhplayschool.com"
+        },
+        {
+          "info": "Mrs. Melissa Burgess (Custodian of Records) fiverams@aol.com",
+          "email": "fiverams@aol.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "May 28, 2025",
+      "school_type": "Kindergartens (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "K",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "February 17, 2026"
+    }
+  },
+  {
+    "cds_code": "36678436957740",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Christ the King Lutheran Childcare Center",
+    "school_type": "Kindergartens (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436957740",
+    "requested_name": "Christ the King Lutheran Childcare Cente",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Christ the King Lutheran Childcare Center",
+      "cds_code": "36 67843 6957740",
+      "school_address": "1505 S Ford St. Redlands,, CA 92373-7128",
+      "google_map_link": "https://www.google.com/maps/place/1505+S+Ford+St.+Redlands,+CA+92373-7128",
+      "mailing_address": "1505 S Ford St. Redlands,, CA 92373-7128",
+      "phone_number": "(909) 793-8722",
+      "fax_number": "(909) 793-5962",
+      "email": "scoectk@yahoo.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mrs. Sheri Coe Director scoectk@yahoo.com",
+          "email": "scoectk@yahoo.com"
+        },
+        {
+          "info": "Mrs. Sheri Coe (Custodian of Records) scoectk@yahoo.com",
+          "email": "scoectk@yahoo.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "Kindergartens (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "K",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "October 2, 2025"
+    }
+  },
+  {
+    "cds_code": "36678437100225",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Citrus Valley Christian Academy PSP",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678437100225",
+    "requested_name": "Citrus Valley Christian Academy PSP",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Citrus Valley Christian Academy PSP",
+      "cds_code": "36 67843 7100225",
+      "school_address": "1306 Morrison Dr. Redlands, CA 92374-5428",
+      "google_map_link": "https://www.google.com/maps/place/1306+Morrison+Dr.+Redlands+CA+92374-5428",
+      "mailing_address": "1306 Morrison Dr. Redlands, CA 92374-5428",
+      "phone_number": "(909) 289-9364",
+      "fax_number": "Information Not Available",
+      "email": "carylcvca@gmail.com",
+      "web_address": "http://citrusvalleychristianacademy.net",
+      "web_address_link": "http://citrusvalleychristianacademy.net",
+      "administrators": [
+        {
+          "info": "Caryl Jones Director carylcvca@gmail.com",
+          "email": "carylcvca@gmail.com"
+        },
+        {
+          "info": "Caryl Jones (Custodian of Records) carylcvca@gmail.com",
+          "email": "carylcvca@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "September 15, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436168371",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Deeper Roots Academy",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436168371",
+    "requested_name": "Deeper Roots Academy",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Deeper Roots Academy",
+      "cds_code": "36 67843 6168371",
+      "school_address": "Information Redacted",
+      "mailing_address": "Information Redacted",
+      "phone_number": "Information Redacted",
+      "fax_number": "Information Not Available",
+      "email": "lesm.nguyen@gmail.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mrs. Leslie Nguyen Administrator lesm.nguyen@gmail.com",
+          "email": "lesm.nguyen@gmail.com"
+        },
+        {
+          "info": "Mrs. Leslie Nguyen (Custodian of Records) lesm.nguyen@gmail.com",
+          "email": "lesm.nguyen@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "October 12, 2023",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "1",
+      "high_grade": "9",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "October 6, 2025"
+    }
+  },
+  {
+    "cds_code": "36678016906457",
+    "county": "San Bernardino",
+    "district": "Needles Unified",
+    "school": "Needles SDA School",
+    "school_type": "Elementary School (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678016906457",
+    "requested_name": "Needles SDA School",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Needles SDA School",
+      "cds_code": "36 67801 6906457",
+      "school_address": "1405 Lillyhill Rd. Needles, CA 92363-3422",
+      "google_map_link": "https://www.google.com/maps/place/1405+Lillyhill+Rd.+Needles+CA+92363-3422",
+      "mailing_address": "1405 Lillyhill Rd. Needles, CA 92363-3422",
+      "phone_number": "(760) 326-4406",
+      "fax_number": "Information Not Available",
+      "email": "annaleewhitaker2@gmail.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mrs. Annalee Whitaker Principal annaleewhitaker2@gmail.com",
+          "email": "annaleewhitaker2@gmail.com"
+        },
+        {
+          "info": "Miss Rabel Ortiz (Custodian of Records) Rabel.Ortiz@seccsda.org",
+          "email": "Rabel.Ortiz@seccsda.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "July 1, 1980",
+      "school_type": "Elementary School (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "8",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "September 25, 2025"
+    }
+  },
+  {
+    "cds_code": "36678196170294",
+    "county": "San Bernardino",
+    "district": "Ontario-Montclair",
+    "school": "Hunter Academies",
+    "school_type": "High Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678196170294",
+    "requested_name": "Hunter Academies",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Hunter Academies",
+      "cds_code": "36 67819 6170294",
+      "school_address": "11255 S Central Ave Ontario, CA 91762-4512",
+      "google_map_link": "https://www.google.com/maps/place/11255+S+Central+Ave+Ontario+CA+91762-4512",
+      "mailing_address": "11255 S Central Ave Ontario, CA 91762-4512",
+      "phone_number": "(626) 641-9009",
+      "fax_number": "Information Not Available",
+      "email": "swu@hunteracademies.org",
+      "web_address": "http://hunteracademies.org/",
+      "web_address_link": "https://hunteracademies.org/",
+      "administrators": [
+        {
+          "info": "Dr. Sally Wu Principal swu@hunteracademies.org",
+          "email": "swu@hunteracademies.org"
+        },
+        {
+          "info": "Dr. Sally Wu (Custodian of Records) swu@hunteracademies.org",
+          "email": "swu@hunteracademies.org"
+        }
+      ],
+      "status": "Active",
+      "open_date": "August 28, 2024",
+      "school_type": "High Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "February 2, 2026"
+    }
+  },
+  {
+    "cds_code": "36678016167662",
+    "county": "San Bernardino",
+    "district": "Needles Unified",
+    "school": "NotYourRegularChurch",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678016167662",
+    "requested_name": "NotYourRegularChurch",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "NotYourRegularChurch",
+      "cds_code": "36 67801 6167662",
+      "school_address": "1916 Five Mile Rd Needles, CA 92363",
+      "google_map_link": "https://www.google.com/maps/place/1916+Five+Mile+Rd+Needles+CA+92363",
+      "mailing_address": "Po Box 96 Winterhaven, CA 92283",
+      "phone_number": "(760) 377-1737",
+      "fax_number": "Information Not Available",
+      "email": "notyourregularchurch@gmail.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mrs. Angel Shultz Administrator angel.shultz.74@gmail.com",
+          "email": "angel.shultz.74@gmail.com"
+        },
+        {
+          "info": "Mrs. Angel Shultz (Custodian of Records) angel.shultz.74@gmail.com",
+          "email": "angel.shultz.74@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "August 10, 2023",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "October 9, 2025"
+    }
+  },
+  {
+    "cds_code": "36678436165823",
+    "county": "San Bernardino",
+    "district": "Redlands Unified",
+    "school": "Hope Center Academy",
+    "school_type": "K-12 Schools (Private)",
+    "sector_type": "Private",
+    "charter": "No",
+    "status": "success",
+    "detail_link": "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=36678436165823",
+    "requested_name": "Hope Center Academy",
+    "attempts_used": 1,
+    "detailed_info": {
+      "county": "San Bernardino",
+      "school": "Hope Center Academy",
+      "cds_code": "36 67843 6165823",
+      "school_address": "1210 Ford Redlands, CA 92374-6327",
+      "google_map_link": "https://www.google.com/maps/place/1210+Ford+Redlands+CA+92374-6327",
+      "mailing_address": "1210 Ford St Redlands, CA 92374",
+      "phone_number": "(909) 793-4353",
+      "fax_number": "Information Not Available",
+      "email": "hopecenteracademy@gmail.com",
+      "web_address": "Information Not Available",
+      "administrators": [
+        {
+          "info": "Mrs. Rose Castillo Administrator hopecenteracademy@gmail.com",
+          "email": "hopecenteracademy@gmail.com"
+        },
+        {
+          "info": "Mrs. Rose Castillo (Custodian of Records) hopecenteracademy@gmail.com",
+          "email": "hopecenteracademy@gmail.com"
+        }
+      ],
+      "status": "Active",
+      "open_date": "October 18, 2022",
+      "school_type": "K-12 Schools (Private)",
+      "educational_program_type": "Information Not Available",
+      "low_grade": "K",
+      "high_grade": "12",
+      "public_school": "No",
+      "statistical_info": "Link to CDE Private School Data page",
+      "statistical_info_link": "https://www.cde.ca.gov/ds/si/ps/",
+      "last_updated": "October 24, 2025"
+    }
+  }
+]
